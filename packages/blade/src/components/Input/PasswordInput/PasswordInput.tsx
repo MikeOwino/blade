@@ -8,7 +8,7 @@ import { IconButton } from '~components/Button/IconButton';
 import type { StyledPropsBlade } from '~components/Box/styledProps';
 import { assignWithoutSideEffects } from '~utils/assignWithoutSideEffects';
 import { MetaConstants } from '~utils/metaAttribute';
-import type { BladeElementRef } from '~utils/types';
+import type { DataAnalyticsAttribute, BladeElementRef } from '~utils/types';
 
 type PasswordInputExtraProps = {
   /**
@@ -70,6 +70,8 @@ type PasswordInputCommonProps = Pick<
   | 'keyboardReturnKeyType'
   | 'autoCompleteSuggestionType'
   | 'testID'
+  | 'size'
+  | keyof DataAnalyticsAttribute
 > &
   PasswordInputExtraProps &
   StyledPropsBlade;
@@ -131,7 +133,8 @@ const _PasswordInput: React.ForwardRefRenderFunction<BladeElementRef, PasswordIn
     keyboardReturnKeyType = 'done',
     autoCompleteSuggestionType,
     testID,
-    ...styledProps
+    size = 'medium',
+    ...rest
   },
   ref,
 ) => {
@@ -173,7 +176,7 @@ const _PasswordInput: React.ForwardRefRenderFunction<BladeElementRef, PasswordIn
       hideLabelText={!Boolean(label)}
       labelPosition={labelPosition}
       type={type}
-      interactionElement={revealButton}
+      trailingInteractionElement={revealButton}
       trailingFooterSlot={trailingFooterSlot}
       maxCharacters={maxCharacters}
       validationState={validationState}
@@ -197,7 +200,8 @@ const _PasswordInput: React.ForwardRefRenderFunction<BladeElementRef, PasswordIn
       keyboardReturnKeyType={keyboardReturnKeyType}
       autoCapitalize="none"
       testID={testID}
-      {...styledProps}
+      size={size}
+      {...rest}
     />
   );
 };

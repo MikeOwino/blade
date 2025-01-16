@@ -20,7 +20,7 @@ const getBaseTextStyles = ({
   opacity,
   theme,
 }: StyledBaseTextProps): CSSObject => {
-  const textColor = getIn(theme.colors, color);
+  const textColor = color === 'currentColor' ? 'currentColor' : getIn(theme.colors, color);
   const themeFontFamily = theme.typography.fonts.family[fontFamily];
   const themeFontSize = makeTypographySize(theme.typography.fonts.size[fontSize]);
   const themeFontWeight = theme.typography.fonts.weight[fontWeight];
@@ -41,6 +41,7 @@ const getBaseTextStyles = ({
         'line-clamp': `${numberOfLines}`,
         '-webkit-line-clamp': `${numberOfLines}`,
         '-webkit-box-orient': 'vertical',
+        overflowWrap: 'break-word',
       };
     }
   }

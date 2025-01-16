@@ -7,7 +7,7 @@ import Animated, {
   useSharedValue,
   withTiming,
 } from 'react-native-reanimated';
-import type { LayoutChangeEvent } from 'react-native';
+import type { LayoutChangeEvent, ViewStyle } from 'react-native';
 import { View } from 'react-native';
 import type { CollapsibleBodyContentProps } from './types';
 import { useCollapsible } from './CollapsibleContext';
@@ -34,7 +34,10 @@ const AnimatedStyledCollapsibleBodyContent = styled(
   };
 });
 
-const CollapsibleBodyContent = ({ children }: CollapsibleBodyContentProps): ReactElement => {
+const CollapsibleBodyContent = ({
+  children,
+  _hasMargin,
+}: CollapsibleBodyContentProps): ReactElement => {
   const { isExpanded, direction } = useCollapsible();
   const { theme } = useTheme();
 
@@ -72,12 +75,14 @@ const CollapsibleBodyContent = ({ children }: CollapsibleBodyContentProps): Reac
     );
   }, [isExpanded, opacity, duration, easing, height, layoutHeight, onAnimationComplete]);
 
-  const animatedStyles = useAnimatedStyle(() => {
-    return {
-      opacity: opacity.value,
-      height: height.value,
-    };
-  });
+  const animatedStyles = useAnimatedStyle(
+    (): ViewStyle => {
+      return {
+        opacity: opacity.value,
+        height: height.value,
+      };
+    },
+  );
 
   /**
    * Tracks the height of content so we can animate height to and from 0 to the content's height.
@@ -123,7 +128,7 @@ const CollapsibleBodyContent = ({ children }: CollapsibleBodyContentProps): Reac
             : nativeStyles.collapsibleBodyCollapsed
         }
       >
-        <Box {...getCollapsibleBodyContentBoxProps({ direction })}>{children}</Box>
+        <Box {...getCollapsibleBodyContentBoxProps({ direction, _hasMargin })}>{children}</Box>
       </View>
     </AnimatedStyledCollapsibleBodyContent>
   );

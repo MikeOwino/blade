@@ -10,6 +10,9 @@ import { Sandbox } from '~utils/storybook/Sandbox';
 import StoryPageWrapper from '~utils/storybook/StoryPageWrapper';
 import { Button } from '~components/Button';
 import { getStyledPropsArgTypes } from '~components/Box/BaseBox/storybookArgTypes';
+import { Box } from '~components/Box';
+import { Text } from '~components/Typography';
+import { Link } from '~components/Link';
 
 const propsCategory = {
   BASE_PROPS: 'Text Input Props',
@@ -33,6 +36,7 @@ export default {
     maxCharacters: undefined,
     textAlign: 'left',
     autoFocus: false,
+    size: 'medium',
     onChange: ({ name, value }): void => {
       console.log(`input field ${name} content changed to ${value}`);
     },
@@ -61,6 +65,16 @@ export default {
   tags: ['autodocs'],
   argTypes: {
     defaultValue: {
+      table: {
+        category: propsCategory.BASE_PROPS,
+      },
+    },
+    testID: {
+      table: {
+        category: propsCategory.BASE_PROPS,
+      },
+    },
+    size: {
       table: {
         category: propsCategory.BASE_PROPS,
       },
@@ -106,17 +120,39 @@ export default {
         category: propsCategory.BASE_PROPS,
       },
     },
+    onSubmit: {
+      control: {
+        disable: true,
+      },
+      table: {
+        category: propsCategory.BASE_PROPS,
+      },
+    },
+    onClick: {
+      control: {
+        disable: true,
+      },
+      table: {
+        category: propsCategory.BASE_PROPS,
+      },
+    },
     onChange: {
       table: {
         category: propsCategory.BASE_PROPS,
       },
     },
     onFocus: {
+      control: {
+        disable: true,
+      },
       table: {
         category: propsCategory.BASE_PROPS,
       },
     },
     onBlur: {
+      control: {
+        disable: true,
+      },
       table: {
         category: propsCategory.BASE_PROPS,
       },
@@ -167,7 +203,15 @@ export default {
       },
     },
     icon: {
-      name: 'icon',
+      control: {
+        disable: true,
+      },
+      table: {
+        category: propsCategory.LEADING_VISUAL_PROPS,
+      },
+    },
+    leadingIcon: {
+      name: 'leadingIcon',
       type: 'select',
       options: Object.keys(iconMap),
       table: {
@@ -180,6 +224,19 @@ export default {
       },
     },
     suffix: {
+      table: {
+        category: propsCategory.TRAILING_VISUAL_PROPS,
+      },
+    },
+    trailingIcon: {
+      name: 'trailingIcon',
+      type: 'select',
+      options: Object.keys(iconMap),
+      table: {
+        category: propsCategory.TRAILING_VISUAL_PROPS,
+      },
+    },
+    trailingButton: {
       table: {
         category: propsCategory.TRAILING_VISUAL_PROPS,
       },
@@ -230,7 +287,7 @@ export default {
             {`
               import { TextInput } from '@razorpay/blade/components';
 
-              function App(): React.ReactElement {
+              function App() {
                 return (
                   <TextInput 
                     label="Name" 
@@ -249,8 +306,18 @@ export default {
   },
 } as Meta<TextInputProps>;
 
-const TextInputTemplate: StoryFn<typeof TextInputComponent> = ({ icon, ...args }) => {
-  return <TextInputComponent {...args} icon={iconMap[(icon as unknown) as string]} />;
+const TextInputTemplate: StoryFn<typeof TextInputComponent> = ({
+  leadingIcon,
+  trailingIcon,
+  ...args
+}) => {
+  return (
+    <TextInputComponent
+      {...args}
+      leadingIcon={iconMap[(leadingIcon as unknown) as string]}
+      trailingIcon={iconMap[(trailingIcon as unknown) as string]}
+    />
+  );
 };
 
 export const TextInput = TextInputTemplate.bind({});
@@ -265,11 +332,10 @@ TextInputTypeNumber.args = {
   placeholder: 'Enter any random number',
 };
 
-// @ts-expect-error: Just another undocumented, untyped storybook property ;__;
-TextInputTypeNumber.story = {
-  parameters: {
-    docs: {
-      storyDescription: `You might notice that type number allows you to enter other characters as well. That's because instead of setting type number internally, we prefer inputMode numeric. Checkout this article for the reasoning - <b><a href="https://technology.blog.gov.uk/2020/02/24/why-the-gov-uk-design-system-team-changed-the-input-type-for-numbers/">Why the GOV.UK Design System team changed the input type for numbers</a></b> \n\nIf you have a usecase of only allowing number in field, you can handle that on validations end.`,
+TextInputTypeNumber.parameters = {
+  docs: {
+    description: {
+      story: `You might notice that type number allows you to enter other characters as well. That's because instead of setting type number internally, we prefer inputMode numeric. Checkout this article for the reasoning - <b><a href="https://technology.blog.gov.uk/2020/02/24/why-the-gov-uk-design-system-team-changed-the-input-type-for-numbers/">Why the GOV.UK Design System team changed the input type for numbers</a></b> \n\nIf you have a usecase of only allowing number in field, you can handle that on validations end.`,
     },
   },
 };
@@ -303,6 +369,15 @@ TextInputWithoutLabel.args = {
   accessibilityLabel: 'Enter your name',
 };
 
+export const TextInputWithTrailingButton = TextInputTemplate.bind({});
+TextInputWithTrailingButton.storyName = 'TextInput with trailing action button';
+TextInputWithTrailingButton.args = {
+  defaultValue: 'John Ives',
+  label: 'Discount Code',
+  trailingButton: <Link>Apply</Link>,
+  showClearButton: false,
+};
+
 const TextInputMaxCharactersTemplate: StoryFn<typeof TextInputComponent> = () => {
   return (
     <TextInput
@@ -315,6 +390,36 @@ const TextInputMaxCharactersTemplate: StoryFn<typeof TextInputComponent> = () =>
   );
 };
 export const TextInputMaxCharacters = TextInputMaxCharactersTemplate.bind({});
+
+const TextInputSizesTemplate: StoryFn<typeof TextInputComponent> = ({
+  leadingIcon,
+  trailingIcon,
+  ...args
+}) => {
+  return (
+    <Box display="flex" flexDirection="column">
+      <Text size="large" marginBottom="spacing.2">
+        Medium Size:
+      </Text>
+      <TextInputComponent
+        {...args}
+        leadingIcon={iconMap[(leadingIcon as unknown) as string]}
+        trailingIcon={iconMap[(trailingIcon as unknown) as string]}
+        size="medium"
+      />
+      <Text size="large" marginTop="spacing.4" marginBottom="spacing.2">
+        Large Size:
+      </Text>
+      <TextInputComponent
+        {...args}
+        leadingIcon={iconMap[(leadingIcon as unknown) as string]}
+        trailingIcon={iconMap[(trailingIcon as unknown) as string]}
+        size="large"
+      />
+    </Box>
+  );
+};
+export const TextInputSizes = TextInputSizesTemplate.bind({});
 
 const TextInputUncontrolledTemplate: StoryFn<typeof TextInputComponent> = () => {
   return (
@@ -474,4 +579,98 @@ inputRef.parameters = {
         'TextInput component exposes the `ref` prop. The `ref` exposes two methods `focus` & `scrollIntoView` which can be used to programatically control the DOM element',
     },
   },
+};
+
+// Don't copy email regex from here. This is just an example regex for basic emails. Make sure to use email validation as per usecase
+const isValidEmail = (email: string): boolean => {
+  const regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return regex.test(email);
+};
+
+export const TextInputWithControlledTags: StoryFn<typeof TextInputComponent> = ({ ...args }) => {
+  const [tags, setTags] = React.useState<string[]>([]);
+
+  return (
+    <Box display="flex" flexDirection="column">
+      <TextInputComponent
+        {...args}
+        tags={tags}
+        onTagChange={({ tags }) => {
+          setTags(tags);
+        }}
+      />
+    </Box>
+  );
+};
+
+TextInputWithControlledTags.args = {
+  isTaggedInput: true,
+  showClearButton: false,
+};
+
+export const TextInputWithTagsValidation: StoryFn<typeof TextInputComponent> = ({ ...args }) => {
+  const [tags, setTags] = React.useState<string[]>([]);
+  const [inputValue, setInputValue] = React.useState('');
+  const [errorText, setErrorText] = React.useState('');
+  // we use ref because onTagChange and onChange is called in same render
+  // So if we want to set error in onTagChange, and use its value in onChange, its not possible with useState
+  const isErrorRef = React.useRef(false);
+
+  return (
+    <Box display="flex" flexDirection="column">
+      <TextInputComponent
+        {...args}
+        value={inputValue}
+        onChange={({ value }) => {
+          if (!isErrorRef.current) {
+            setInputValue(value ?? '');
+            setErrorText('');
+          }
+
+          isErrorRef.current = false;
+        }}
+        tags={tags}
+        onTagChange={({ tags: newTags }) => {
+          const isTagRemoved = newTags.length < tags.length;
+          if (isTagRemoved) {
+            // we don't validate while removing tags
+            setTags(newTags);
+            return;
+          }
+
+          if (isValidEmail(inputValue)) {
+            setTags(newTags);
+          } else {
+            isErrorRef.current = true;
+            setErrorText(`Invalid email ${inputValue}. Try with different email`);
+          }
+        }}
+        errorText={errorText}
+        validationState={errorText ? 'error' : undefined}
+      />
+    </Box>
+  );
+};
+
+TextInputWithTagsValidation.args = {
+  isTaggedInput: true,
+  showClearButton: false,
+};
+
+export const TextInputWithUncontrolledTags: StoryFn<typeof TextInputComponent> = ({ ...args }) => {
+  return (
+    <Box display="flex" flexDirection="column">
+      <TextInputComponent
+        {...args}
+        onTagChange={(tags) => {
+          console.log('new tags', tags);
+        }}
+      />
+    </Box>
+  );
+};
+
+TextInputWithUncontrolledTags.args = {
+  isTaggedInput: true,
+  showClearButton: true,
 };

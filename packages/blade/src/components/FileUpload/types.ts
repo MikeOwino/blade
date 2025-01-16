@@ -1,5 +1,8 @@
+import type { MotionMetaProp } from '~components/BaseMotion';
 import type { Theme } from '~components/BladeProvider';
+import type { StyledPropsBlade } from '~components/Box/styledProps';
 import type { DotNotationToken } from '~utils/lodashButBetter/get';
+import type { DataAnalyticsAttribute } from '~utils/types';
 
 interface BladeFile extends File {
   /**
@@ -82,6 +85,10 @@ type FileUploadCommonProps = {
    */
   onRemove?: ({ file }: { file: File }) => void;
   /**
+   * Callback function triggered when a file upload is retried
+   */
+  onReupload?: ({ file }: { file: File }) => void;
+  /**
    * Callback function triggered when a file upload is dismissed
    */
   onDismiss?: ({ file }: { file: File }) => void;
@@ -102,10 +109,17 @@ type FileUploadCommonProps = {
    */
   errorText?: string;
   /**
+   * Size of the FileUpload component
+   *
+   * @default 'medium'
+   */
+  size?: 'medium' | 'large';
+  /**
    * Test ID for automation
    */
   testID?: string;
-};
+} & StyledPropsBlade &
+  MotionMetaProp;
 
 /*
   Mandatory accessibilityLabel prop when label is not provided
@@ -138,19 +152,24 @@ type FileUploadPropsWithLabel = {
 type FileUploadProps = (FileUploadPropsWithA11yLabel | FileUploadPropsWithLabel) &
   FileUploadCommonProps;
 
-type FileUploadItemProps = Pick<FileUploadProps, 'onPreview' | 'onRemove' | 'onDismiss'> & {
+type FileUploadItemProps = Pick<
+  FileUploadProps,
+  'onPreview' | 'onRemove' | 'onDismiss' | 'onReupload' | 'size'
+> & {
   file: BladeFile;
-};
+} & DataAnalyticsAttribute;
 
 type StyledFileUploadWrapperProps = {
   isDisabled?: boolean;
   isActive: boolean;
+  size: NonNullable<FileUploadProps['size']>;
   theme: Theme;
   children: React.ReactNode;
 };
 
 type StyledFileUploadItemWrapperProps = {
   status: NonNullable<BladeFile['status']>;
+  size: NonNullable<FileUploadProps['size']>;
   theme: Theme;
   children: React.ReactNode;
 };

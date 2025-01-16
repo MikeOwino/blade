@@ -200,7 +200,7 @@ describe('<BaseButton />', () => {
         </BaseButton>,
       ),
     ).toThrowErrorMatchingInlineSnapshot(
-      `"[Blade: BaseButton]: Tertiary variant can only be used with color: "default" or "white" but received "positive""`,
+      `"[Blade: BaseButton]: Tertiary variant can only be used with color: "primary" or "white" but received "positive""`,
     );
   });
 
@@ -246,5 +246,15 @@ describe('<BaseButton />', () => {
       </BaseButton>,
     );
     await assertAccessible(container);
+  });
+  it('should support passing data-analytics attribute', () => {
+    const buttonText = 'Pay Now';
+    const { getByRole } = renderWithTheme(
+      <BaseButton data-analytics-name="pay-now" onClick={jest.fn()}>
+        {buttonText}
+      </BaseButton>,
+    );
+    const button = getByRole('button');
+    expect(button).toHaveAttribute('data-analytics-name', 'pay-now');
   });
 });

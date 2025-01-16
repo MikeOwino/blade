@@ -19,15 +19,17 @@ import {
   modalResponsiveScreenGap,
 } from './modalTokens';
 import type { ModalProps } from './types';
+import { componentIds } from './constants';
 import { castWebType, makeMotionTime, makeSize } from '~utils';
 import { BaseBox } from '~components/Box/BaseBox';
 import { useTheme } from '~components/BladeProvider';
 import { Box } from '~components/Box';
-import { isValidAllowedChildren } from '~utils/isValidAllowedChildren';
 import { MetaConstants, metaAttribute } from '~utils/metaAttribute';
 import { makeAccessible } from '~utils/makeAccessible';
-import { logger, throwBladeError } from '~utils/logger';
+import { logger } from '~utils/logger';
 import { componentZIndices } from '~utils/componentZIndices';
+import { useVerifyAllowedChildren } from '~utils/useVerifyAllowedChildren';
+import { makeAnalyticsAttribute } from '~utils/makeAnalyticsAttribute';
 
 const entry = keyframes`
   from {
@@ -58,10 +60,10 @@ const ModalContent = styled(BaseBox)<{ isVisible: boolean }>(({ isVisible, theme
     transform: translate(-50%, -50%);
     opacity: ${isVisible ? 1 : 0};
     animation: ${isVisible ? entry : exit}
-      ${castWebType(makeMotionTime(theme.motion.duration.xmoderate))}
+      ${castWebType(makeMotionTime(theme.motion.duration.moderate))}
       ${isVisible
-        ? castWebType(theme.motion.easing.entrance.revealing)
-        : castWebType(theme.motion.easing.exit.revealing)};
+        ? castWebType(theme.motion.easing.entrance)
+        : castWebType(theme.motion.easing.exit)};
   `;
 });
 
@@ -73,10 +75,11 @@ const Modal = ({
   size = 'small',
   accessibilityLabel,
   zIndex = componentZIndices.modal,
+  ...rest
 }: ModalProps): React.ReactElement => {
   const { theme, platform } = useTheme();
   const { isMounted, isVisible } = usePresence(isOpen, {
-    transitionDuration: theme.motion.duration.xmoderate,
+    transitionDuration: theme.motion.duration.moderate,
     initialEnter: true,
   });
 
@@ -117,20 +120,10 @@ const Modal = ({
   };
 
   // Only allow ModalHeader, ModalBody and ModalFooter as children
-  const validChildren = React.Children.map(children, (child) => {
-    if (
-      isValidAllowedChildren(child, MetaConstants.ModalHeader) ||
-      isValidAllowedChildren(child, MetaConstants.ModalBody) ||
-      isValidAllowedChildren(child, MetaConstants.ModalFooter)
-    ) {
-      return child;
-    } else if (__DEV__) {
-      throwBladeError({
-        message: 'Modal only accepts ModalHeader, ModalBody and ModalFooter as children',
-        moduleName: 'Modal',
-      });
-    }
-    return null;
+  useVerifyAllowedChildren({
+    allowedComponents: [componentIds.ModalHeader, componentIds.ModalBody, componentIds.ModalFooter],
+    children,
+    componentName: 'Modal',
   });
 
   return (
@@ -143,7 +136,12 @@ const Modal = ({
             context={context}
             modal={true}
           >
-            <Box zIndex={zIndex} position="fixed" testID="modal-wrapper">
+            <Box
+              zIndex={zIndex}
+              position="fixed"
+              testID="modal-wrapper"
+              {...makeAnalyticsAttribute(rest)}
+            >
               <ModalBackdrop />
               <ModalContent
                 {...metaAttribute({
@@ -169,7 +167,7 @@ const Modal = ({
                 isVisible={isVisible}
                 ref={refs.setFloating}
               >
-                {validChildren}
+                {children}
               </ModalContent>
             </Box>
           </FloatingFocusManager>

@@ -10,18 +10,9 @@ import {
   TableRow,
   TableCell,
 } from '@razorpay/blade/components';
-import type { TableData } from '@razorpay/blade/components';
 import React from 'react';
 
-type Item = {
-  id: string;
-  paymentId: string;
-  amount: number;
-  date: Date;
-  method: string;
-};
-
-const nodes: Item[] = [
+const nodes = [
   ...Array.from({ length: 5 }, (_, i) => ({
     id: (i + 1).toString(),
     paymentId: \`rzp\${Math.floor(Math.random() * 1000000)}\`,
@@ -38,11 +29,11 @@ const nodes: Item[] = [
   })),
 ];
 
-const data: TableData<Item> = {
+const data = {
   nodes,
 };
 
-function App(): React.ReactElement {
+function App() {
   return (
     <Box
       backgroundColor="surface.background.gray.intense"
@@ -109,18 +100,9 @@ import {
   IconButton,
   Tooltip,
 } from '@razorpay/blade/components';
-import type { TableData } from '@razorpay/blade/components';
 import React from 'react';
 
-type Item = {
-  id: string;
-  paymentId: string;
-  amount: number;
-  date: Date;
-  status: string;
-};
-
-const nodes: Item[] = [
+const nodes = [
   ...Array.from({ length: 5 }, (_, i) => ({
     id: (i + 1).toString(),
     paymentId: \`rzp\${Math.floor(Math.random() * 1000000)}\`,
@@ -135,11 +117,11 @@ const nodes: Item[] = [
   })),
 ];
 
-const data: TableData<Item> = {
+const data = {
   nodes,
 };
 
-function App(): React.ReactElement {
+function App() {
   return (
     <Box
       backgroundColor="surface.background.gray.intense"
@@ -289,18 +271,9 @@ import {
   Amount,
   Badge,
 } from '@razorpay/blade/components';
-import type { TableData } from '@razorpay/blade/components';
 import React from 'react';
 
-type Item = {
-  id: string;
-  paymentId: string;
-  amount: number;
-  date: Date;
-  status: string;
-};
-
-const nodes: Item[] = [
+const nodes = [
   ...Array.from({ length: 5 }, (_, i) => ({
     id: (i + 1).toString(),
     paymentId: \`rzp\${Math.floor(Math.random() * 1000000)}\`,
@@ -315,11 +288,11 @@ const nodes: Item[] = [
   })),
 ];
 
-const data: TableData<Item> = {
+const data = {
   nodes,
 };
 
-function App(): React.ReactElement {
+function App() {
   return (
     <Box
       backgroundColor="surface.background.gray.intense"
@@ -414,18 +387,9 @@ import {
   Badge,
   Text,
 } from '@razorpay/blade/components';
-import type { TableData } from '@razorpay/blade/components';
 import React, { useState } from 'react';
 
-type Item = {
-  id: string;
-  paymentId: string;
-  amount: number;
-  date: Date;
-  status: string;
-};
-
-const nodes: Item[] = [
+const nodes = [
   ...Array.from({ length: 5 }, (_, i) => ({
     id: (i + 1).toString(),
     paymentId: \`rzp\${Math.floor(Math.random() * 1000000)}\`,
@@ -440,12 +404,12 @@ const nodes: Item[] = [
   })),
 ];
 
-const data: TableData<Item> = {
+const data = {
   nodes,
 };
 
-function App(): React.ReactElement {
-  const [selectedItem, setSelectedItem] = useState<Item | undefined>(undefined);
+function App() {
+  const [selectedItem, setSelectedItem] = useState(undefined);
   return (
     <Box
       backgroundColor="surface.background.gray.intense"
@@ -545,18 +509,9 @@ import {
   useTheme,
   Text,
 } from '@razorpay/blade/components';
-import type { TableData } from '@razorpay/blade/components';
 import React, { useState } from 'react';
 
-type Item = {
-  id: string;
-  paymentId: string;
-  amount: number;
-  date: Date;
-  status: string;
-};
-
-const nodes: Item[] = [
+const nodes = [
   ...Array.from({ length: 5 }, (_, i) => ({
     id: (i + 1).toString(),
     paymentId: \`rzp\${Math.floor(Math.random() * 1000000)}\`,
@@ -571,12 +526,12 @@ const nodes: Item[] = [
   })),
 ];
 
-const data: TableData<Item> = {
+const data = {
   nodes,
 };
 
-function App(): React.ReactElement {
-  const [selectedItems, setSelectedItems] = useState<Item[]>([]);
+function App() {
+  const [selectedItems, setSelectedItems] = useState([]);
   const { platform } = useTheme();
   const onMobile = platform === 'onMobile';
   const selectedItemsLength = selectedItems.length;
@@ -594,7 +549,9 @@ function App(): React.ReactElement {
       <Table
         data={data}
         selectionType="multiple"
-        onSelectionChange={({ values }) => setSelectedItems(values)}
+        onSelectionChange={({ selectedIds }) => {
+          setSelectedItems(data.nodes.filter((node) => selectedIds.includes(node.id)));
+        }}
         toolbar={
           <TableToolbar
             title="Showing Recent Transactions"
@@ -689,18 +646,9 @@ import {
   Button,
   useTheme,
 } from '@razorpay/blade/components';
-import type { TableData } from '@razorpay/blade/components';
 import React from 'react';
 
-type Item = {
-  id: string;
-  paymentId: string;
-  amount: number;
-  date: Date;
-  status: string;
-};
-
-const nodes: Item[] = [
+const nodes = [
   ...Array.from({ length: 5 }, (_, i) => ({
     id: (i + 1).toString(),
     paymentId: \`rzp\${Math.floor(Math.random() * 1000000)}\`,
@@ -715,11 +663,11 @@ const nodes: Item[] = [
   })),
 ];
 
-const data: TableData<Item> = {
+const data = {
   nodes,
 };
 
-function App(): React.ReactElement {
+function App() {
   const { platform } = useTheme();
   const onMobile = platform === 'onMobile';
   return (
@@ -824,18 +772,9 @@ import {
   TableFooterRow,
   TableFooterCell,
 } from '@razorpay/blade/components';
-import type { TableData } from '@razorpay/blade/components';
 import React from 'react';
 
-type Item = {
-  id: string;
-  paymentId: string;
-  amount: number;
-  date: Date;
-  status: string;
-};
-
-const nodes: Item[] = [
+const nodes = [
   ...Array.from({ length: 20 }, (_, i) => ({
     id: (i + 1).toString(),
     paymentId: \`rzp\${Math.floor(Math.random() * 1000000)}\`,
@@ -850,11 +789,11 @@ const nodes: Item[] = [
   })),
 ];
 
-const data: TableData<Item> = {
+const data = {
   nodes,
 };
 
-function App(): React.ReactElement {
+function App() {
   const totalAmount = nodes.reduce((acc, curr) => acc + curr.amount, 0);
 
   return (
@@ -949,21 +888,9 @@ import {
   Amount,
   Badge,
 } from '@razorpay/blade/components';
-import type { TableData } from '@razorpay/blade/components';
 import React from 'react';
 
-type Item = {
-  id: string;
-  paymentId: string;
-  amount: number;
-  date: Date;
-  status: string;
-  account: string;
-  method: string;
-  name: string;
-};
-
-const nodes: Item[] = [
+const nodes = [
   ...Array.from({ length: 20 }, (_, i) => ({
     id: (i + 1).toString(),
     paymentId: \`rzp\${Math.floor(Math.random() * 1000000)}\`,
@@ -992,11 +919,11 @@ const nodes: Item[] = [
   })),
 ];
 
-const data: TableData<Item> = {
+const data = {
   nodes,
 };
 
-function App(): React.ReactElement {
+function App() {
   return (
     <Box
       backgroundColor="surface.background.gray.intense"
@@ -1090,18 +1017,9 @@ import {
   TablePagination,
   Text,
 } from '@razorpay/blade/components';
-import type { TableData } from '@razorpay/blade/components';
 import React from 'react';
 
-type Item = {
-  id: string;
-  paymentId: string;
-  amount: number;
-  date: Date;
-  status: string;
-};
-
-const nodes: Item[] = [
+const nodes = [
   ...Array.from({ length: 100 }, (_, i) => ({
     id: (i + 1).toString(),
     paymentId: \`rzp\${Math.floor(Math.random() * 1000000)}\`,
@@ -1116,11 +1034,11 @@ const nodes: Item[] = [
   })),
 ];
 
-const data: TableData<Item> = {
+const data = {
   nodes,
 };
 
-function App(): React.ReactElement {
+function App() {
   const { platform } = useTheme();
   const onMobile = platform === 'onMobile';
 
@@ -1171,9 +1089,9 @@ function App(): React.ReactElement {
             <TableHeader>
               <TableHeaderRow>
                 <TableHeaderCell>ID</TableHeaderCell>
-                <TableHeaderCell>Amount</TableHeaderCell>
                 <TableHeaderCell>Date</TableHeaderCell>
                 <TableHeaderCell>Method</TableHeaderCell>
+                <TableHeaderCell>Amount</TableHeaderCell>
               </TableHeaderRow>
             </TableHeader>
             <TableBody>
@@ -1181,9 +1099,6 @@ function App(): React.ReactElement {
                 <TableRow key={index} item={tableItem}>
                   <TableCell>
                     <Code size="medium">{tableItem.paymentId}</Code>
-                  </TableCell>
-                  <TableCell>
-                    <Amount value={tableItem.amount} />
                   </TableCell>
                   <TableCell>
                     {tableItem.date?.toLocaleDateString('en-IN', {
@@ -1207,6 +1122,9 @@ function App(): React.ReactElement {
                     >
                       {tableItem.status}
                     </Badge>
+                  </TableCell>
+                  <TableCell>
+                    <Amount value={tableItem.amount} />
                   </TableCell>
                 </TableRow>
               ))}
@@ -1242,18 +1160,9 @@ import {
   TrashIcon,
   CopyIcon,
 } from '@razorpay/blade/components';
-import type { TableData } from '@razorpay/blade/components';
 import React from 'react';
 
-type Item = {
-  id: string;
-  paymentId: string;
-  amount: number;
-  date: Date;
-  status: string;
-};
-
-const nodes: Item[] = [
+const nodes = [
   ...Array.from({ length: 10 }, (_, i) => ({
     id: (i + 1).toString(),
     paymentId: \`rzp\${Math.floor(Math.random() * 1000000)}\`,
@@ -1268,11 +1177,11 @@ const nodes: Item[] = [
   })),
 ];
 
-const data: TableData<Item> = {
+const data = {
   nodes,
 };
 
-function App(): React.ReactElement {
+function App() {
   const { platform } = useTheme();
   const onMobile = platform === 'onMobile';
 
@@ -1379,18 +1288,9 @@ import {
   TableFooterRow,
   TableFooterCell,
 } from '@razorpay/blade/components';
-import type { TableData } from '@razorpay/blade/components';
 import React, { useState } from 'react';
 
-type Item = {
-  id: string;
-  paymentId: string;
-  amount: number;
-  date: Date;
-  method: string;
-};
-
-const nodes: Item[] = [
+const nodes = [
   ...Array.from({ length: 5 }, (_, i) => ({
     id: (i + 1).toString(),
     paymentId: \`rzp\${Math.floor(Math.random() * 1000000)}\`,
@@ -1407,17 +1307,15 @@ const nodes: Item[] = [
   })),
 ];
 
-const data: TableData<Item> = {
+const data = {
   nodes,
 };
 
-type Emphasis = 'subtle' | 'intense' | 'moderate'
-
-function App(): React.ReactElement {
-  const [emphasis, setEmphasis] = useState<Emphasis>('subtle');
+function App() {
+  const [emphasis, setEmphasis] = useState('subtle');
   return (
     <Box
-      backgroundColor={\`surface.background.gray\${emphasis}\`}
+      backgroundColor={\`surface.background.gray.\${emphasis}\`}
       padding="spacing.5"
       overflow="auto"
       minHeight="400px"
@@ -1429,7 +1327,7 @@ function App(): React.ReactElement {
         <RadioGroup
           label="Select Emphasis Level"
           onChange={({ value }) =>
-            setEmphasis(Number(value) as Emphasis)
+            setEmphasis(value)
           }
           value={\`\${emphasis}\`}
         >
@@ -1510,18 +1408,9 @@ import {
   TablePagination,
   Link,
 } from '@razorpay/blade/components';
-import type { TableData } from '@razorpay/blade/components';
 import React, { useEffect, useState } from 'react';
 
-type Item = {
-  id: string;
-  paymentId: string;
-  amount: number;
-  date: Date;
-  status: string;
-};
-
-const nodes: Item[] = [
+const nodes = [
   ...Array.from({ length: 100 }, (_, i) => ({
     id: (i + 1).toString(),
     paymentId: \`rzp\${Math.floor(Math.random() * 1000000)}\`,
@@ -1536,7 +1425,7 @@ const nodes: Item[] = [
   })),
 ];
 
-function App(): React.ReactElement {
+function App() {
   const { platform } = useTheme();
   const [showData, setShowData] = useState(false);
   useEffect(() => {
@@ -1546,7 +1435,7 @@ function App(): React.ReactElement {
   }, [showData]);
 
   const onMobile = platform === 'onMobile';
-  const data: TableData<Item> = {
+  const data = {
     nodes: nodes,
   };
 
@@ -1584,15 +1473,6 @@ function App(): React.ReactElement {
               </TableToolbarActions>
             </TableToolbar>
           }
-          pagination={
-            <TablePagination
-              onPageChange={console.log}
-              defaultPageSize={10}
-              onPageSizeChange={console.log}
-              showPageSizePicker
-              showPageNumberSelector
-            />
-          }
           isLoading={!showData}
         >
           {(tableData) => (
@@ -1601,8 +1481,7 @@ function App(): React.ReactElement {
                 <TableHeaderRow>
                   <TableHeaderCell>ID</TableHeaderCell>
                   <TableHeaderCell>Amount</TableHeaderCell>
-                  <TableHeaderCell>Date</TableHeaderCell>
-                  <TableHeaderCell>Method</TableHeaderCell>
+                  <TableHeaderCell>Action</TableHeaderCell>
                 </TableHeaderRow>
               </TableHeader>
               <TableBody>
@@ -1615,27 +1494,7 @@ function App(): React.ReactElement {
                       <Amount value={tableItem.amount} />
                     </TableCell>
                     <TableCell>
-                      {tableItem.date?.toLocaleDateString('en-IN', {
-                        year: 'numeric',
-                        month: '2-digit',
-                        day: '2-digit',
-                      })}
-                    </TableCell>
-                    <TableCell>
-                      <Badge
-                        size="medium"
-                        color={
-                          tableItem.status === 'Completed'
-                            ? 'positive'
-                            : tableItem.status === 'Pending'
-                            ? 'notice'
-                            : tableItem.status === 'Failed'
-                            ? 'negative'
-                            : 'default'
-                        }
-                      >
-                        {tableItem.status}
-                      </Badge>
+                      <Badge>{tableItem.status}</Badge>
                     </TableCell>
                   </TableRow>
                 ))}
@@ -1671,19 +1530,10 @@ import {
   useTheme,
   TablePagination,
   Text,
-  TableProps,
 } from '@razorpay/blade/components';
 import React, { useState } from 'react';
 
-type Item = {
-  id: string;
-  paymentId: string;
-  amount: number;
-  date: Date;
-  status: string;
-};
-
-const nodes: Item[] = [
+const nodes = [
   ...Array.from({ length: 100 }, (_, i) => ({
     id: (i + 1).toString(),
     paymentId: \`rzp\${Math.floor(Math.random() * 1000000)}\`,
@@ -1698,17 +1548,17 @@ const nodes: Item[] = [
   })),
 ];
 
-const data: TableProps<Item>['data'] = {
+const data = {
   nodes,
 };
 
-function App(): React.ReactElement {
+function App() {
   const { platform } = useTheme();
   const [currentPage, setCurrentPage] = useState(0);
   const [isRefreshing, setIsRefreshing] = useState(false);
   const onMobile = platform === 'onMobile';
 
-  const handlePageChange = ({ page }: { page: number }) => {
+  const handlePageChange = ({ page }) => {
     if (currentPage !== page) {
       setIsRefreshing(true);
       setTimeout(() => {
@@ -1831,21 +1681,7 @@ import {
 } from '@razorpay/blade/components';
 import React, { useEffect, useState } from 'react';
 
-type APIResult = {
-  info: {
-    count: number;
-    pages: number;
-  };
-  results: {
-    id: number;
-    name: string;
-    species: string;
-    status: string;
-    origin: { name: string };
-  }[];
-};
-
-const fetchData = async ({ page }: { page: number }): Promise<APIResult> => {
+const fetchData = async ({ page }) => {
   const response = await fetch(
     \`https://rickandmortyapi.com/api/character?page=\${page}\`,
     {
@@ -1854,10 +1690,10 @@ const fetchData = async ({ page }: { page: number }): Promise<APIResult> => {
     }
   );
   const result = await response.json();
-  return result as APIResult;
+  return result;
 };
 
-function App(): React.ReactElement {
+function App() {
   const [apiData, setApiData] = useState<{ nodes: APIResult['results'] }>({
     nodes: [],
   });
@@ -1875,7 +1711,7 @@ function App(): React.ReactElement {
     }
   }, []);
 
-  const handlePageChange = ({ page }: { page: number }) => {
+  const handlePageChange = ({ page }) => {
     setIsRefreshing(true);
     fetchData({ page: page + 1 }).then((res) => {
       // rick & morty api returns 20 items and we cannot change that. Hence limiting to show only first 10 items from the result of this API. Ideally an API should have \`limit\` & \`offset\` params that help us define the response we get.
@@ -1939,6 +1775,114 @@ function App(): React.ReactElement {
 export default App;
 `;
 
+const TableWithEditableCellsStory = `
+import {
+  Table,
+  Heading,
+  Box,
+  TableHeader,
+  TableHeaderRow,
+  TableHeaderCell,
+  TableBody,
+  TableRow,
+  TableEditableCell,
+  TableEditableDropdownCell,
+  AutoComplete,
+  DropdownOverlay,
+  ActionList,
+  ActionListItem,
+} from '@razorpay/blade/components';
+import React from 'react';
+
+const nodes = [
+  ...Array.from({ length: 5 }, (_, i) => ({
+    id: (i + 1).toString(),
+    paymentId: \`rzp\${Math.floor(Math.random() * 1000000)}\`,
+    amount: Number((Math.random() * 10000).toFixed(2)),
+    date: new Date(
+      2021,
+      Math.floor(Math.random() * 12),
+      Math.floor(Math.random() * 28) + 1
+    ),
+    method: ['Bank Transfer', 'Credit Card', 'PayPal'][
+      Math.floor(Math.random() * 3)
+    ],
+    account: Math.floor(Math.random() * 1000000000).toString(),
+  })),
+];
+
+const data = {
+  nodes,
+};
+
+function App() {
+  return (
+    <Box
+      backgroundColor="surface.background.gray.intense"
+      padding="spacing.5"
+      overflow="auto"
+      minHeight="400px"
+    >
+      <Box paddingBottom="spacing.4">
+        <Heading>Table with Editable Cells</Heading>
+      </Box>
+      <Table data={data} showBorderedCells>
+        {(tableData) => (
+          <>
+            <TableHeader>
+              <TableHeaderRow>
+                <TableHeaderCell>ID</TableHeaderCell>
+                <TableHeaderCell>Date</TableHeaderCell>
+                <TableHeaderCell>Amount</TableHeaderCell>
+                <TableHeaderCell>Method</TableHeaderCell>
+              </TableHeaderRow>
+            </TableHeader>
+            <TableBody>
+              {tableData.map((tableItem, index) => (
+                <TableRow key={index} item={tableItem}>
+                  <TableEditableCell
+                    placeholder="Enter ID"
+                    accessibilityLabel="ID"
+                    autoFocus={index === 0}
+                    validationState="error"
+                    errorText="ID Cannot be empty"
+                  />
+
+                  <TableEditableCell
+                    placeholder="Enter Date"
+                    accessibilityLabel="Date"
+                  />
+                  <TableEditableCell
+                    placeholder="Enter Amount"
+                    accessibilityLabel="Amount"
+                    defaultValue={\`\${tableItem.amount}\`}
+                    validationState="success"
+                    successText="Amount is valid"
+                  />
+                  <TableEditableDropdownCell>
+                    <AutoComplete accessibilityLabel="Method" />
+                    <DropdownOverlay>
+                      <ActionList>
+                        <ActionListItem title="UPI" value="upi" />
+                        <ActionListItem title="Credit Card" value="credit" />
+                        <ActionListItem title="Debit Card" value="debit" />
+                        <ActionListItem title="Cash" value="debit" />
+                      </ActionList>
+                    </DropdownOverlay>
+                  </TableEditableDropdownCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </>
+        )}
+      </Table>
+    </Box>
+  );
+}
+
+export default App;
+`;
+
 export {
   BasicTableStory,
   TableWithCustomCellComponentsStory,
@@ -1954,4 +1898,5 @@ export {
   TableWithIsRefreshingStory,
   TableWithClientSidePaginationStory,
   TableWithServerSidePaginationStory,
+  TableWithEditableCellsStory,
 };

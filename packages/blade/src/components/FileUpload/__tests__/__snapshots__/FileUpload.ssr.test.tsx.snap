@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<FileUpload /> should render in SSR 1`] = `"<div id="root"><div data-blade-component="file-upload" class="BaseBox-bmPWx iAvyvB"><div data-blade-component="base-box" class="BaseBox-bmPWx hqusWt"><span style="width:auto;flex-shrink:0;margin-right:16px" id="fileuploadinput-undefined-label-undefined" data-blade-component="form-label"><div data-blade-component="base-box" class="BaseBox-bmPWx fZlcZT"><div data-blade-component="base-box" class="BaseBox-bmPWx ikPXAQ"><p class="StyledBaseText-dVBfTO bDCeGT" data-blade-component="text">Upload GST certificate</p><div data-blade-component="visually-hidden" class="VisuallyHiddenweb__StyledVisuallyHidden-g3hls3-0 Fuolv"><p class="StyledBaseText-dVBfTO fAQkza" data-blade-component="text">, Upload .jpg, .jpeg, or .png file only</p></div></div></div></span><label style="cursor:pointer" data-blade-component="file-upload-label" class="SelectorLabelweb__StyledSelectorLabel-sc-1yoi09a-0 ehaOvX"><div data-blade-component="base-box" class="BaseBox-bmPWx bVySqA"><div data-comp="f" data-blade-component="base-box" class="BaseBox-bmPWx StyledFileUploadWrapper-sc-1wln1sx-0 guVuJK vjymx"><div data-blade-component="box" class="BaseBox-bmPWx cSvwKg"><p class="StyledBaseText-dVBfTO cYIHIH" data-blade-component="text">Drag files here or<!-- --> </p><input id="fileuploadinput-undefined-input-undefined" name="single-file-upload-input" type="file" accept="image/*" aria-required="false" aria-invalid="false" aria-disabled="false" aria-describedby="fileuploadinput-undefined-label-undefined" class="SelectorInputweb__StyledInput-sc-1bnkrae-0 Frznr"/><div data-blade-component="box" class="BaseBox-bmPWx gTlwBH"><div data-blade-component="box" class="BaseBox-bmPWx jTWYOz"><p class="StyledBaseText-dVBfTO eRPBEA" data-blade-component="text">Upload</p></div></div></div></div></div></label></div><div data-blade-component="base-box" class="BaseBox-bmPWx eSTmVF"><div data-blade-component="base-box" class="BaseBox-bmPWx xgVLl"><div id="fileuploadinput-undefined-helptext-undefined" data-blade-component="base-box" class="BaseBox-bmPWx kzOBQv"><span style="word-break:break-all" data-blade-component="base-box" class="BaseBox-bmPWx fAEwZa"><span class="StyledBaseText-dVBfTO csXxAx" data-blade-component="text">Upload .jpg, .jpeg, or .png file only</span></span></div></div></div></div></div>"`;
+exports[`<FileUpload /> should render in SSR 1`] = `"<div id="root"><div data-blade-component="file-upload" class="BaseBox-bmPWx iAvyvB"><div data-blade-component="base-box" class="BaseBox-bmPWx hqusWt"><span style="width:auto;flex-shrink:0;margin-right:0px" id="fileuploadinput-undefined-label-undefined" data-blade-component="form-label"><div data-blade-component="base-box" class="BaseBox-bmPWx fZlcZT"><div data-blade-component="base-box" class="BaseBox-bmPWx dGiucr"><p class="StyledBaseText-dVBfTO kCEKIT" data-blade-component="text">Upload GST certificate</p><div data-blade-component="visually-hidden" class="VisuallyHiddenweb__StyledVisuallyHidden-g3hls3-0 Fuolv"><p class="StyledBaseText-dVBfTO fAQkza" data-blade-component="text">, Upload .jpg, .jpeg, or .png file only</p></div></div></div></span><label style="cursor:pointer;width:100%" data-blade-component="file-upload-label" class="SelectorLabelweb__StyledSelectorLabel-sc-1yoi09a-0 ehaOvX"><div data-blade-component="base-box" class="BaseBox-bmPWx iAvyvB"><div data-comp="f" data-blade-component="base-box" class="BaseBox-bmPWx StyledFileUploadWrapper-sc-1wln1sx-0 guVuJK fDlaBt"><div data-blade-component="box" class="BaseBox-bmPWx cSvwKg"><p class="StyledBaseText-dVBfTO cYIHIH" data-blade-component="text">Drag files here or<!-- --> </p><input id="fileuploadinput-undefined-input-undefined" name="single-file-upload-input" type="file" accept="image/*" aria-required="false" aria-invalid="false" aria-disabled="false" aria-describedby="fileuploadinput-undefined-label-undefined" class="SelectorInputweb__StyledInput-sc-1bnkrae-0 iFVFWY"/><div data-blade-component="box" class="BaseBox-bmPWx gTlwBH"><div data-blade-component="box" class="BaseBox-bmPWx jTWYOz"><p class="StyledBaseText-dVBfTO eRPBEA" data-blade-component="text">Upload</p></div></div></div></div></div></label></div><div data-blade-component="base-box" class="BaseBox-bmPWx iARoiz"><div data-blade-component="base-box" class="BaseBox-bmPWx xgVLl"><div id="fileuploadinput-undefined-helptext-undefined" data-blade-component="base-box" class="BaseBox-bmPWx kzOBQv"><span data-blade-component="base-box" class="BaseBox-bmPWx hnjoEU"><span class="StyledBaseText-dVBfTO kECbDA" data-blade-component="text">Upload .jpg, .jpeg, or .png file only</span></span></div></div></div></div></div>"`;
 
 exports[`<FileUpload /> should render in SSR 2`] = `
 .c0.c0.c0.c0.c0 {
@@ -35,9 +35,6 @@ exports[`<FileUpload /> should render in SSR 2`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
@@ -50,18 +47,6 @@ exports[`<FileUpload /> should render in SSR 2`] = `
 }
 
 .c8.c8.c8.c8.c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  margin-bottom: 0px;
-  width: 100%;
-}
-
-.c9.c9.c9.c9.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -82,7 +67,7 @@ exports[`<FileUpload /> should render in SSR 2`] = `
   border-style: solid;
 }
 
-.c11.c11.c11.c11.c11 {
+.c10.c10.c10.c10.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -102,7 +87,7 @@ exports[`<FileUpload /> should render in SSR 2`] = `
   gap: 6px;
 }
 
-.c14.c14.c14.c14.c14 {
+.c13.c13.c13.c13.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -121,7 +106,7 @@ exports[`<FileUpload /> should render in SSR 2`] = `
   border-radius: 2px;
 }
 
-.c15.c15.c15.c15.c15 {
+.c14.c14.c14.c14.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -138,12 +123,11 @@ exports[`<FileUpload /> should render in SSR 2`] = `
   border-bottom-style: solid;
 }
 
-.c17.c17.c17.c17.c17 {
-  margin-bottom: 16px;
+.c16.c16.c16.c16.c16 {
   margin-left: 0px;
 }
 
-.c18.c18.c18.c18.c18 {
+.c17.c17.c17.c17.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -155,11 +139,11 @@ exports[`<FileUpload /> should render in SSR 2`] = `
   -ms-flex-pack: 'justify;justify-content:'space-between;
 }
 
-.c19.c19.c19.c19.c19 {
+.c18.c18.c18.c18.c18 {
   margin-top: 4px;
 }
 
-.c20.c20.c20.c20.c20 {
+.c19.c19.c19.c19.c19 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -167,13 +151,14 @@ exports[`<FileUpload /> should render in SSR 2`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  gap: 4px;
 }
 
-.c10.c10.c10.c10.c10 {
+.c9.c9.c9.c9.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -185,12 +170,12 @@ exports[`<FileUpload /> should render in SSR 2`] = `
   transition-property: background-color;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
-  -webkit-transition-duration: 70ms;
-  transition-duration: 70ms;
-  border-color: hsla(211,27%,76%,1);
+  -webkit-transition-duration: 80ms;
+  transition-duration: 80ms;
+  border-color: hsla(214,28%,84%,1);
 }
 
-.c10.c10.c10.c10.c10:hover {
+.c9.c9.c9.c9.c9:hover {
   background-color: hsla(211,20%,52%,0.18);
 }
 
@@ -214,6 +199,7 @@ exports[`<FileUpload /> should render in SSR 2`] = `
   line-clamp: 2;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+  overflow-wrap: break-word;
 }
 
 .c6.c6.c6.c6.c6 {
@@ -233,7 +219,7 @@ exports[`<FileUpload /> should render in SSR 2`] = `
   padding: 0;
 }
 
-.c12.c12.c12.c12.c12 {
+.c11.c11.c11.c11.c11 {
   color: hsla(211,26%,34%,1);
   font-family: "Inter","Inter Fallback Arial",Arial;
   font-size: 0.875rem;
@@ -250,7 +236,7 @@ exports[`<FileUpload /> should render in SSR 2`] = `
   padding: 0;
 }
 
-.c16.c16.c16.c16.c16 {
+.c15.c15.c15.c15.c15 {
   color: hsla(227,100%,59%,1);
   font-family: "Inter","Inter Fallback Arial",Arial;
   font-size: 0.875rem;
@@ -267,7 +253,7 @@ exports[`<FileUpload /> should render in SSR 2`] = `
   padding: 0;
 }
 
-.c21.c21.c21.c21.c21 {
+.c20.c20.c20.c20.c20 {
   color: hsla(211,22%,56%,1);
   font-family: "Inter","Inter Fallback Arial",Arial;
   font-size: 0.6875rem;
@@ -282,6 +268,7 @@ exports[`<FileUpload /> should render in SSR 2`] = `
   letter-spacing: 0px;
   margin: 0;
   padding: 0;
+  word-break: break-word;
 }
 
 .c7.c7.c7.c7.c7 {
@@ -310,7 +297,7 @@ exports[`<FileUpload /> should render in SSR 2`] = `
   word-wrap: normal;
 }
 
-.c13.c13.c13.c13.c13 {
+.c12.c12.c12.c12.c12 {
   border: 0;
   -webkit-clip: rect(0 0 0 0);
   clip: rect(0 0 0 0);
@@ -327,98 +314,98 @@ exports[`<FileUpload /> should render in SSR 2`] = `
   word-wrap: normal;
 }
 
-.c13.c13.c13.c13.c13:focus-visible + div {
+.c12.c12.c12.c12.c12:focus-visible + div {
   outline: 4px solid hsla(227,100%,59%,0.18);
   outline-offset: 1px;
   -webkit-transition-property: outline-width;
   transition-property: outline-width;
-  -webkit-transition-duration: 70ms;
-  transition-duration: 70ms;
+  -webkit-transition-duration: 80ms;
+  transition-duration: 80ms;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
 }
 
-.c13.c13.c13.c13.c13:hover + div {
-  border-color: hsla(211,27%,76%,1);
+.c12.c12.c12.c12.c12:hover + div {
+  border-color: hsla(214,28%,84%,1);
   background-color: hsla(0,0%,100%,0);
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
-  -webkit-transition-duration: 70ms;
-  transition-duration: 70ms;
+  -webkit-transition-duration: 80ms;
+  transition-duration: 80ms;
 }
 
 @media screen and (min-width:320px) {
-  .c9.c9.c9.c9.c9 {
+  .c8.c8.c8.c8.c8 {
     border-style: solid;
   }
 }
 
 @media screen and (min-width:480px) {
-  .c9.c9.c9.c9.c9 {
+  .c8.c8.c8.c8.c8 {
     border-style: solid;
   }
 }
 
 @media screen and (min-width:768px) {
-  .c9.c9.c9.c9.c9 {
+  .c8.c8.c8.c8.c8 {
     border-style: solid;
   }
 }
 
 @media screen and (min-width:1024px) {
-  .c9.c9.c9.c9.c9 {
+  .c8.c8.c8.c8.c8 {
     border-style: solid;
   }
 }
 
 @media screen and (min-width:1200px) {
-  .c9.c9.c9.c9.c9 {
+  .c8.c8.c8.c8.c8 {
     border-style: solid;
   }
 }
 
 @media screen and (min-width:480px) {
-  .c11.c11.c11.c11.c11 {
+  .c10.c10.c10.c10.c10 {
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;
+  }
+}
+
+@media screen and (min-width:480px) {
+  .c13.c13.c13.c13.c13 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+
+@media screen and (min-width:320px) {
+  .c14.c14.c14.c14.c14 {
+    border-bottom-style: solid;
   }
 }
 
 @media screen and (min-width:480px) {
   .c14.c14.c14.c14.c14 {
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-  }
-}
-
-@media screen and (min-width:320px) {
-  .c15.c15.c15.c15.c15 {
-    border-bottom-style: solid;
-  }
-}
-
-@media screen and (min-width:480px) {
-  .c15.c15.c15.c15.c15 {
     border-bottom-style: solid;
   }
 }
 
 @media screen and (min-width:768px) {
-  .c15.c15.c15.c15.c15 {
+  .c14.c14.c14.c14.c14 {
     border-bottom-style: solid;
   }
 }
 
 @media screen and (min-width:1024px) {
-  .c15.c15.c15.c15.c15 {
+  .c14.c14.c14.c14.c14 {
     border-bottom-style: solid;
   }
 }
 
 @media screen and (min-width:1200px) {
-  .c15.c15.c15.c15.c15 {
+  .c14.c14.c14.c14.c14 {
     border-bottom-style: solid;
   }
 }
@@ -437,7 +424,7 @@ exports[`<FileUpload /> should render in SSR 2`] = `
       <span
         data-blade-component="form-label"
         id="fileuploadinput-1-label-6"
-        style="width:auto;flex-shrink:0;margin-right:16px"
+        style="width:auto;flex-shrink:0;margin-right:0px"
       >
         <div
           class="c2"
@@ -470,23 +457,23 @@ exports[`<FileUpload /> should render in SSR 2`] = `
       <label
         class="c7"
         data-blade-component="file-upload-label"
-        style="cursor:pointer"
+        style="cursor:pointer;width:100%"
       >
         <div
-          class="c8"
+          class="c0"
           data-blade-component="base-box"
         >
           <div
-            class="c9 c10"
+            class="c8 c9"
             data-blade-component="base-box"
             data-comp="f"
           >
             <div
-              class="c11"
+              class="c10"
               data-blade-component="box"
             >
               <p
-                class="c12"
+                class="c11"
                 data-blade-component="text"
               >
                 Drag files here or
@@ -499,21 +486,21 @@ exports[`<FileUpload /> should render in SSR 2`] = `
                 aria-disabled="false"
                 aria-invalid="false"
                 aria-required="false"
-                class="c13"
+                class="c12"
                 id="fileuploadinput-1-input-2"
                 name="single-file-upload-input"
                 type="file"
               />
               <div
-                class="c14"
+                class="c13"
                 data-blade-component="box"
               >
                 <div
-                  class="c15"
+                  class="c14"
                   data-blade-component="box"
                 >
                   <p
-                    class="c16"
+                    class="c15"
                     data-blade-component="text"
                   >
                     Upload
@@ -526,25 +513,24 @@ exports[`<FileUpload /> should render in SSR 2`] = `
       </label>
     </div>
     <div
-      class="c17"
+      class="c16"
       data-blade-component="base-box"
     >
       <div
-        class="c18"
+        class="c17"
         data-blade-component="base-box"
       >
         <div
-          class="c19"
+          class="c18"
           data-blade-component="base-box"
           id="fileuploadinput-1-helptext-4"
         >
           <span
-            class="c20"
+            class="c19"
             data-blade-component="base-box"
-            style="word-break:break-all"
           >
             <span
-              class="c21"
+              class="c20"
               data-blade-component="text"
             >
               Upload .jpg, .jpeg, or .png file only

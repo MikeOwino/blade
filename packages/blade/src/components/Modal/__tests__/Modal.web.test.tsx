@@ -233,7 +233,7 @@ describe('Modal', () => {
       );
     };
     expect(() => renderWithTheme(<Example />)).toThrow(
-      '[Blade: Modal]: Modal only accepts ModalHeader, ModalBody and ModalFooter as children',
+      '[Blade: Modal]: Only `ModalHeader, ModalBody, ModalFooter` components are accepted in `Modal` children',
     );
     mockConsoleError.mockRestore();
   });
@@ -250,5 +250,28 @@ describe('Modal', () => {
     expect(container).toHaveStyle({
       zIndex: 9999,
     });
+  });
+
+  it('should support adding data-analytics attribute', () => {
+    const { getByTestId } = renderWithTheme(
+      <Modal
+        isOpen={true}
+        onDismiss={() => {}}
+        accessibilityLabel="Test Modal"
+        data-analytics-modal="test-modal"
+      >
+        <ModalHeader title="Modal" data-analytics-header="title" />
+
+        <ModalBody data-analytics-modal-body="test-body">
+          <Text>Test Content</Text>
+        </ModalBody>
+        <ModalFooter data-analytics-modal-footer="footer">
+          <Button accessibilityLabel="save">Save</Button>
+        </ModalFooter>
+      </Modal>,
+    );
+    const container = getByTestId('modal-wrapper');
+    expect(container).toHaveAttribute('data-analytics-modal');
+    expect(container).toHaveAttribute('data-analytics-modal', 'test-modal');
   });
 });

@@ -430,7 +430,7 @@ exports[`<Chip /> should prioritize Chip's isDisabled prop instead of ChipGroup 
                           {
                             "alignItems": "center",
                             "alignSelf": "center",
-                            "backgroundColor": "hsla(0, 0%, 100%, 1)",
+                            "backgroundColor": "transparent",
                             "borderColor": "hsla(211, 20%, 52%, 0.18)",
                             "borderRadius": 9999,
                             "borderWidth": 1,
@@ -454,7 +454,7 @@ exports[`<Chip /> should prioritize Chip's isDisabled prop instead of ChipGroup 
                     >
                       <View
                         alignItems="center"
-                        backgroundColor="transparent"
+                        backgroundColor="surface.background.gray.intense"
                         borderColor="interactive.border.gray.faded"
                         borderRadius="max"
                         borderWidth="thinner"
@@ -471,7 +471,7 @@ exports[`<Chip /> should prioritize Chip's isDisabled prop instead of ChipGroup 
                           [
                             {
                               "alignItems": "center",
-                              "backgroundColor": "hsla(0, 0%, 100%, 0)",
+                              "backgroundColor": "hsla(0, 0%, 100%, 1)",
                               "borderColor": "hsla(211, 20%, 52%, 0.18)",
                               "borderRadius": 9999,
                               "borderStyle": "solid",
@@ -763,7 +763,7 @@ exports[`<Chip /> should render chip 1`] = `
                           {
                             "alignItems": "center",
                             "alignSelf": "center",
-                            "backgroundColor": "hsla(0, 0%, 100%, 1)",
+                            "backgroundColor": "transparent",
                             "borderColor": "hsla(211, 20%, 52%, 0.18)",
                             "borderRadius": 9999,
                             "borderWidth": 1,
@@ -787,7 +787,7 @@ exports[`<Chip /> should render chip 1`] = `
                     >
                       <View
                         alignItems="center"
-                        backgroundColor="transparent"
+                        backgroundColor="surface.background.gray.intense"
                         borderColor="interactive.border.gray.faded"
                         borderRadius="max"
                         borderWidth="thinner"
@@ -804,7 +804,7 @@ exports[`<Chip /> should render chip 1`] = `
                           [
                             {
                               "alignItems": "center",
-                              "backgroundColor": "hsla(0, 0%, 100%, 0)",
+                              "backgroundColor": "hsla(0, 0%, 100%, 1)",
                               "borderColor": "hsla(211, 20%, 52%, 0.18)",
                               "borderRadius": 9999,
                               "borderStyle": "solid",
@@ -970,7 +970,7 @@ exports[`<Chip /> should render chip 1`] = `
                           {
                             "alignItems": "center",
                             "alignSelf": "center",
-                            "backgroundColor": "hsla(0, 0%, 100%, 1)",
+                            "backgroundColor": "transparent",
                             "borderColor": "hsla(211, 20%, 52%, 0.18)",
                             "borderRadius": 9999,
                             "borderWidth": 1,
@@ -994,7 +994,7 @@ exports[`<Chip /> should render chip 1`] = `
                     >
                       <View
                         alignItems="center"
-                        backgroundColor="transparent"
+                        backgroundColor="surface.background.gray.intense"
                         borderColor="interactive.border.gray.faded"
                         borderRadius="max"
                         borderWidth="thinner"
@@ -1011,7 +1011,7 @@ exports[`<Chip /> should render chip 1`] = `
                           [
                             {
                               "alignItems": "center",
-                              "backgroundColor": "hsla(0, 0%, 100%, 0)",
+                              "backgroundColor": "hsla(0, 0%, 100%, 1)",
                               "borderColor": "hsla(211, 20%, 52%, 0.18)",
                               "borderRadius": 9999,
                               "borderStyle": "solid",
@@ -1303,7 +1303,7 @@ exports[`<Chip /> should render chip with icon 1`] = `
                           {
                             "alignItems": "center",
                             "alignSelf": "center",
-                            "backgroundColor": "hsla(0, 0%, 100%, 1)",
+                            "backgroundColor": "transparent",
                             "borderColor": "hsla(211, 20%, 52%, 0.18)",
                             "borderRadius": 9999,
                             "borderWidth": 1,
@@ -1327,7 +1327,7 @@ exports[`<Chip /> should render chip with icon 1`] = `
                     >
                       <View
                         alignItems="center"
-                        backgroundColor="transparent"
+                        backgroundColor="surface.background.gray.intense"
                         borderColor="interactive.border.gray.faded"
                         borderRadius="max"
                         borderWidth="thinner"
@@ -1344,7 +1344,7 @@ exports[`<Chip /> should render chip with icon 1`] = `
                           [
                             {
                               "alignItems": "center",
-                              "backgroundColor": "hsla(0, 0%, 100%, 0)",
+                              "backgroundColor": "hsla(0, 0%, 100%, 1)",
                               "borderColor": "hsla(211, 20%, 52%, 0.18)",
                               "borderRadius": 9999,
                               "borderStyle": "solid",
@@ -1419,7 +1419,12 @@ exports[`<Chip /> should render chip with icon 1`] = `
                             >
                               <RNSVGPath
                                 d="M12 11C12.5523 11 13 11.4477 13 12V16C13 16.5523 12.5523 17 12 17C11.4477 17 11 16.5523 11 16V12C11 11.4477 11.4477 11 12 11Z"
-                                fill={4282406509}
+                                fill={
+                                  {
+                                    "payload": 4282406509,
+                                    "type": 0,
+                                  }
+                                }
                                 propList={
                                   [
                                     "fill",
@@ -1428,7 +1433,12 @@ exports[`<Chip /> should render chip with icon 1`] = `
                               />
                               <RNSVGPath
                                 d="M12 7C11.4477 7 11 7.44772 11 8C11 8.55228 11.4477 9 12 9H12.01C12.5623 9 13.01 8.55228 13.01 8C13.01 7.44772 12.5623 7 12.01 7H12Z"
-                                fill={4282406509}
+                                fill={
+                                  {
+                                    "payload": 4282406509,
+                                    "type": 0,
+                                  }
+                                }
                                 propList={
                                   [
                                     "fill",
@@ -1438,7 +1448,12 @@ exports[`<Chip /> should render chip with icon 1`] = `
                               <RNSVGPath
                                 clipRule={0}
                                 d="M1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12ZM12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3Z"
-                                fill={4282406509}
+                                fill={
+                                  {
+                                    "payload": 4282406509,
+                                    "type": 0,
+                                  }
+                                }
                                 fillRule={0}
                                 propList={
                                   [
@@ -1596,7 +1611,7 @@ exports[`<Chip /> should render chip with icon 1`] = `
                           {
                             "alignItems": "center",
                             "alignSelf": "center",
-                            "backgroundColor": "hsla(0, 0%, 100%, 1)",
+                            "backgroundColor": "transparent",
                             "borderColor": "hsla(211, 20%, 52%, 0.18)",
                             "borderRadius": 9999,
                             "borderWidth": 1,
@@ -1620,7 +1635,7 @@ exports[`<Chip /> should render chip with icon 1`] = `
                     >
                       <View
                         alignItems="center"
-                        backgroundColor="transparent"
+                        backgroundColor="surface.background.gray.intense"
                         borderColor="interactive.border.gray.faded"
                         borderRadius="max"
                         borderWidth="thinner"
@@ -1637,7 +1652,7 @@ exports[`<Chip /> should render chip with icon 1`] = `
                           [
                             {
                               "alignItems": "center",
-                              "backgroundColor": "hsla(0, 0%, 100%, 0)",
+                              "backgroundColor": "hsla(0, 0%, 100%, 1)",
                               "borderColor": "hsla(211, 20%, 52%, 0.18)",
                               "borderRadius": 9999,
                               "borderStyle": "solid",
@@ -1712,7 +1727,12 @@ exports[`<Chip /> should render chip with icon 1`] = `
                             >
                               <RNSVGPath
                                 d="M12 11C12.5523 11 13 11.4477 13 12V16C13 16.5523 12.5523 17 12 17C11.4477 17 11 16.5523 11 16V12C11 11.4477 11.4477 11 12 11Z"
-                                fill={4282406509}
+                                fill={
+                                  {
+                                    "payload": 4282406509,
+                                    "type": 0,
+                                  }
+                                }
                                 propList={
                                   [
                                     "fill",
@@ -1721,7 +1741,12 @@ exports[`<Chip /> should render chip with icon 1`] = `
                               />
                               <RNSVGPath
                                 d="M12 7C11.4477 7 11 7.44772 11 8C11 8.55228 11.4477 9 12 9H12.01C12.5623 9 13.01 8.55228 13.01 8C13.01 7.44772 12.5623 7 12.01 7H12Z"
-                                fill={4282406509}
+                                fill={
+                                  {
+                                    "payload": 4282406509,
+                                    "type": 0,
+                                  }
+                                }
                                 propList={
                                   [
                                     "fill",
@@ -1731,7 +1756,12 @@ exports[`<Chip /> should render chip with icon 1`] = `
                               <RNSVGPath
                                 clipRule={0}
                                 d="M1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12ZM12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3Z"
-                                fill={4282406509}
+                                fill={
+                                  {
+                                    "payload": 4282406509,
+                                    "type": 0,
+                                  }
+                                }
                                 fillRule={0}
                                 propList={
                                   [
@@ -2222,7 +2252,7 @@ exports[`<Chip /> should set disabled state with isDisabled 1`] = `
                           {
                             "alignItems": "center",
                             "alignSelf": "center",
-                            "backgroundColor": "hsla(0, 0%, 100%, 1)",
+                            "backgroundColor": "transparent",
                             "borderColor": "hsla(211, 20%, 52%, 0.18)",
                             "borderRadius": 9999,
                             "borderWidth": 1,
@@ -2246,7 +2276,7 @@ exports[`<Chip /> should set disabled state with isDisabled 1`] = `
                     >
                       <View
                         alignItems="center"
-                        backgroundColor="transparent"
+                        backgroundColor="surface.background.gray.intense"
                         borderColor="interactive.border.gray.faded"
                         borderRadius="max"
                         borderWidth="thinner"
@@ -2263,7 +2293,7 @@ exports[`<Chip /> should set disabled state with isDisabled 1`] = `
                           [
                             {
                               "alignItems": "center",
-                              "backgroundColor": "hsla(0, 0%, 100%, 0)",
+                              "backgroundColor": "hsla(0, 0%, 100%, 1)",
                               "borderColor": "hsla(211, 20%, 52%, 0.18)",
                               "borderRadius": 9999,
                               "borderStyle": "solid",

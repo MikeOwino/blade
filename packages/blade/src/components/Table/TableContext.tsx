@@ -2,7 +2,12 @@
 // eslint-disable-next-line @typescript-eslint/no-empty-function
 import React from 'react';
 import type { TableNode } from '@table-library/react-table-library/table';
-import type { TableBackgroundColors, TableProps, TablePaginationType } from './types';
+import type {
+  TableBackgroundColors,
+  TableProps,
+  TablePaginationType,
+  TableHeaderRowProps,
+} from './types';
 
 export type TableContextType = {
   selectionType?: TableProps<unknown>['selectionType'];
@@ -30,6 +35,11 @@ export type TableContextType = {
   paginationType: NonNullable<TablePaginationType>;
   setPaginationType: React.Dispatch<React.SetStateAction<NonNullable<TablePaginationType>>>;
   backgroundColor: TableBackgroundColors;
+  headerRowDensity?: TableHeaderRowProps['rowDensity'];
+  setHeaderRowDensity: React.Dispatch<React.SetStateAction<TableHeaderRowProps['rowDensity']>>;
+  showBorderedCells: NonNullable<TableProps<unknown>['showBorderedCells']>;
+  hasHoverActions: boolean;
+  setHasHoverActions: (hasHoverActions: boolean) => void;
 };
 
 const TableContext = React.createContext<TableContextType>({
@@ -52,6 +62,10 @@ const TableContext = React.createContext<TableContextType>({
   paginationType: 'client',
   setPaginationType: () => {},
   backgroundColor: 'surface.background.gray.intense',
+  setHeaderRowDensity: () => {},
+  showBorderedCells: false,
+  hasHoverActions: false,
+  setHasHoverActions: () => {},
 });
 
 const useTableContext = (): TableContextType => {

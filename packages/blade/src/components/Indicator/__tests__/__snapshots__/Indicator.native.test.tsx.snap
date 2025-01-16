@@ -80,7 +80,12 @@ exports[`<Indicator /> should render 1`] = `
           <RNSVGCircle
             cx="5"
             cy="5"
-            fill={4281287254}
+            fill={
+              {
+                "payload": 4280563015,
+                "type": 0,
+              }
+            }
             propList={
               [
                 "fill",
@@ -95,7 +100,7 @@ exports[`<Indicator /> should render 1`] = `
         style={
           [
             {
-              "marginLeft": 4,
+              "marginLeft": 0,
             },
           ]
         }
@@ -220,7 +225,12 @@ exports[`<Indicator /> should render different variants for size and color 1`] =
           <RNSVGCircle
             cx="5"
             cy="5"
-            fill={4293486604}
+            fill={
+              {
+                "payload": 4291189776,
+                "type": 0,
+              }
+            }
             propList={
               [
                 "fill",
@@ -235,7 +245,7 @@ exports[`<Indicator /> should render different variants for size and color 1`] =
         style={
           [
             {
-              "marginLeft": 4,
+              "marginLeft": 0,
             },
           ]
         }
@@ -349,7 +359,12 @@ exports[`<Indicator /> should render different variants for size and color 1`] =
           <RNSVGCircle
             cx="5"
             cy="5"
-            fill={4278231890}
+            fill={
+              {
+                "payload": 4278225477,
+                "type": 0,
+              }
+            }
             propList={
               [
                 "fill",
@@ -364,7 +379,7 @@ exports[`<Indicator /> should render different variants for size and color 1`] =
         style={
           [
             {
-              "marginLeft": 4,
+              "marginLeft": 0,
             },
           ]
         }
@@ -478,7 +493,12 @@ exports[`<Indicator /> should render different variants for size and color 1`] =
           <RNSVGCircle
             cx="5"
             cy="5"
-            fill={4292422944}
+            fill={
+              {
+                "payload": 4292422944,
+                "type": 0,
+              }
+            }
             propList={
               [
                 "fill",
@@ -493,7 +513,7 @@ exports[`<Indicator /> should render different variants for size and color 1`] =
         style={
           [
             {
-              "marginLeft": 4,
+              "marginLeft": 0,
             },
           ]
         }
@@ -607,7 +627,12 @@ exports[`<Indicator /> should render different variants for size and color 1`] =
           <RNSVGCircle
             cx="5"
             cy="5"
-            fill={4279406798}
+            fill={
+              {
+                "payload": 4279204270,
+                "type": 0,
+              }
+            }
             propList={
               [
                 "fill",
@@ -622,7 +647,7 @@ exports[`<Indicator /> should render different variants for size and color 1`] =
         style={
           [
             {
-              "marginLeft": 4,
+              "marginLeft": 0,
             },
           ]
         }
@@ -661,6 +686,169 @@ exports[`<Indicator /> should render different variants for size and color 1`] =
           }
           textAlign="left"
         />
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`<Indicator /> should render with intense emphasis 1`] = `
+<View
+  style={
+    {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    accessibilityLabel="Success"
+    accessible={true}
+    data-blade-component="indicator"
+    display="flex"
+    style={
+      [
+        {
+          "display": "flex",
+        },
+      ]
+    }
+  >
+    <View
+      alignItems="center"
+      data-blade-component="base-box"
+      display="flex"
+      flexDirection="row"
+      style={
+        [
+          {
+            "alignItems": "center",
+            "display": "flex",
+            "flexDirection": "row",
+          },
+        ]
+      }
+    >
+      <RNSVGSvgView
+        accessibilityElementsHidden={true}
+        align="xMidYMid"
+        bbHeight="16"
+        bbWidth="16"
+        data-blade-component="icon"
+        fill="none"
+        focusable={false}
+        height="16"
+        importantForAccessibility="no-hide-descendants"
+        meetOrSlice={0}
+        minX={0}
+        minY={0}
+        style={
+          [
+            {
+              "backgroundColor": "transparent",
+              "borderWidth": 0,
+            },
+            [
+              {},
+            ],
+            {
+              "flex": 0,
+              "height": 16,
+              "width": 16,
+            },
+          ]
+        }
+        vbHeight={10}
+        vbWidth={10}
+        width="16"
+      >
+        <RNSVGGroup
+          fill={null}
+          propList={
+            [
+              "fill",
+            ]
+          }
+        >
+          <RNSVGCircle
+            cx="5"
+            cy="5"
+            fill={
+              {
+                "payload": 385917778,
+                "type": 0,
+              }
+            }
+            propList={
+              [
+                "fill",
+              ]
+            }
+            r="5"
+          />
+          <RNSVGCircle
+            cx="5"
+            cy="5"
+            fill={
+              {
+                "payload": 4278225477,
+                "type": 0,
+              }
+            }
+            propList={
+              [
+                "fill",
+              ]
+            }
+            r="2.5"
+          />
+        </RNSVGGroup>
+      </RNSVGSvgView>
+      <View
+        data-blade-component="base-box"
+        style={
+          [
+            {
+              "marginLeft": 4,
+            },
+          ]
+        }
+      >
+        <Text
+          accessible={true}
+          color="surface.text.gray.subtle"
+          data-blade-component="text"
+          fontFamily="text"
+          fontSize={75}
+          fontStyle="normal"
+          fontWeight="medium"
+          lineHeight={75}
+          style={
+            [
+              {
+                "color": "hsla(211, 26%, 34%, 1)",
+                "fontFamily": "Inter",
+                "fontSize": 12,
+                "fontStyle": "normal",
+                "fontWeight": "500",
+                "letterSpacing": 0,
+                "lineHeight": 18,
+                "marginBottom": 0,
+                "marginLeft": 0,
+                "marginRight": 0,
+                "marginTop": 0,
+                "paddingBottom": 0,
+                "paddingLeft": 0,
+                "paddingRight": 0,
+                "paddingTop": 0,
+                "textAlign": "left",
+                "textDecorationLine": "none",
+              },
+            ]
+          }
+          textAlign="left"
+        >
+          Success
+        </Text>
       </View>
     </View>
   </View>

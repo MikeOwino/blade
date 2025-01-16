@@ -1,4 +1,4 @@
-import type { TestID } from '~utils/types';
+import type { DataAnalyticsAttribute, TestID } from '~utils/types';
 
 type DrawerProps = {
   /**
@@ -38,7 +38,16 @@ type DrawerProps = {
    */
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   initialFocusRef?: React.MutableRefObject<any>;
-} & TestID;
+
+  /**
+   * If `true`, the DrawerBody will be rendered only when it becomes active.
+   * Set to `false` to keep DrawerBody in DOM
+   *
+   * @default true
+   */
+  isLazy?: boolean;
+} & DataAnalyticsAttribute &
+  TestID;
 
 type DrawerHeaderProps = {
   /**
@@ -71,6 +80,6 @@ type DrawerHeaderProps = {
    * Link, Button[]
    */
   trailing?: React.ReactNode;
-};
+} & DataAnalyticsAttribute;
 
 export type { DrawerProps, DrawerHeaderProps };

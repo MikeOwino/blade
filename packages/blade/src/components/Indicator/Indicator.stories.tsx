@@ -78,6 +78,14 @@ WithoutLabel.parameters = {
   },
 };
 
+export const WithIntenseEmphasis: StoryFn<typeof IndicatorComponent> = ({ ...args }) => {
+  return <IndicatorComponent {...args} />;
+};
+WithIntenseEmphasis.args = {
+  children: 'Success',
+  emphasis: 'intense',
+};
+
 export const Composition: StoryFn<typeof IndicatorComponent> = ({ ...args }) => {
   const isReactNative = getPlatformType() === 'react-native';
   return (
@@ -90,7 +98,7 @@ export const Composition: StoryFn<typeof IndicatorComponent> = ({ ...args }) => 
         {...args}
         position="absolute"
         top={isReactNative ? '-8px' : '-4px'}
-        right="-8px"
+        right="-4px"
         zIndex={10}
       />
       <Button>Get started</Button>

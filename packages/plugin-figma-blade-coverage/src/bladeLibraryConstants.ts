@@ -3,17 +3,23 @@ export const bladeThemeData = {
     'ActionListItems Group': {
       key: '1e18a66e07ce9830b6a4e440a9b7c02ae55d069b',
     },
-    'Accordion Group': {
-      key: 'f2c9831bc8da8ca8bdfd4594c76099a707c5b9fe',
+    Accordion: {
+      key: 'a14d82171648231f3f121aa1a828161e191fa282',
     },
-    'Accordion Item': {
-      key: 'db5e8797115a4badc366e4bb155f8caca290730c',
+    'Accordion/Item': {
+      key: 'f37213cecb1a4d29ca5872614eebc5ac5a52376b',
     },
-    'AccordionHeader-Base': {
-      key: '4ab4fdf876a4783349814b2fcfa9fab1b7e2d843',
+    'Accordion/Body': {
+      key: '20fa85fbd083dc92ec93669c4d4db0723e34ac42',
     },
-    'AccordionBody-Base': {
-      key: '5e7801218a5c222780ae8ae33a2be71bc3d3b58e',
+    'Accordion/Header': {
+      key: 'b9b9656a3fb01a8f05f57ae2caf45a93768d7842',
+    },
+    'Accordion/Leading Item': {
+      key: 'dea27276a01770b05ac502693d0f76e8266bf4ec',
+    },
+    'Accordion/Trailing Item': {
+      key: '5007e2c022b2927930235c31d770e0e676f60f01',
     },
     Collapsible: {
       key: '0b6944a8171a763631f1aa2cca713c77dd701d89',
@@ -57,15 +63,61 @@ export const bladeThemeData = {
     Divider: {
       key: '3942574367676524ab7ea045ece704f751984dae',
     },
-    'Dropdown Menu': {
-      key: '301e099f941f2b4a4c1475779e72659d7caabd4d',
+
+    // Drawer
+    Drawer: {
+      key: '0ac0ef71c3ea1e80df41865c3bedad8de2021c99',
     },
-    'Dropdown/Header': {
-      key: '5acfcd1de0ee3569014590cdede3bd11b5f4b143',
+    'Drawer/Header': {
+      key: '8e525221266c2d002c28e0bc08310eaefa9fd706',
     },
-    'Dropdown/Footer': {
-      key: '1568049d40a5c7465dbf686d6e9d5892ec4b69d2',
+    'Drawer/Leading': {
+      key: 'bacc1048d13fde73544c53141e51b420311d1250',
     },
+    'Drawer/Trailing': {
+      key: 'b8191f2b181f821e4e93c29df319efa8a90bf1bf',
+    },
+
+    // Menu
+    Menu: {
+      key: '5579b346d87f88747c96444d0b042bdcc2348066',
+    },
+    'Menu/Leading': {
+      key: '0e8422f46f5279c6e1037557d8a5049bea2427ea',
+    },
+    'Menu/Trailing': {
+      key: 'f3433ad2b96c72a9b4d3b07b9d0547328c3f6685',
+    },
+    'Menu/Header': {
+      key: 'e70bd033f0fb628e411f017734b266594063c47a',
+    },
+    'Menu/Footer': {
+      key: 'e70bd033f0fb628e411f017734b266594063c47a',
+    },
+
+    MenuItem: {
+      key: '34e76b11e46e82f64694313432ae88e5901f4f6d',
+    },
+    'MenuItem/Trailing': {
+      key: '9c7a7356118794224990529e4922d8ec89a77b56',
+    },
+    'MenuItem/Leading': {
+      key: 'cbeaaaeb4fbf0a830a97687bf50c50aa2cfe8b2a',
+    },
+
+    L1SubMenu: {
+      key: 'bb790d1a888ea23b023b51c6378bf161efee59a2',
+    },
+    L1SubMenuItem: {
+      key: '5090d1d66a59d0762b38915d3e56946f6617a0ea',
+    },
+    L2SubMenu: {
+      key: 'fa7e637dcf31980ff1da955bc1c5c707e002fc60',
+    },
+    L2SubMenuItem: {
+      key: '06cc9d71153af14dc0ec0cb22835596420fa7c93',
+    },
+
     'Icon Size': {
       key: '06edcdaff550d4c96534c6d95f968e0e4b3eb224',
     },
@@ -155,19 +207,25 @@ export const bladeThemeData = {
 
     // Input Elements
     'Text Input': {
-      key: 'a8afab83a4a784647d6c7df136e365d7681e712e',
+      key: '80d2aa6b83e97fcd15fc13b4c3b4b10930d17b7a',
     },
     'TextArea Input': {
-      key: '1fbef7453e9ef0338195174488daf0eb12af547b',
+      key: '2f1a8c8a2c671a132e8f05eff402d5fa21b1ae20',
     },
     'Password Input': {
-      key: '765dfe31bdb5842b83cb32756aa39205a2d85114',
+      key: '32d3288a8c94e7f2937fd9d267a0eb6869498614',
     },
     'OTP Input': {
-      key: 'a49a552a588ecab96554fd77b0c26810e5341cb7',
+      key: '7b6cf020d3d912c5dd9393d65baec24441049703',
+    },
+    'PhoneNumber Input': {
+      key: '8e3ef810ea320bda3163206d423d25b935ec3aa9',
     },
     'Select Input': {
-      key: 'acf3eb63bacc1f1ed3d20adda0987e5b79e3b39c',
+      key: 'a6d039a89f0987ffb3363b3c26b5b2b3da9aa709',
+    },
+    'Search Input': {
+      key: '8d631a9604d64de10e4600f6c659a0b5cce90be6',
     },
     'Radio-Group': {
       key: 'cf97c2d61fde8367bd5e905e8048728069d32e0b',
@@ -187,6 +245,9 @@ export const bladeThemeData = {
     Switch: {
       key: '927781eb654ae1e4cdcb0cb79d5840797a7fb8db',
     },
+    'File Upload': {
+      key: '1b6beb7c0ca1bee22e5cb69234c3dc7319368806',
+    },
 
     // Button
     Button: {
@@ -194,6 +255,9 @@ export const bladeThemeData = {
     },
     IconButton: {
       key: 'da16ecb1aaad66d8e93a96a8f01ed231f623f1f9',
+    },
+    'Button Group': {
+      key: '2b3f50d0105fcbce2fc209dacdc4a94bc79d7b5e',
     },
 
     //Table
@@ -239,12 +303,69 @@ export const bladeThemeData = {
       key: '3991460bbbe1d0fb22fd45ed8672350a8be592aa',
     },
 
+    // SideNav
+    'Side Navigation': {
+      key: '76684c0b18de39fff0cd94528d077f0bb0323cee',
+    },
+
+    // DatePicker
+    'Date Picker': {
+      key: 'b6ad28e5abaa6d3c38dad52098fe516d351d6c92',
+    },
+
+    // Avatar
+    Avatar: {
+      key: 'f401ff760de849db53703b19843877cefd4c8eb7',
+    },
+    'Avatar Group': {
+      key: 'd0391cad4a3c0f944dde0aa5bfde8ff84aa55083',
+    },
+
+    // Step Group
+    StepGroup: {
+      key: '5ee106373ceea89b535f54d9f71c722391af488b',
+    },
+    StepGroupItem: {
+      key: '2d842865f2a93ae22949f6282d32ed46d1e4b2dd',
+    },
+    StepGroupItemLine: {
+      key: '2af5fa754700573a12d89e78aba099bfc6a933ac',
+    },
+
+    // TopNav
+    TopNavigation: {
+      key: '81bc989c244d5fa751b9851ad7d69841c78255a2',
+    },
+    TopNavigationTabs: {
+      key: '622b115eef2ed77542c0076ce0a34b5f09208fd5',
+    },
+    TopNavigationRightSection: {
+      key: 'da9403d1b567187dc06fef8c67817f15d603fc44',
+    },
+
+    BottomNavigation: {
+      key: 'b548e311c74c71b7bfe16ae8f926ab5689adad3c',
+    },
+
     // Utility Components
+    Browser: {
+      key: '89affaa18c972d661e866cb1f5c3882424d539f6',
+    },
+    Keyboard: {
+      key: 'a890ea34953fb832de37c8d9198b262ca301ae1b',
+    },
+    ScrollBar: {
+      key: 'cf94e008d24cb6e47e65ae8a87497a362f6a28fd',
+    },
+    StatusBar: {
+      key: '453e635ac304a50732f3c0a1fe8207af8d517a55',
+    },
+    Cursor: {
+      key: '0f3efaf43d4b967430312b6341cdca3694741176',
+    },
+
     'Dashboard / Sidebar': {
       key: '938574fa23373c6a9a9a75eb19c2224ad40ff238',
-    },
-    Browsers: {
-      key: '89affaa18c972d661e866cb1f5c3882424d539f6',
     },
     'Wordmarks-Logos': {
       key: 'e792328de5953d34fcbb749c3569fb46061dad6a',
@@ -1068,6 +1189,75 @@ export const bladeThemeData = {
     invoices: {
       key: 'fd4d573099d6f1d691cb3ed6c43124722326659a',
     },
+    building: {
+      key: '6f4cc17cae44cb4604a3bd34081608ce2f5f1f35',
+    },
+    barcode: {
+      key: '2a8a84d04a9f7cda5897c3f4b9421f5e25d7fa2f',
+    },
+    storefront: {
+      key: 'cbb9aa0e14f97ddc33150d0ac792119253cd0662',
+    },
+    'shopping-bag': {
+      key: '5d25c8c58553c6d2319cb1a95870aa1566ae1b99',
+    },
+    'close-captioning': {
+      key: '8970845d4ca8ce7439edf09a5a69d54f7482af15',
+    },
+    trademark: {
+      key: '79ae7b7693516a37756b702214a50e5088739d06',
+    },
+    'trademark-registered': {
+      key: 'f479d042a60fa2d78fa9fe93d2e18ab991e68d56',
+    },
+    cookie: {
+      key: '1972c4ecccb330738f3fa4db5a18d332ae349cd2',
+    },
+    copyright: {
+      key: 'c9c86ec08b44c83bcb1d6334de6ae2cbe42d657f',
+    },
+    headset: {
+      key: '8b8e941cefb51120afc0082e9aa93a358e5263b0',
+    },
+    confetti: {
+      key: '69a819588520bc5a64bd09513b627cd59f5b6737',
+    },
+    test: {
+      key: '69a819588520bc5a64bd09513b627cd59f5b6737',
+    },
+    cash: {
+      key: '9731c5262649247aa2134d4d2e940fb7368453f3',
+    },
+    'picture-in-picture': {
+      key: '9731c5262649247aa2134d4d2e940fb7368453f3',
+    },
+    pin: {
+      key: '0d7b404dcb9f64c9e644037c3876606e0566a33b',
+    },
+    headphone: {
+      key: '8745ed5fefef70653d51f6fcb98c82f58a88995a',
+    },
+    coin: {
+      key: 'b1e4a7049b1fbbd229fdf3a4830f8fed671d1a16',
+    },
+    'address-book': {
+      key: 'e6dd6db9e7cec9765265c98177188261b2be7e2e',
+    },
+    'code-snippet': {
+      key: 'f3d59f7e70115f5130a061f9ec9e13f29d5551e3',
+    },
+    figma: {
+      key: '20d283599ff62d8be8a34b6b8d03f1eaee929364',
+    },
+    sparkles: {
+      key: '54ab15b26b0ec4a78ba2081b0b2df05f444cf3da',
+    },
+    announcment: {
+      key: 'cf85f3f35ae0d8624a75e888d000205af191ccb9',
+    },
+    'check-circle-2': {
+      key: '097b141914a95a9df34a3eb5f7e7bac30c3b962a',
+    },
   },
   colorStyles: {
     'elevation/highRaised': 'VariableID:240c65132f30cd5f0356eb6e268df75765739a9b',
@@ -1468,17 +1658,15 @@ export const BLADE_COMPONENT_IDS = Object.values(bladeThemeData.components).map(
   (component) => component.key,
 );
 
-// Carousel, Modal, Bottom Sheet, Card, Dropdown Menu
+// Carousel, Modal, Bottom Sheet, Card, Dropdown Menu, Accordion, Menu, StepGroup
 export const BLADE_COMPONENT_IDS_HAVING_SLOT = [
-  bladeThemeData.components['Accordion Group'],
-  bladeThemeData.components['Accordion Item'],
-  bladeThemeData.components['AccordionBody-Base'],
+  bladeThemeData.components.Accordion,
+  bladeThemeData.components['Accordion/Item'],
+  bladeThemeData.components['Accordion/Body'],
+  bladeThemeData.components['Accordion/Header'],
   bladeThemeData.components['Bottom Sheet'],
   bladeThemeData.components['BottomSheet/Footer'],
-  bladeThemeData.components['Dropdown/Header'],
   bladeThemeData.components['Base - General Header'],
-  bladeThemeData.components['Dropdown Menu'],
-  bladeThemeData.components['Dropdown/Footer'],
   bladeThemeData.components.Card,
   bladeThemeData.components.Carousel,
   bladeThemeData.components.Modal,
@@ -1487,6 +1675,19 @@ export const BLADE_COMPONENT_IDS_HAVING_SLOT = [
   bladeThemeData.components['Spotlight Popover'],
   bladeThemeData.components.Collapsible,
   bladeThemeData.components.Table,
+  bladeThemeData.components.Drawer,
+  bladeThemeData.components['Drawer/Leading'],
+  bladeThemeData.components['Drawer/Trailing'],
+  bladeThemeData.components.StepGroup,
+  bladeThemeData.components.StepGroupItem,
+  bladeThemeData.components.Menu,
+  bladeThemeData.components['Menu/Leading'],
+  bladeThemeData.components['Menu/Footer'],
+  bladeThemeData.components['MenuItem/Leading'],
+  bladeThemeData.components.L1SubMenuItem,
+  bladeThemeData.components.L2SubMenuItem,
+  bladeThemeData.components.TopNavigation,
+  bladeThemeData.components.TopNavigationRightSection,
 ]
   .map((component) => component.key)
   .flat();

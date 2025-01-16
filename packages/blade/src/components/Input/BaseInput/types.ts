@@ -26,6 +26,9 @@ export type BaseInputTagSlotProps = {
   isDropdownTrigger: BaseInputProps['isDropdownTrigger'];
   inputWrapperRef: InputWrapperRef;
   labelPrefix?: string;
+  size: NonNullable<BaseInputProps['size']>;
+  isTextArea?: boolean;
+  numberOfLines: BaseInputProps['numberOfLines'];
 };
 
 export type BaseInputWrapperProps = Pick<
@@ -36,8 +39,12 @@ export type BaseInputWrapperProps = Pick<
   isLabelLeftPositioned?: boolean;
   currentInteraction: ActionStates;
   isTextArea?: boolean;
-  setShowAllTagsWithAnimation?: (showAllTagsWithAnimation: boolean) => void;
+  setShowAllTagsWithAnimation: (showAllTagsWithAnimation: boolean) => void;
   children: React.ReactNode;
+  size: NonNullable<BaseInputProps['size']>;
+  numberOfLines: BaseInputProps['numberOfLines'];
+  isTableInputCell: NonNullable<BaseInputProps['isTableInputCell']>;
+  onClick?: (event: React.MouseEvent<HTMLInputElement>) => void;
 };
 
 export type StyledBaseInputProps = {
@@ -55,6 +62,9 @@ export type StyledBaseInputProps = {
   setCurrentInteraction: Dispatch<SetStateAction<ActionStates>>;
   isTextArea?: boolean;
   hasTags?: boolean;
+  $size: NonNullable<BaseInputProps['size']>;
+  isTableInputCell: NonNullable<BaseInputProps['isTableInputCell']>;
+  valueComponentType: NonNullable<BaseInputProps['valueComponentType']>;
 } & Pick<
   BaseInputProps,
   | 'as'
@@ -70,7 +80,9 @@ export type StyledBaseInputProps = {
   | 'validationState'
   | 'leadingIcon'
   | 'prefix'
-  | 'interactionElement'
+  | 'trailingInteractionElement'
+  | 'onTrailingInteractionElementClick'
+  | 'leadingInteractionElement'
   | 'suffix'
   | 'trailingIcon'
   | 'maxCharacters'

@@ -6,6 +6,7 @@ import { BaseInput } from '..';
 import renderWithTheme from '~utils/testing/renderWithTheme.web';
 import assertAccessible from '~utils/testing/assertAccessible.web';
 import { CloseIcon, EyeIcon } from '~components/Icons';
+import { Link } from '~components/Link';
 
 describe('<BaseInput />', () => {
   it('should render', () => {
@@ -70,6 +71,51 @@ describe('<BaseInput />', () => {
     expect(input).toBeValid();
   });
 
+  it('should render base input with no borders', () => {
+    const label = 'Enter name';
+    const { getByLabelText } = renderWithTheme(
+      <BaseInput label={label} id="name" isTableInputCell={false} />,
+    );
+
+    const input = getByLabelText(label);
+
+    expect(input).toMatchSnapshot();
+  });
+
+  it('should render base input with no borders in error state', () => {
+    const label = 'Enter name';
+    const { getByLabelText } = renderWithTheme(
+      <BaseInput
+        label={label}
+        id="name"
+        isTableInputCell={false}
+        validationState="error"
+        errorText="Something went wrong"
+      />,
+    );
+
+    const input = getByLabelText(label);
+
+    expect(input).toMatchSnapshot();
+  });
+
+  it('should render base input with no borders in success state', () => {
+    const label = 'Enter name';
+    const { getByLabelText } = renderWithTheme(
+      <BaseInput
+        label={label}
+        id="name"
+        isTableInputCell={false}
+        validationState="success"
+        successText="This seems valid"
+      />,
+    );
+
+    const input = getByLabelText(label);
+
+    expect(input).toMatchSnapshot();
+  });
+
   it('should render with icons', () => {
     const { container } = renderWithTheme(
       <BaseInput
@@ -79,6 +125,31 @@ describe('<BaseInput />', () => {
         leadingIcon={EyeIcon}
         trailingIcon={CloseIcon}
       />,
+    );
+
+    expect(container).toMatchSnapshot();
+  });
+
+  it('should render with large size input', () => {
+    const { container } = renderWithTheme(
+      <BaseInput
+        label="Enter name"
+        placeholder="First Last"
+        id="name"
+        leadingIcon={EyeIcon}
+        trailingIcon={CloseIcon}
+        successText="Success"
+        validationState="success"
+        size="large"
+      />,
+    );
+
+    expect(container).toMatchSnapshot();
+  });
+
+  it('should render with trailingButton', () => {
+    const { container } = renderWithTheme(
+      <BaseInput id="coupon" label="Coupon" trailingButton={<Link>Apply</Link>} />,
     );
 
     expect(container).toMatchSnapshot();
@@ -258,5 +329,13 @@ describe('<BaseInput />', () => {
     );
 
     expect(getByTestId('base-input-test')).toBeTruthy();
+  });
+  it('should support passing data-analytics-* attributes to the input field', () => {
+    const { getByLabelText, container } = renderWithTheme(
+      <BaseInput id="name" label="Enter name" data-analytics-name="base-input" />,
+    );
+
+    expect(container).toMatchSnapshot();
+    expect(getByLabelText('Enter name')).toHaveAttribute('data-analytics-name', 'base-input');
   });
 });

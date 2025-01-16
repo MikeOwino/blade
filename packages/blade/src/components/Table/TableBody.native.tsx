@@ -16,4 +16,12 @@ const TableCell = (props: TableCellProps): React.ReactElement => {
   return <Text>Table Component is not available for Native mobile apps.</Text>;
 };
 
-export { TableBody, TableRow, TableCell };
+const StyledCell = (props: TableCellProps): React.ReactElement => {
+  return <Text>Table Component is not available for Native mobile apps.</Text>;
+};
+
+const CellWrapper = (props: TableCellProps): React.ReactElement => {
+  return <Text>Table Component is not available for Native mobile apps.</Text>;
+};
+
+export { TableBody, TableRow, TableCell, StyledCell, CellWrapper };

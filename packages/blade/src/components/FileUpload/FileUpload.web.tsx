@@ -1,4 +1,4 @@
-import { useState, useCallback, useMemo, forwardRef } from 'react';
+import { useState, useCallback, useMemo, useRef, forwardRef } from 'react';
 import type { FileUploadProps, BladeFile, BladeFileList } from './types';
 import { StyledFileUploadWrapper } from './StyledFileUploadWrapper';
 import {
@@ -23,6 +23,12 @@ import { Text } from '~components/Typography';
 import type { BladeElementRef } from '~utils/types';
 import { getHintType } from '~components/Input/BaseInput/BaseInput';
 import { makeAccessible } from '~utils/makeAccessible';
+import { formHintLeftLabelMarginLeft } from '~components/Input/BaseInput/baseInputTokens';
+import { useMergeRefs } from '~utils/useMergeRefs';
+import { useControllableState } from '~utils/useControllable';
+import { getInnerMotionRef, getOuterMotionRef } from '~utils/getMotionRefs';
+import { makeAnalyticsAttribute } from '~utils/makeAnalyticsAttribute';
+import { fireNativeEvent } from '~utils/fireNativeEvent';
 
 const _FileUpload: React.ForwardRefRenderFunction<BladeElementRef, FileUploadProps> = (
   {
@@ -32,6 +38,7 @@ const _FileUpload: React.ForwardRefRenderFunction<BladeElementRef, FileUploadPro
     onChange,
     onPreview,
     onRemove,
+    onReupload,
     onDismiss,
     onDrop,
     isDisabled,
@@ -47,14 +54,20 @@ const _FileUpload: React.ForwardRefRenderFunction<BladeElementRef, FileUploadPro
     errorText,
     maxCount,
     maxSize,
-    ...styledProps
+    size = 'medium',
+    _motionMeta,
+    ...rest
   },
   ref,
 ): React.ReactElement => {
+  const inputRef = useRef<HTMLInputElement | null>(null);
+  const mergedRef = useMergeRefs(ref, inputRef);
   const { platform } = useTheme();
-  const [selectedFiles, setSelectedFiles] = useState<BladeFileList>(fileList ?? []);
-  const [errorMessage, setErrorMessage] = useState(errorText);
-  console.log('🚀 ~ errorMessage:', errorMessage);
+  const [selectedFiles, setSelectedFiles] = useControllableState({
+    value: fileList,
+    defaultValue: fileList ?? [],
+  });
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [internalValidationState, setInternalValidationState] = useState('none');
   const [isActive, setIsActive] = useState(false);
 
@@ -67,7 +80,7 @@ const _FileUpload: React.ForwardRefRenderFunction<BladeElementRef, FileUploadPro
   const showError = validationState === 'error' || internalValidationState === 'error';
   const showHelpText = !showError && helpText;
   const accessibilityText =
-    accessibilityLabel ?? `,${showError ? errorText : ''} ${showHelpText ? helpText : ''}`;
+    accessibilityLabel ?? `,${showError ? errorMessage : ''} ${showHelpText ? helpText : ''}`;
   const { inputId, labelId, helpTextId, errorTextId } = useFormId('fileuploadinput');
 
   const accessibilityProps = makeAccessible({
@@ -123,7 +136,7 @@ const _FileUpload: React.ForwardRefRenderFunction<BladeElementRef, FileUploadPro
     }
 
     setInternalValidationState('none');
-    setErrorMessage('');
+    setErrorMessage(null);
     return false;
   };
 
@@ -149,6 +162,7 @@ const _FileUpload: React.ForwardRefRenderFunction<BladeElementRef, FileUploadPro
     if (!hasValidationErrors) {
       handleFilesChange(droppedFiles);
       onDrop?.({ name, fileList: allFiles });
+      fireNativeEvent(inputRef, ['change', 'input']);
     }
   };
 
@@ -162,15 +176,19 @@ const _FileUpload: React.ForwardRefRenderFunction<BladeElementRef, FileUploadPro
       handleFilesChange(inputFiles);
       onChange?.({ name, fileList: allFiles });
     }
+
+    // Reset the input value to allow re-selecting the same file
+    event.target.value = '';
   };
 
   return (
     <BaseBox
+      ref={getOuterMotionRef({ _motionMeta, ref })}
       display="flex"
       flexDirection="column"
       width="100%"
       {...metaAttribute({ name: MetaConstants.FileUpload, testID })}
-      {...getStyledProps(styledProps)}
+      {...getStyledProps(rest)}
     >
       <BaseBox
         display="flex"
@@ -181,6 +199,7 @@ const _FileUpload: React.ForwardRefRenderFunction<BladeElementRef, FileUploadPro
       >
         {label ? (
           <FormLabel
+            size={size}
             as="span"
             necessityIndicator={necessityIndicator}
             position={labelPosition}
@@ -196,15 +215,12 @@ const _FileUpload: React.ForwardRefRenderFunction<BladeElementRef, FileUploadPro
           inputProps={{}}
           style={{
             cursor: isDisabled ? 'not-allowed' : 'pointer',
+            width: '100%',
           }}
         >
-          <BaseBox
-            display="flex"
-            flexDirection="column"
-            width="100%"
-            marginBottom={willRenderHintText ? 'spacing.0' : 'spacing.5'}
-          >
+          <BaseBox display="flex" flexDirection="column" width="100%">
             <StyledFileUploadWrapper
+              size={size}
               isDisabled={isDisabled}
               isActive={isActive}
               display="flex"
@@ -255,7 +271,8 @@ const _FileUpload: React.ForwardRefRenderFunction<BladeElementRef, FileUploadPro
                     onBlur: () => setIsActive(false),
                     ...accessibilityProps,
                   }}
-                  ref={ref}
+                  ref={getInnerMotionRef({ _motionMeta, ref: mergedRef })}
+                  {...makeAnalyticsAttribute(rest)}
                 />
 
                 <Box
@@ -292,34 +309,51 @@ const _FileUpload: React.ForwardRefRenderFunction<BladeElementRef, FileUploadPro
         {isOneFileSelectedWithSingleUpload && (
           <FileUploadItem
             file={selectedFiles[0]}
+            size={size}
             onRemove={() => {
               const newFiles = selectedFiles.filter(({ id }) => id !== selectedFiles[0].id);
-              setSelectedFiles(newFiles);
+              setSelectedFiles(() => newFiles);
               onRemove?.({ file: selectedFiles[0] });
+              fireNativeEvent(inputRef, ['change', 'input']);
+            }}
+            onReupload={() => {
+              const newFiles = selectedFiles.filter(({ id }) => id !== selectedFiles[0].id);
+              setSelectedFiles(() => newFiles);
+              inputRef.current?.click();
+
+              // TODO - Remove this in the next major release
+              // Fallback to onRemove if onReupload isn't provided to avoid breaking changes in the API
+              if (onReupload) {
+                onReupload({ file: selectedFiles[0] });
+              } else {
+                onRemove?.({ file: selectedFiles[0] });
+              }
+              setIsActive(false);
             }}
             onDismiss={() => {
               const newFiles = selectedFiles.filter(({ id }) => id !== selectedFiles[0].id);
-              setSelectedFiles(newFiles);
+              setSelectedFiles(() => newFiles);
               onDismiss?.({ file: selectedFiles[0] });
             }}
             onPreview={onPreview}
           />
         )}
       </BaseBox>
-      {/* the magic number 136 is basically max-width of label i.e 120 and then right margin i.e 16 which is the spacing between label and input field */}
       {willRenderHintText && (
         <BaseBox
-          marginLeft={makeSize(label && isLabelLeftPositioned ? 136 : 0)}
-          marginBottom="spacing.5"
+          marginLeft={makeSize(
+            label && isLabelLeftPositioned ? formHintLeftLabelMarginLeft[size] : 0,
+          )}
         >
           <BaseBox display="flex" flexDirection="row" justifyContent="'space-between">
             <FormHint
+              size={size}
               type={getHintType({
                 validationState: showError ? 'error' : validationState,
                 hasHelpText: Boolean(helpText),
               })}
               helpText={helpText}
-              errorText={errorMessage}
+              errorText={errorMessage ?? errorText}
               helpTextId={helpTextId}
               errorTextId={errorTextId}
             />
@@ -327,23 +361,41 @@ const _FileUpload: React.ForwardRefRenderFunction<BladeElementRef, FileUploadPro
         </BaseBox>
       )}
       {!isOneFileSelectedWithSingleUpload &&
-        selectedFiles.map((file) => (
+        selectedFiles.map((file, index) => (
           <BaseBox
             key={file.id}
-            marginLeft={makeSize(label && isLabelLeftPositioned ? 136 : 0)}
-            marginBottom="spacing.3"
+            marginLeft={makeSize(
+              label && isLabelLeftPositioned ? formHintLeftLabelMarginLeft[size] : 0,
+            )}
+            marginTop={index === 0 ? 'spacing.5' : 'spacing.3'}
           >
             <FileUploadItem
               file={file}
+              size={size}
               onRemove={() => {
                 const newFiles = selectedFiles.filter(({ id }) => id !== file.id);
-                setSelectedFiles(newFiles);
+                setSelectedFiles(() => newFiles);
                 onRemove?.({ file });
+                fireNativeEvent(inputRef, ['change', 'input']);
+              }}
+              onReupload={() => {
+                const newFiles = selectedFiles.filter(({ id }) => id !== file.id);
+                setSelectedFiles(() => newFiles);
+                inputRef.current?.click();
+                // TODO - Remove this in the next major release
+                // Fallback to onRemove if onReupload isn't provided to avoid breaking changes in the API
+                if (onReupload) {
+                  onReupload({ file });
+                } else {
+                  onRemove?.({ file });
+                }
+                setIsActive(false);
               }}
               onDismiss={() => {
                 const newFiles = selectedFiles.filter(({ id }) => id !== file.id);
-                setSelectedFiles(newFiles);
+                setSelectedFiles(() => newFiles);
                 onDismiss?.({ file });
+                fireNativeEvent(inputRef, ['change', 'input']);
               }}
               onPreview={onPreview}
             />

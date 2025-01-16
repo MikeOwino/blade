@@ -23,7 +23,7 @@ const Page = (): React.ReactElement => {
         {`
           import { CheckboxGroup, Checkbox } from '@razorpay/blade/components';
 
-          function App(): React.ReactElement {
+          function App() {
             return (
               <CheckboxGroup 
                 label="Where do you want to collect payments?"
@@ -139,6 +139,12 @@ export const Small = CheckboxGroupTemplate.bind({});
 Small.storyName = 'Small';
 Small.args = {
   size: 'small',
+};
+
+export const Large = CheckboxGroupTemplate.bind({});
+Large.storyName = 'Large';
+Large.args = {
+  size: 'large',
 };
 
 export const LabelPositionLeft = CheckboxGroupTemplate.bind({});

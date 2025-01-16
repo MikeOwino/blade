@@ -2,16 +2,24 @@ import { memo } from 'react';
 import { StyledFileUploadItemWrapper } from './StyledFileUploadItemWrapper';
 import type { FileUploadItemProps } from './types';
 import { FileUploadItemIcon } from './FileUploadItemIcon';
-import { TrashIcon, EyeIcon, CloseIcon, CheckCircleIcon } from '~components/Icons';
+import { TrashIcon, EyeIcon, CloseIcon, CheckCircleIcon, RefreshIcon } from '~components/Icons';
 import { BaseBox } from '~components/Box/BaseBox';
 import { Text } from '~components/Typography';
 import { Divider } from '~components/Divider';
 import { IconButton } from '~components/Button/IconButton';
 import { ProgressBar } from '~components/ProgressBar';
 import isUndefined from '~utils/lodashButBetter/isUndefined';
+import { BaseLink } from '~components/Link/BaseLink';
 
 const FileUploadItem = memo(
-  ({ file, onPreview, onRemove, onDismiss }: FileUploadItemProps): React.ReactElement => {
+  ({
+    file,
+    onPreview,
+    onRemove,
+    onReupload,
+    onDismiss,
+    size: containerSize,
+  }: FileUploadItemProps): React.ReactElement => {
     const { name, size, uploadPercent, errorText, status } = file;
     const isUploading = status === 'uploading';
     const sizeInKB = size / 1024;
@@ -20,12 +28,17 @@ const FileUploadItem = memo(
 
     return (
       <StyledFileUploadItemWrapper
+        size={containerSize ?? 'medium'}
         status={status ?? 'success'}
         borderRadius="medium"
         borderWidth="thin"
       >
         <BaseBox width="100%" display="flex" flexDirection="column">
-          <BaseBox display="flex" flexDirection="row" margin="spacing.3">
+          <BaseBox
+            display="flex"
+            flexDirection="row"
+            margin={containerSize === 'large' ? 'spacing.4' : 'spacing.3'}
+          >
             <BaseBox marginRight="spacing.3">
               <FileUploadItemIcon fileName={name} uploadStatus={status} />
             </BaseBox>
@@ -62,13 +75,28 @@ const FileUploadItem = memo(
                   } ${isUploading && uploadPercent ? `(${uploadPercent}%)` : ''}`}
               </Text>
             </BaseBox>
-            {status === 'error' || status === 'uploading' ? (
+            {status === 'uploading' ? (
               <BaseBox>
                 <IconButton
                   accessibilityLabel="Remove File"
                   icon={CloseIcon}
                   onClick={() => onDismiss?.({ file })}
                 />
+              </BaseBox>
+            ) : status === 'error' ? (
+              <BaseBox display="flex" flexDirection="row" alignItems="center">
+                <BaseLink
+                  marginX="spacing.1"
+                  variant="button"
+                  icon={RefreshIcon}
+                  color="negative"
+                  size="small"
+                  onClick={() => {
+                    onReupload?.({ file });
+                  }}
+                >
+                  Re-upload
+                </BaseLink>
               </BaseBox>
             ) : (
               <BaseBox display="flex" flexDirection="row" alignItems="center">

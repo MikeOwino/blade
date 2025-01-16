@@ -52,7 +52,7 @@ const switchColors = {
     default: {
       background: {
         checked: 'colors.interactive.background.primary.default',
-        unchecked: 'colors.interactive.background.gray.faded',
+        unchecked: 'colors.interactive.background.gray.default',
       },
     },
     disabled: {
@@ -82,14 +82,14 @@ const switchColors = {
 
 const switchMotion = {
   easing: {
-    thumb: 'motion.easing.standard.effective',
-    thumbIcon: 'motion.easing.standard.effective',
-    track: 'motion.easing.standard.effective',
+    thumb: 'motion.easing.standard',
+    thumbIcon: 'motion.easing.standard',
+    track: 'motion.easing.standard',
   },
   duration: {
-    thumb: 'motion.duration.xquick',
-    thumbIcon: 'motion.duration.xquick',
-    track: 'motion.duration.xquick',
+    thumb: 'motion.duration.quick',
+    thumbIcon: 'motion.duration.quick',
+    track: 'motion.duration.quick',
   },
 } as const;
 
@@ -97,7 +97,7 @@ const switchHoverTokens = {
   default: {
     background: {
       checked: 'colors.interactive.background.primary.highlighted',
-      unchecked: 'colors.interactive.background.gray.fadedHighlighted',
+      unchecked: 'colors.interactive.background.gray.highlighted',
     },
   },
 } as const;

@@ -114,7 +114,12 @@ exports[`<List /> should render List with default properties 1`] = `
                 <RNSVGCircle
                   cx="3px"
                   cy="3px"
-                  fill={4285959847}
+                  fill={
+                    {
+                      "payload": 4285959847,
+                      "type": 0,
+                    }
+                  }
                   propList={
                     [
                       "fill",
@@ -282,13 +287,24 @@ exports[`<List /> should render List with default properties 1`] = `
                       <RNSVGCircle
                         cx="3px"
                         cy="3px"
+                        fill={
+                          {
+                            "payload": 4278190080,
+                            "type": 0,
+                          }
+                        }
                         propList={
                           [
                             "stroke",
                           ]
                         }
                         r="2.5px"
-                        stroke={4285959847}
+                        stroke={
+                          {
+                            "payload": 4285959847,
+                            "type": 0,
+                          }
+                        }
                       />
                     </RNSVGGroup>
                   </RNSVGSvgView>
@@ -448,11 +464,18 @@ exports[`<List /> should render List with default properties 1`] = `
                             }
                           >
                             <RNSVGRect
-                              fill={4285959847}
+                              fill={
+                                {
+                                  "payload": 4285959847,
+                                  "type": 0,
+                                }
+                              }
+                              fillOpacity={0.48}
                               height="6px"
                               propList={
                                 [
                                   "fill",
+                                  "fillOpacity",
                                 ]
                               }
                               rx="1px"
@@ -640,7 +663,12 @@ exports[`<List /> should render List with inline ListItemCode 1`] = `
                 <RNSVGCircle
                   cx="3px"
                   cy="3px"
-                  fill={4285959847}
+                  fill={
+                    {
+                      "payload": 4285959847,
+                      "type": 0,
+                    }
+                  }
                   propList={
                     [
                       "fill",
@@ -847,7 +875,12 @@ exports[`<List /> should render List with inline ListItemCode 1`] = `
                 <RNSVGCircle
                   cx="3px"
                   cy="3px"
-                  fill={4285959847}
+                  fill={
+                    {
+                      "payload": 4285959847,
+                      "type": 0,
+                    }
+                  }
                   propList={
                     [
                       "fill",
@@ -1029,7 +1062,12 @@ exports[`<List /> should render List with inline ListItemLink 1`] = `
                 <RNSVGCircle
                   cx="3px"
                   cy="3px"
-                  fill={4285959847}
+                  fill={
+                    {
+                      "payload": 4285959847,
+                      "type": 0,
+                    }
+                  }
                   propList={
                     [
                       "fill",
@@ -1284,7 +1322,12 @@ exports[`<List /> should render List with inline ListItemLink 1`] = `
                 <RNSVGCircle
                   cx="3px"
                   cy="3px"
-                  fill={4285959847}
+                  fill={
+                    {
+                      "payload": 4285959847,
+                      "type": 0,
+                    }
+                  }
                   propList={
                     [
                       "fill",
@@ -1466,7 +1509,12 @@ exports[`<List /> should render List with inline ListItemText 1`] = `
                 <RNSVGCircle
                   cx="3px"
                   cy="3px"
-                  fill={4285959847}
+                  fill={
+                    {
+                      "payload": 4285959847,
+                      "type": 0,
+                    }
+                  }
                   propList={
                     [
                       "fill",
@@ -1806,13 +1854,24 @@ exports[`<List /> should render large ordered List 1`] = `
                       <RNSVGCircle
                         cx="3px"
                         cy="3px"
+                        fill={
+                          {
+                            "payload": 4278190080,
+                            "type": 0,
+                          }
+                        }
                         propList={
                           [
                             "stroke",
                           ]
                         }
                         r="2.5px"
-                        stroke={4285959847}
+                        stroke={
+                          {
+                            "payload": 4285959847,
+                            "type": 0,
+                          }
+                        }
                       />
                     </RNSVGGroup>
                   </RNSVGSvgView>
@@ -1972,11 +2031,18 @@ exports[`<List /> should render large ordered List 1`] = `
                             }
                           >
                             <RNSVGRect
-                              fill={4285959847}
+                              fill={
+                                {
+                                  "payload": 4285959847,
+                                  "type": 0,
+                                }
+                              }
+                              fillOpacity={0.48}
                               height="6px"
                               propList={
                                 [
                                   "fill",
+                                  "fillOpacity",
                                 ]
                               }
                               rx="1px"
@@ -2628,8 +2694,13 @@ exports[`<List /> should render large unordered List with icon 1`] = `
                 }
               >
                 <RNSVGPath
-                  d="M14.707 5.293a1 1 0 1 0-1.414 1.414L17.586 11H4a1 1 0 1 0 0 2h13.586l-4.293 4.293a1 1 0 0 0 1.414 1.414l6-6a1 1 0 0 0 0-1.414l-6-6Z"
-                  fill={4285959847}
+                  d="M14.7071 5.29289C14.3166 4.90237 13.6834 4.90237 13.2929 5.29289C12.9024 5.68342 12.9024 6.31658 13.2929 6.70711L17.5858 11H4C3.44772 11 3 11.4477 3 12C3 12.5523 3.44772 13 4 13H17.5858L13.2929 17.2929C12.9024 17.6834 12.9024 18.3166 13.2929 18.7071C13.6834 19.0976 14.3166 19.0976 14.7071 18.7071L20.7071 12.7071C21.0976 12.3166 21.0976 11.6834 20.7071 11.2929L14.7071 5.29289Z"
+                  fill={
+                    {
+                      "payload": 4285959847,
+                      "type": 0,
+                    }
+                  }
                   propList={
                     [
                       "fill",
@@ -2794,8 +2865,13 @@ exports[`<List /> should render large unordered List with icon 1`] = `
                       }
                     >
                       <RNSVGPath
-                        d="M12.707 3.293a1 1 0 0 0-1.414 0l-6 6a1 1 0 0 0 1.414 1.414L11 6.414V20a1 1 0 1 0 2 0V6.414l4.293 4.293a1 1 0 0 0 1.414-1.414l-6-6Z"
-                        fill={4285959847}
+                        d="M12.7071 3.29289C12.3166 2.90237 11.6834 2.90237 11.2929 3.29289L5.29289 9.29289C4.90237 9.68342 4.90237 10.3166 5.29289 10.7071C5.68342 11.0976 6.31658 11.0976 6.70711 10.7071L11 6.41421V20C11 20.5523 11.4477 21 12 21C12.5523 21 13 20.5523 13 20V6.41421L17.2929 10.7071C17.6834 11.0976 18.3166 11.0976 18.7071 10.7071C19.0976 10.3166 19.0976 9.68342 18.7071 9.29289L12.7071 3.29289Z"
+                        fill={
+                          {
+                            "payload": 4285959847,
+                            "type": 0,
+                          }
+                        }
                         propList={
                           [
                             "fill",
@@ -2960,11 +3036,18 @@ exports[`<List /> should render large unordered List with icon 1`] = `
                             }
                           >
                             <RNSVGRect
-                              fill={4285959847}
+                              fill={
+                                {
+                                  "payload": 4285959847,
+                                  "type": 0,
+                                }
+                              }
+                              fillOpacity={0.48}
                               height="6px"
                               propList={
                                 [
                                   "fill",
+                                  "fillOpacity",
                                 ]
                               }
                               rx="1px"
@@ -3310,13 +3393,24 @@ exports[`<List /> should render medium ordered List 1`] = `
                       <RNSVGCircle
                         cx="3px"
                         cy="3px"
+                        fill={
+                          {
+                            "payload": 4278190080,
+                            "type": 0,
+                          }
+                        }
                         propList={
                           [
                             "stroke",
                           ]
                         }
                         r="2.5px"
-                        stroke={4285959847}
+                        stroke={
+                          {
+                            "payload": 4285959847,
+                            "type": 0,
+                          }
+                        }
                       />
                     </RNSVGGroup>
                   </RNSVGSvgView>
@@ -3476,11 +3570,18 @@ exports[`<List /> should render medium ordered List 1`] = `
                             }
                           >
                             <RNSVGRect
-                              fill={4285959847}
+                              fill={
+                                {
+                                  "payload": 4285959847,
+                                  "type": 0,
+                                }
+                              }
+                              fillOpacity={0.48}
                               height="6px"
                               propList={
                                 [
                                   "fill",
+                                  "fillOpacity",
                                 ]
                               }
                               rx="1px"
@@ -4132,8 +4233,13 @@ exports[`<List /> should render medium unordered List with icon 1`] = `
                 }
               >
                 <RNSVGPath
-                  d="M14.707 5.293a1 1 0 1 0-1.414 1.414L17.586 11H4a1 1 0 1 0 0 2h13.586l-4.293 4.293a1 1 0 0 0 1.414 1.414l6-6a1 1 0 0 0 0-1.414l-6-6Z"
-                  fill={4285959847}
+                  d="M14.7071 5.29289C14.3166 4.90237 13.6834 4.90237 13.2929 5.29289C12.9024 5.68342 12.9024 6.31658 13.2929 6.70711L17.5858 11H4C3.44772 11 3 11.4477 3 12C3 12.5523 3.44772 13 4 13H17.5858L13.2929 17.2929C12.9024 17.6834 12.9024 18.3166 13.2929 18.7071C13.6834 19.0976 14.3166 19.0976 14.7071 18.7071L20.7071 12.7071C21.0976 12.3166 21.0976 11.6834 20.7071 11.2929L14.7071 5.29289Z"
+                  fill={
+                    {
+                      "payload": 4285959847,
+                      "type": 0,
+                    }
+                  }
                   propList={
                     [
                       "fill",
@@ -4298,8 +4404,13 @@ exports[`<List /> should render medium unordered List with icon 1`] = `
                       }
                     >
                       <RNSVGPath
-                        d="M12.707 3.293a1 1 0 0 0-1.414 0l-6 6a1 1 0 0 0 1.414 1.414L11 6.414V20a1 1 0 1 0 2 0V6.414l4.293 4.293a1 1 0 0 0 1.414-1.414l-6-6Z"
-                        fill={4285959847}
+                        d="M12.7071 3.29289C12.3166 2.90237 11.6834 2.90237 11.2929 3.29289L5.29289 9.29289C4.90237 9.68342 4.90237 10.3166 5.29289 10.7071C5.68342 11.0976 6.31658 11.0976 6.70711 10.7071L11 6.41421V20C11 20.5523 11.4477 21 12 21C12.5523 21 13 20.5523 13 20V6.41421L17.2929 10.7071C17.6834 11.0976 18.3166 11.0976 18.7071 10.7071C19.0976 10.3166 19.0976 9.68342 18.7071 9.29289L12.7071 3.29289Z"
+                        fill={
+                          {
+                            "payload": 4285959847,
+                            "type": 0,
+                          }
+                        }
                         propList={
                           [
                             "fill",
@@ -4464,11 +4575,18 @@ exports[`<List /> should render medium unordered List with icon 1`] = `
                             }
                           >
                             <RNSVGRect
-                              fill={4285959847}
+                              fill={
+                                {
+                                  "payload": 4285959847,
+                                  "type": 0,
+                                }
+                              }
+                              fillOpacity={0.48}
                               height="6px"
                               propList={
                                 [
                                   "fill",
+                                  "fillOpacity",
                                 ]
                               }
                               rx="1px"
@@ -4814,13 +4932,24 @@ exports[`<List /> should render small ordered List 1`] = `
                       <RNSVGCircle
                         cx="3px"
                         cy="3px"
+                        fill={
+                          {
+                            "payload": 4278190080,
+                            "type": 0,
+                          }
+                        }
                         propList={
                           [
                             "stroke",
                           ]
                         }
                         r="2.5px"
-                        stroke={4285959847}
+                        stroke={
+                          {
+                            "payload": 4285959847,
+                            "type": 0,
+                          }
+                        }
                       />
                     </RNSVGGroup>
                   </RNSVGSvgView>
@@ -4980,11 +5109,18 @@ exports[`<List /> should render small ordered List 1`] = `
                             }
                           >
                             <RNSVGRect
-                              fill={4285959847}
+                              fill={
+                                {
+                                  "payload": 4285959847,
+                                  "type": 0,
+                                }
+                              }
+                              fillOpacity={0.48}
                               height="5px"
                               propList={
                                 [
                                   "fill",
+                                  "fillOpacity",
                                 ]
                               }
                               rx="1px"
@@ -5636,8 +5772,13 @@ exports[`<List /> should render small unordered List with icon 1`] = `
                 }
               >
                 <RNSVGPath
-                  d="M14.707 5.293a1 1 0 1 0-1.414 1.414L17.586 11H4a1 1 0 1 0 0 2h13.586l-4.293 4.293a1 1 0 0 0 1.414 1.414l6-6a1 1 0 0 0 0-1.414l-6-6Z"
-                  fill={4285959847}
+                  d="M14.7071 5.29289C14.3166 4.90237 13.6834 4.90237 13.2929 5.29289C12.9024 5.68342 12.9024 6.31658 13.2929 6.70711L17.5858 11H4C3.44772 11 3 11.4477 3 12C3 12.5523 3.44772 13 4 13H17.5858L13.2929 17.2929C12.9024 17.6834 12.9024 18.3166 13.2929 18.7071C13.6834 19.0976 14.3166 19.0976 14.7071 18.7071L20.7071 12.7071C21.0976 12.3166 21.0976 11.6834 20.7071 11.2929L14.7071 5.29289Z"
+                  fill={
+                    {
+                      "payload": 4285959847,
+                      "type": 0,
+                    }
+                  }
                   propList={
                     [
                       "fill",
@@ -5802,8 +5943,13 @@ exports[`<List /> should render small unordered List with icon 1`] = `
                       }
                     >
                       <RNSVGPath
-                        d="M12.707 3.293a1 1 0 0 0-1.414 0l-6 6a1 1 0 0 0 1.414 1.414L11 6.414V20a1 1 0 1 0 2 0V6.414l4.293 4.293a1 1 0 0 0 1.414-1.414l-6-6Z"
-                        fill={4285959847}
+                        d="M12.7071 3.29289C12.3166 2.90237 11.6834 2.90237 11.2929 3.29289L5.29289 9.29289C4.90237 9.68342 4.90237 10.3166 5.29289 10.7071C5.68342 11.0976 6.31658 11.0976 6.70711 10.7071L11 6.41421V20C11 20.5523 11.4477 21 12 21C12.5523 21 13 20.5523 13 20V6.41421L17.2929 10.7071C17.6834 11.0976 18.3166 11.0976 18.7071 10.7071C19.0976 10.3166 19.0976 9.68342 18.7071 9.29289L12.7071 3.29289Z"
+                        fill={
+                          {
+                            "payload": 4278225477,
+                            "type": 0,
+                          }
+                        }
                         propList={
                           [
                             "fill",
@@ -5968,11 +6114,18 @@ exports[`<List /> should render small unordered List with icon 1`] = `
                             }
                           >
                             <RNSVGRect
-                              fill={4285959847}
+                              fill={
+                                {
+                                  "payload": 4285959847,
+                                  "type": 0,
+                                }
+                              }
+                              fillOpacity={0.48}
                               height="5px"
                               propList={
                                 [
                                   "fill",
+                                  "fillOpacity",
                                 ]
                               }
                               rx="1px"
@@ -6160,7 +6313,12 @@ exports[`<List /> should render unordered List of small size 1`] = `
                 <RNSVGCircle
                   cx="3px"
                   cy="3px"
-                  fill={4285959847}
+                  fill={
+                    {
+                      "payload": 4285959847,
+                      "type": 0,
+                    }
+                  }
                   propList={
                     [
                       "fill",
@@ -6328,13 +6486,24 @@ exports[`<List /> should render unordered List of small size 1`] = `
                       <RNSVGCircle
                         cx="3px"
                         cy="3px"
+                        fill={
+                          {
+                            "payload": 4278190080,
+                            "type": 0,
+                          }
+                        }
                         propList={
                           [
                             "stroke",
                           ]
                         }
                         r="2.5px"
-                        stroke={4285959847}
+                        stroke={
+                          {
+                            "payload": 4285959847,
+                            "type": 0,
+                          }
+                        }
                       />
                     </RNSVGGroup>
                   </RNSVGSvgView>
@@ -6494,11 +6663,18 @@ exports[`<List /> should render unordered List of small size 1`] = `
                             }
                           >
                             <RNSVGRect
-                              fill={4285959847}
+                              fill={
+                                {
+                                  "payload": 4285959847,
+                                  "type": 0,
+                                }
+                              }
+                              fillOpacity={0.48}
                               height="5px"
                               propList={
                                 [
                                   "fill",
+                                  "fillOpacity",
                                 ]
                               }
                               rx="1px"

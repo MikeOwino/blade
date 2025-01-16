@@ -1,6 +1,7 @@
+import { AlertCircleIcon, CheckIcon } from '~components/Icons';
 import { size } from '~tokens/global';
 
-const firstColumnStickyHeaderFooterZIndex = 2;
+const firstColumnStickyZIndex = 2;
 
 const refreshWrapperZIndex = 3;
 
@@ -28,21 +29,20 @@ const tableFooter = {
 } as const;
 
 const tableRow = {
-  paddingTop: {
-    normal: 'spacing.5',
-    comfortable: 'spacing.6',
-  },
-  paddingBottom: {
-    normal: 'spacing.5',
-    comfortable: 'spacing.6',
-  },
   paddingLeft: {
+    compact: 'spacing.4',
     normal: 'spacing.4',
     comfortable: 'spacing.4',
   },
   paddingRight: {
+    compact: 'spacing.4',
     normal: 'spacing.4',
     comfortable: 'spacing.4',
+  },
+  minHeight: {
+    compact: '36',
+    normal: '48',
+    comfortable: '60',
   },
   nonStripe: {
     backgroundColor: 'transparent',
@@ -87,20 +87,19 @@ const tableRow = {
     backgroundColorSelectedActive: 'interactive.background.primary.faded',
   },
   borderBottomWidth: 'thin',
-  borderBottomColor: 'surface.border.gray.muted',
-  backgroundColorMotionEasing: 'easing.standard.effective',
+  borderColor: 'surface.border.gray.muted',
+  backgroundColorMotionEasing: 'easing.standard',
   backgroundColorMotionDuration: 'duration.xquick',
 } as const;
 
 const tableToolbar = {
   backgroundColor: 'transparent',
   backgroundColorSelected: 'interactive.background.primary.faded',
-  backgroundColorMotionEasing: 'easing.standard.effective',
+  backgroundColorMotionEasing: 'easing.standard',
   backgroundColorMotionDuration: 'duration.xquick',
 } as const;
 
 const tablePagination = {
-  backgroundColor: 'transparent',
   padding: 'spacing.4',
   pageSelectionButton: {
     backgroundColor: 'transparent',
@@ -120,6 +119,30 @@ const tablePagination = {
   defaultPageSize: 10,
 } as const;
 
+const tableEditableCellRowDensityToInputSizeMap = {
+  compact: 'medium',
+  normal: 'large',
+  comfortable: 'medium',
+} as const;
+
+const validationStateToInputTrailingIconMap = {
+  none: undefined,
+  success: CheckIcon,
+  error: AlertCircleIcon,
+};
+
+const rowDensityToIsTableInputCellMapping = {
+  comfortable: false,
+  normal: true,
+  compact: true,
+};
+
+const classes = {
+  HOVER_ACTIONS: 'hover-actions',
+  HOVER_ACTIONS_LAYER2: 'hover-actions-layer-2',
+  HOVER_ACTIONS_LAYER3: 'hover-actions-layer-3',
+};
+
 export {
   tableHeader,
   tableFooter,
@@ -128,6 +151,10 @@ export {
   tablePagination,
   refreshWrapperZIndex,
   tableBackgroundColor,
-  firstColumnStickyHeaderFooterZIndex,
+  firstColumnStickyZIndex,
   checkboxCellWidth,
+  tableEditableCellRowDensityToInputSizeMap,
+  validationStateToInputTrailingIconMap,
+  rowDensityToIsTableInputCellMapping,
+  classes,
 };

@@ -53,7 +53,7 @@ const CustomPreviewTemplate: StoryFn<typeof FileUploadComponent> = (args) => {
         if (f.id === file.id) {
           f.status = 'uploading';
         }
-        return file;
+        return f;
       }),
     );
     const data = new FormData();
@@ -71,7 +71,7 @@ const CustomPreviewTemplate: StoryFn<typeof FileUploadComponent> = (args) => {
             if (f.id === file.id) {
               f.status = 'success';
             }
-            return file;
+            return f;
           }),
         );
 
@@ -85,7 +85,7 @@ const CustomPreviewTemplate: StoryFn<typeof FileUploadComponent> = (args) => {
                 f.status = 'error';
                 f.errorText = `Oops! Something went wrong. ${data.error.message}`;
               }
-              return file;
+              return f;
             }),
           );
         }
@@ -98,7 +98,7 @@ const CustomPreviewTemplate: StoryFn<typeof FileUploadComponent> = (args) => {
               f.status = 'error';
               f.errorText = `Oops! Something went wrong. ${error.message}`;
             }
-            return file;
+            return f;
           }),
         );
       });
@@ -124,7 +124,12 @@ const CustomPreviewTemplate: StoryFn<typeof FileUploadComponent> = (args) => {
     >
       <Box>
         {!isSubmitted ? (
-          <Box maxWidth="400px" display="flex" flexDirection="column" gap="spacing.5">
+          <Box
+            maxWidth={args.labelPosition === 'left' ? '500px' : '400px'}
+            display="flex"
+            flexDirection="column"
+            gap="spacing.5"
+          >
             <Heading marginBottom="spacing.4">Add New Product</Heading>
             <TextInput
               label="Product Name"
@@ -132,6 +137,8 @@ const CustomPreviewTemplate: StoryFn<typeof FileUploadComponent> = (args) => {
               isRequired
               necessityIndicator="required"
               onChange={({ value }) => setProductName(value)}
+              size={args.size}
+              labelPosition={args.labelPosition}
             />
             <FileUploadComponent
               {...args}

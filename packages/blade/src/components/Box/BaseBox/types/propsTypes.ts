@@ -4,7 +4,7 @@ import type { MarginProps, PaddingProps, SpacingValueType } from './spacingTypes
 import type { MakeObjectResponsive } from './responsiveTypes';
 import type { Theme } from '~components/BladeProvider';
 import type { Border, Elevation } from '~tokens/global';
-import type { PickCSSByPlatform, TestID } from '~utils/types';
+import type { DataAnalyticsAttribute, PickCSSByPlatform, TestID } from '~utils/types';
 import type { Platform } from '~utils';
 import type { BladeCommonEvents } from '~components/types';
 import type { DotNotationToken } from '~utils/lodashButBetter/get';
@@ -152,6 +152,11 @@ type CommonBoxVisualProps = MakeObjectResponsive<
     | 'transform'
     | 'transformOrigin'
     | 'clipPath'
+    | 'borderStyle'
+    | 'borderTopStyle'
+    | 'borderBottomStyle'
+    | 'borderLeftStyle'
+    | 'borderRightStyle'
   > & {
       /**
        * Sets the elevation for Box
@@ -161,7 +166,7 @@ type CommonBoxVisualProps = MakeObjectResponsive<
        * @default `theme.elevation.lowRaised`
        *
        * **Links:**
-       * - Docs: https://blade.razorpay.com/?path=/docs/tokens-elevation--page
+       * - Docs: https://blade.razorpay.com/?path=/docs/tokens-elevation--docs
        */
       elevation?: keyof Elevation;
     }
@@ -190,12 +195,16 @@ type BaseBoxVisualProps = MakeObjectResponsive<
     | 'borderBottom'
     | 'opacity'
     | 'pointerEvents'
+    | 'cursor'
   >
 >;
 
 // Visual props that are specific to Box
 type BoxVisualProps = MakeObjectResponsive<{
-  backgroundColor: BackgroundColorString<'surface'> | 'transparent';
+  backgroundColor:
+    | BackgroundColorString<'surface'>
+    | BackgroundColorString<'overlay'>
+    | 'transparent';
 }> & {
   // Intentionally keeping this outside of MakeObjectResponsive since we only want as to be string and not responsive object
   // styled-components do not support passing `as` prop as an object
@@ -217,7 +226,8 @@ type StyledPropsBlade = Partial<
         | 'gridColumnEnd'
         | 'gridArea'
       > &
-      Pick<LayoutProps, 'display'>,
+      Pick<LayoutProps, 'display'> &
+      Pick<CommonBoxVisualProps, 'visibility'>,
     '__brand__'
   >
 >;
@@ -298,7 +308,8 @@ type BoxProps = Partial<
       children?: React.ReactNode | React.ReactNode[];
       tabIndex?: number;
       id?: string;
-    } & TestID
+    } & TestID &
+    DataAnalyticsAttribute
 >;
 
 // Visual props have different types for BaseBox and Box. BaseBox has more flexible types and more props exposed.
@@ -306,11 +317,12 @@ type BoxProps = Partial<
 // Then we append BaseBoxVisualProps and some other props for styled-components like class and id
 type BaseBoxProps = Omit<BoxProps, keyof BoxVisualProps> &
   Partial<
-    BaseBoxVisualProps & {
-      className?: string;
-      id?: string;
-      tabIndex?: number;
-    }
+    DataAnalyticsAttribute &
+      BaseBoxVisualProps & {
+        className?: string;
+        id?: string;
+        tabIndex?: number;
+      }
   > &
   BladeCommonEvents;
 

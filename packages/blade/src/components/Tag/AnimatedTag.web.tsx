@@ -11,17 +11,17 @@ import {
 } from './tagAnimationConfig';
 import BaseBox from '~components/Box/BaseBox';
 import { useTheme } from '~components/BladeProvider';
-import { makeMotionTime, makeSize } from '~utils';
+import { makeMotionTime } from '~utils';
 
 const tagDissappearKeyframe = keyframes`
   0% {
     opacity: ${TAG_OPACITY_START};
-    max-width: ${makeSize(TAG_MAX_WIDTH_START)};
+    max-width: ${TAG_MAX_WIDTH_START}
   }
 
   100% {
     opacity: ${TAG_OPACITY_END};
-    max-width: ${makeSize(TAG_MAX_WIDTH_END)};
+    max-width: ${TAG_MAX_WIDTH_END};
   }
 `;
 
@@ -43,7 +43,7 @@ const AnimatedTagContainer = styled(BaseBox)<{
     ${props.transition};
     display: inline-block;
     opacity: ${props.isVisible ? TAG_OPACITY_START : TAG_OPACITY_END};
-    max-width: ${makeSize(props.isVisible ? TAG_MAX_WIDTH_START : TAG_MAX_WIDTH_END)};
+    max-width: ${props.isVisible ? TAG_MAX_WIDTH_START : TAG_MAX_WIDTH_END};
     flex-shrink: 0;
   `,
 );
@@ -54,18 +54,19 @@ const AnimatedTag = ({
   isDisabled,
   activeTagIndex,
   onDismiss,
+  size = 'medium',
 }: AnimatedTagProps): React.ReactElement => {
   const [isTagVisible, setIsTagVisible] = React.useState(true);
   const { theme } = useTheme();
 
   const hideTagTransition = css`
     animation: ${tagDissappearKeyframe} ${makeMotionTime(theme.motion.duration.xquick)}
-      ${String(theme.motion.easing.exit.effective)};
+      ${String(theme.motion.easing.exit)};
   `;
 
   const showTagTransition = css`
     animation: ${tagShowKeyframe} ${makeMotionTime(theme.motion.duration.xquick)}
-      ${String(theme.motion.easing.entrance.effective)};
+      ${String(theme.motion.easing.entrance)};
   `;
 
   return (
@@ -87,6 +88,7 @@ const AnimatedTag = ({
         marginRight="spacing.3"
         marginY="spacing.2"
         isDisabled={isDisabled}
+        size={size}
       >
         {children}
       </Tag>

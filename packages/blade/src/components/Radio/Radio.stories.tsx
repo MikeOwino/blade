@@ -25,7 +25,7 @@ const Page = (): React.ReactElement => {
         {`
           import { RadioGroup, Radio } from '@razorpay/blade/components';
 
-          function App(): React.ReactElement {
+          function App() {
             return (
               <RadioGroup
                 helpText="Select only one"
@@ -144,6 +144,12 @@ export const Small = RadioTemplate.bind({});
 Small.storyName = 'Small';
 Small.args = {
   size: 'small',
+};
+
+export const Large = RadioTemplate.bind({});
+Large.storyName = 'Large';
+Large.args = {
+  size: 'large',
 };
 
 export const LabelPositionLeft = RadioTemplate.bind({});

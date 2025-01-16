@@ -1,24 +1,20 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import React from 'react';
 import styled from 'styled-components';
-import { StyledActionListItem } from './styles/StyledActionListItem';
+import type { TouchableOpacity } from 'react-native';
 import { componentIds } from './componentIds';
-import type { StyledActionListItemProps } from './styles/getBaseActionListItemStyles';
 import { validateActionListItemProps, getNormalTextColor } from './actionListUtils';
-import { getActionListItemRole, getActionListSectionRole, isRoleMenu } from './getA11yRoles';
+import { getActionListItemRole, getActionListSectionRole } from './getA11yRoles';
 import { Divider } from '~components/Divider';
 import BaseBox from '~components/Box/BaseBox';
 import type { IconComponent } from '~components/Icons';
 import { useDropdown } from '~components/Dropdown/useDropdown';
 import type { FeedbackColors } from '~tokens/theme/theme';
 import { Text } from '~components/Typography';
-import { isReactNative } from '~utils';
+import type { Platform } from '~utils';
+import { castWebType, isReactNative } from '~utils';
 import { metaAttribute, MetaConstants } from '~utils/metaAttribute';
-import { Checkbox } from '~components/Checkbox';
-import { size } from '~tokens/global';
-import type { DropdownProps } from '~components/Dropdown';
-import type { StringChildrenType, TestID } from '~utils/types';
-import { useTheme } from '~components/BladeProvider';
+import type { DataAnalyticsAttribute, StringChildrenType, TestID } from '~utils/types';
 import { assignWithoutSideEffects } from '~utils/assignWithoutSideEffects';
 import { makeSize } from '~utils/makeSize';
 import { makeAccessible } from '~utils/makeAccessible';
@@ -27,11 +23,23 @@ import type { BadgeProps } from '~components/Badge';
 import { Badge } from '~components/Badge';
 import { Box } from '~components/Box';
 import { dropdownComponentIds } from '~components/Dropdown/dropdownComponentIds';
+import { BaseMenuItem, useBaseMenuItem } from '~components/BaseMenu';
+import { Checkbox } from '~components/Checkbox';
+import type { AvatarProps } from '~components/Avatar/types';
+import { Avatar } from '~components/Avatar';
+import { makeAnalyticsAttribute } from '~utils/makeAnalyticsAttribute';
 
 type ActionListItemProps = {
   title: string;
   description?: string;
-  onClick?: (clickProps: { name: string; value?: boolean }) => void;
+  onClick?: (clickProps: {
+    name: string;
+    value?: boolean;
+    event: Platform.Select<{
+      web: React.MouseEvent;
+      native: React.TouchEvent<TouchableOpacity>;
+    }>;
+  }) => void;
   /**
    * value that you get from `onChange` event on SelectInput or in form submissions.
    */
@@ -79,12 +87,8 @@ type ActionListItemProps = {
    * @private
    */
   _index?: number;
-} & TestID;
-
-const ActionListItemContext = React.createContext<{
-  intent?: ActionListItemProps['intent'];
-  isDisabled?: ActionListItemProps['isDisabled'];
-}>({});
+} & TestID &
+  DataAnalyticsAttribute;
 
 const StyledActionListSectionTitle = styled(BaseBox)((props) => ({
   // @TODO: replace this styled-component with new layout box when we have padding shorthand
@@ -108,13 +112,15 @@ type ActionListSectionProps = {
    * @private
    */
   _sectionChildValues?: string[];
-} & TestID;
+} & TestID &
+  DataAnalyticsAttribute;
 const _ActionListSection = ({
   title,
   children,
   testID,
   _hideDivider,
   _sectionChildValues,
+  ...rest
 }: ActionListSectionProps): React.ReactElement => {
   const { hasAutoCompleteInBottomSheetHeader, dropdownTriggerer, filteredValues } = useDropdown();
   const hasAutoComplete =
@@ -145,6 +151,7 @@ const _ActionListSection = ({
         label: title,
       })}
       {...metaAttribute({ name: MetaConstants.ActionListSection, testID })}
+      {...makeAnalyticsAttribute(rest as Record<string, unknown>)}
     >
       {/* We're announcing title as group label so we can hide this */}
       {isSectionVisible ? (
@@ -176,12 +183,12 @@ const ActionListSection = assignWithoutSideEffects(_ActionListSection, {
 
 const _ActionListItemIcon = ({ icon }: { icon: IconComponent }): React.ReactElement => {
   const Icon = icon;
-  const { intent, isDisabled } = React.useContext(ActionListItemContext);
+  const { color, isDisabled } = useBaseMenuItem();
   const iconState = isDisabled ? 'disabled' : 'muted';
   return (
     <Icon
       color={
-        intent === 'negative'
+        color === 'negative'
           ? 'feedback.icon.negative.intense'
           : `interactive.icon.gray.${iconState}`
       }
@@ -210,6 +217,14 @@ const ActionListItemBadgeGroup = assignWithoutSideEffects(_ActionListItemBadgeGr
   componentId: componentIds.ActionListItemBadgeGroup,
 });
 
+const _ActionListItemAvatar = (avatarProps: Omit<AvatarProps, 'size' | ''>): React.ReactElement => {
+  return <Avatar size="xsmall" {...avatarProps} />;
+};
+
+const ActionListItemAvatar = assignWithoutSideEffects(_ActionListItemAvatar, {
+  componentId: componentIds.ActionListItemAvatar,
+});
+
 const _ActionListItemBadge = (props: BadgeProps): React.ReactElement => {
   return <Badge size="medium" marginLeft="spacing.3" {...props} />;
 };
@@ -223,7 +238,7 @@ const _ActionListItemText = ({
 }: {
   children: StringChildrenType;
 }): React.ReactElement => {
-  const { isDisabled } = React.useContext(ActionListItemContext);
+  const { isDisabled } = useBaseMenuItem();
 
   return (
     <Text variant="caption" color={getNormalTextColor(isDisabled, { isMuted: true })}>
@@ -240,7 +255,7 @@ type ClickHandlerType = (e: React.MouseEvent<HTMLButtonElement>) => void;
 
 const makeActionListItemClickable = (
   clickHandler: ClickHandlerType,
-): { onPress?: StyledActionListItemProps['onPress']; onClick?: ClickHandlerType } => {
+): { onPress?: (e: React.TouchEvent<TouchableOpacity>) => void; onClick?: ClickHandlerType } => {
   if (isReactNative()) {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment, @typescript-eslint/prefer-ts-expect-error
     // @ts-ignore: ignoring ReactNative press type for the peace of mind
@@ -251,88 +266,6 @@ const makeActionListItemClickable = (
     onClick: clickHandler,
   };
 };
-
-const _ActionListItemBody = ({
-  selectionType,
-  intent,
-  description,
-  isDisabled,
-  leading,
-  trailing,
-  title,
-  titleSuffix,
-  isSelected,
-}: Pick<
-  ActionListItemProps,
-  'intent' | 'isDisabled' | 'description' | 'trailing' | 'leading' | 'title' | 'titleSuffix'
-> & {
-  selectionType: DropdownProps['selectionType'];
-  isSelected?: boolean;
-}): React.ReactElement => {
-  return (
-    <>
-      <BaseBox
-        display="flex"
-        justifyContent="center"
-        flexDirection="row"
-        alignItems="center"
-        maxHeight={isReactNative() ? undefined : makeSize(size[20])}
-      >
-        <BaseBox display="flex" justifyContent="center" alignItems="center">
-          {selectionType === 'multiple' ? (
-            // Adding aria-hidden because the listbox item in multiselect in itself explains the behaviour so announcing checkbox is unneccesary and just a nice UI tweak for us
-            <BaseBox
-              pointerEvents="none"
-              paddingRight="spacing.2"
-              {...makeAccessible({
-                hidden: true,
-              })}
-            >
-              <Checkbox isChecked={isSelected} tabIndex={-1} isDisabled={isDisabled}>
-                {/* 
-                      Checkbox requires children. Didn't want to make it optional because its helpful for consumers
-                      But for this case in particular, we just want to use Text separately so that we can control spacing and color and keep it consistent with non-multiselect dropdowns
-                    */}
-                {null}
-              </Checkbox>
-            </BaseBox>
-          ) : (
-            leading
-          )}
-        </BaseBox>
-        <BaseBox
-          paddingLeft={selectionType === 'multiple' || !leading ? 'spacing.0' : 'spacing.3'}
-          paddingRight="spacing.3"
-          display="flex"
-          alignItems="center"
-          flexDirection="row"
-        >
-          <Text
-            truncateAfterLines={1}
-            color={
-              intent === 'negative'
-                ? 'feedback.text.negative.intense'
-                : getNormalTextColor(isDisabled)
-            }
-          >
-            {title}
-          </Text>
-          {titleSuffix}
-        </BaseBox>
-        <BaseBox marginLeft="auto">{trailing}</BaseBox>
-      </BaseBox>
-      <BaseBox paddingLeft={leading || selectionType === 'multiple' ? 'spacing.7' : undefined}>
-        {description ? (
-          <Text color={getNormalTextColor(isDisabled, { isMuted: true })} size="small">
-            {description}
-          </Text>
-        ) : null}
-      </BaseBox>
-    </>
-  );
-};
-
-const ActionListItemBody = React.memo(_ActionListItemBody);
 
 /**
  * ### ActionListItem
@@ -366,8 +299,6 @@ const _ActionListItem = (props: ActionListItemProps): React.ReactElement => {
     hasAutoCompleteInBottomSheetHeader,
   } = useDropdown();
 
-  const { platform } = useTheme();
-  const isMobile = platform === 'onMobile';
   const hasAutoComplete =
     hasAutoCompleteInBottomSheetHeader ||
     dropdownTriggerer === dropdownComponentIds.triggers.AutoComplete;
@@ -417,62 +348,68 @@ const _ActionListItem = (props: ActionListItemProps): React.ReactElement => {
     }
   }, [props.intent, dropdownTriggerer]);
 
+  const isVisible = hasAutoComplete && filteredValues ? filteredValues.includes(props.value) : true;
+
   return (
-    <ActionListItemContext.Provider value={{ intent: props.intent, isDisabled: props.isDisabled }}>
-      <StyledActionListItem
-        isVisible={hasAutoComplete && filteredValues ? filteredValues.includes(props.value) : true}
-        as={!isReactNative() ? renderOnWebAs : undefined}
-        id={`${dropdownBaseId}-${props._index}`}
-        type="button"
-        tabIndex={-1}
-        href={props.href}
-        target={props.target}
-        className={activeIndex === props._index ? 'active-focus' : ''}
-        {...makeAccessible({
-          selected: isSelected,
-          current: isRoleMenu(dropdownTriggerer) ? isSelected : undefined,
-          role: getActionListItemRole(dropdownTriggerer, props.href),
-          disabled: props.isDisabled,
-        })}
-        {...makeActionListItemClickable((e: React.MouseEvent<HTMLButtonElement>): void => {
-          if (typeof props._index === 'number') {
-            onOptionClick(e, props._index);
-            props.onClick?.({ name: props.value, value: isSelected });
-          }
-        })}
-        {...metaAttribute({ name: MetaConstants.ActionListItem, testID: props.testID })}
-        onMouseDown={() => {
-          // We want to keep focus on Dropdown's trigger while option is being clicked
-          // So We set this flag that ignores the blur animation to avoid the flicker between focus out + focus in
-          setShouldIgnoreBlurAnimation(true);
-        }}
-        onMouseUp={() => {
-          // (Contd from above comment...) We set this flag back to false since blur of SelectInput is done calling by this time
-          setShouldIgnoreBlurAnimation(false);
-        }}
-        data-value={props.value}
-        data-index={props._index}
-        // Custom props for changes in styles
-        selectionType={selectionType}
-        hasDescription={Boolean(props.description)}
-        intent={props.intent}
-        isSelected={isSelected}
-        isKeydownPressed={isKeydownPressed}
-        isMobile={isMobile}
-      >
-        <ActionListItemBody
-          selectionType={selectionType}
-          intent={props.intent}
-          description={props.description}
-          isDisabled={props.isDisabled}
-          leading={props.leading}
-          trailing={props.trailing}
-          title={props.title}
-          titleSuffix={props.titleSuffix}
-          isSelected={isSelected}
-        />
-      </StyledActionListItem>
-    </ActionListItemContext.Provider>
+    <BaseMenuItem
+      isVisible={isVisible}
+      as={!isReactNative() ? renderOnWebAs : undefined}
+      id={`${dropdownBaseId}-${props._index}`}
+      tabIndex={-1}
+      title={props.title}
+      description={props.description}
+      leading={
+        selectionType === 'multiple' ? (
+          <BaseBox
+            pointerEvents="none"
+            // Adding aria-hidden because the listbox item in multiselect in itself explains the behaviour so announcing checkbox is unneccesary and just a nice UI tweak for us
+            {...makeAccessible({
+              hidden: true,
+            })}
+          >
+            <Checkbox isChecked={isSelected} tabIndex={-1} isDisabled={props.isDisabled}>
+              {/* 
+      Checkbox requires children. Didn't want to make it optional because its helpful for consumers
+      But for this case in particular, we just want to use Text separately so that we can control spacing and color and keep it consistent with non-multiselect dropdowns
+    */}
+              {null}
+            </Checkbox>
+          </BaseBox>
+        ) : (
+          props.leading
+        )
+      }
+      trailing={props.trailing}
+      titleSuffix={props.titleSuffix}
+      href={props.href}
+      target={props.target}
+      className={activeIndex === props._index ? 'active-focus' : ''}
+      isSelected={isSelected}
+      isDisabled={props.isDisabled}
+      role={getActionListItemRole(dropdownTriggerer, props.href)}
+      {...makeActionListItemClickable((e: React.MouseEvent<HTMLButtonElement>): void => {
+        if (typeof props._index === 'number') {
+          onOptionClick(e, props._index);
+          props.onClick?.({ name: props.value, value: isSelected, event: castWebType(e) });
+        }
+      })}
+      {...makeAnalyticsAttribute({ ...props })}
+      {...metaAttribute({ name: MetaConstants.ActionListItem, testID: props.testID })}
+      onMouseDown={() => {
+        // We want to keep focus on Dropdown's trigger while option is being clicked
+        // So We set this flag that ignores the blur animation to avoid the flicker between focus out + focus in
+        setShouldIgnoreBlurAnimation(true);
+      }}
+      onMouseUp={() => {
+        // (Contd from above comment...) We set this flag back to false since blur of SelectInput is done calling by this time
+        setShouldIgnoreBlurAnimation(false);
+      }}
+      data-value={props.value}
+      data-index={props._index}
+      selectionType={selectionType}
+      color={props.intent}
+      isKeydownPressed={isKeydownPressed}
+    />
   );
 };
 
@@ -486,6 +423,7 @@ export {
   ActionListItem,
   ActionListItemIcon,
   ActionListItemText,
+  ActionListItemAvatar,
   ActionListItemBadge,
   ActionListItemBadgeGroup,
   ActionListSection,

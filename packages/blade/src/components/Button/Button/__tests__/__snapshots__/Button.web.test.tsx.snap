@@ -33,8 +33,8 @@ exports[`<Button /> should render button with default properties 1`] = `
   transition-property: background-color,border-color,box-shadow;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   position: relative;
 }
 
@@ -58,31 +58,13 @@ exports[`<Button /> should render button with default properties 1`] = `
 .c0.c0.c0.c0.c0 * {
   -webkit-transition-property: color,fill,opacity;
   transition-property: color,fill,opacity;
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
 }
 
-.c3.c3.c3.c3.c3 {
-  color: hsla(0,0%,100%,1);
-  font-family: "Inter","Inter Fallback Arial",Arial;
-  font-size: 0.875rem;
-  font-weight: 500;
-  font-style: normal;
-  -webkit-text-decoration-line: none;
-  text-decoration-line: none;
-  line-height: 1.25rem;
-  -webkit-letter-spacing: 0px;
-  -moz-letter-spacing: 0px;
-  -ms-letter-spacing: 0px;
-  letter-spacing: 0px;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-}
-
-.c1.c1.c1.c1.c1 {
+.c2.c2.c2.c2.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -104,7 +86,35 @@ exports[`<Button /> should render button with default properties 1`] = `
   z-index: 1;
 }
 
-.c2.c2.c2.c2.c2 {
+.c1.c1.c1.c1.c1 {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition-duration: cubic-bezier(0.3,0,0.2,1);
+  transition-duration: cubic-bezier(0.3,0,0.2,1);
+  -webkit-transition-timing-function: 160px;
+  transition-timing-function: 160px;
+}
+
+.c4.c4.c4.c4.c4 {
+  color: hsla(0,0%,100%,1);
+  font-family: "Inter","Inter Fallback Arial",Arial;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-style: normal;
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+  line-height: 1.25rem;
+  -webkit-letter-spacing: 0px;
+  -moz-letter-spacing: 0px;
+  -ms-letter-spacing: 0px;
+  letter-spacing: 0px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.c3.c3.c3.c3.c3 {
   opacity: 1;
 }
 
@@ -116,14 +126,19 @@ exports[`<Button /> should render button with default properties 1`] = `
     type="button"
   >
     <div
-      class="c1 c2"
+      class=" c1"
       data-blade-component="base-box"
     >
       <div
-        class="c3"
-        data-blade-component="base-text"
+        class="c2 c3"
+        data-blade-component="base-box"
       >
-        Pay Now
+        <div
+          class="c4"
+          data-blade-component="base-text"
+        >
+          Pay Now
+        </div>
       </div>
     </div>
   </button>
@@ -163,8 +178,8 @@ exports[`<Button /> should render button with full width 1`] = `
   transition-property: background-color,border-color,box-shadow;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   position: relative;
 }
 
@@ -188,31 +203,13 @@ exports[`<Button /> should render button with full width 1`] = `
 .c0.c0.c0.c0.c0 * {
   -webkit-transition-property: color,fill,opacity;
   transition-property: color,fill,opacity;
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
 }
 
-.c3.c3.c3.c3.c3 {
-  color: hsla(0,0%,100%,1);
-  font-family: "Inter","Inter Fallback Arial",Arial;
-  font-size: 0.875rem;
-  font-weight: 500;
-  font-style: normal;
-  -webkit-text-decoration-line: none;
-  text-decoration-line: none;
-  line-height: 1.25rem;
-  -webkit-letter-spacing: 0px;
-  -moz-letter-spacing: 0px;
-  -ms-letter-spacing: 0px;
-  letter-spacing: 0px;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-}
-
-.c1.c1.c1.c1.c1 {
+.c2.c2.c2.c2.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -234,7 +231,35 @@ exports[`<Button /> should render button with full width 1`] = `
   z-index: 1;
 }
 
-.c2.c2.c2.c2.c2 {
+.c1.c1.c1.c1.c1 {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition-duration: cubic-bezier(0.3,0,0.2,1);
+  transition-duration: cubic-bezier(0.3,0,0.2,1);
+  -webkit-transition-timing-function: 160px;
+  transition-timing-function: 160px;
+}
+
+.c4.c4.c4.c4.c4 {
+  color: hsla(0,0%,100%,1);
+  font-family: "Inter","Inter Fallback Arial",Arial;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-style: normal;
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+  line-height: 1.25rem;
+  -webkit-letter-spacing: 0px;
+  -moz-letter-spacing: 0px;
+  -ms-letter-spacing: 0px;
+  letter-spacing: 0px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.c3.c3.c3.c3.c3 {
   opacity: 1;
 }
 
@@ -246,14 +271,19 @@ exports[`<Button /> should render button with full width 1`] = `
     type="button"
   >
     <div
-      class="c1 c2"
+      class=" c1"
       data-blade-component="base-box"
     >
       <div
-        class="c3"
-        data-blade-component="base-text"
+        class="c2 c3"
+        data-blade-component="base-box"
       >
-        Pay Now
+        <div
+          class="c4"
+          data-blade-component="base-text"
+        >
+          Pay Now
+        </div>
       </div>
     </div>
   </button>
@@ -293,8 +323,8 @@ exports[`<Button /> should render button with icon with default iconPosition 1`]
   transition-property: background-color,border-color,box-shadow;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   position: relative;
 }
 
@@ -318,31 +348,13 @@ exports[`<Button /> should render button with icon with default iconPosition 1`]
 .c0.c0.c0.c0.c0 * {
   -webkit-transition-property: color,fill,opacity;
   transition-property: color,fill,opacity;
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
 }
 
-.c4.c4.c4.c4.c4 {
-  color: hsla(0,0%,100%,1);
-  font-family: "Inter","Inter Fallback Arial",Arial;
-  font-size: 0.875rem;
-  font-weight: 500;
-  font-style: normal;
-  -webkit-text-decoration-line: none;
-  text-decoration-line: none;
-  line-height: 1.25rem;
-  -webkit-letter-spacing: 0px;
-  -moz-letter-spacing: 0px;
-  -ms-letter-spacing: 0px;
-  letter-spacing: 0px;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-}
-
-.c1.c1.c1.c1.c1 {
+.c2.c2.c2.c2.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -364,7 +376,7 @@ exports[`<Button /> should render button with icon with default iconPosition 1`]
   z-index: 1;
 }
 
-.c3.c3.c3.c3.c3 {
+.c4.c4.c4.c4.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -377,10 +389,38 @@ exports[`<Button /> should render button with icon with default iconPosition 1`]
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding-right: 4px;
+  padding-right: 8px;
 }
 
-.c2.c2.c2.c2.c2 {
+.c1.c1.c1.c1.c1 {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition-duration: cubic-bezier(0.3,0,0.2,1);
+  transition-duration: cubic-bezier(0.3,0,0.2,1);
+  -webkit-transition-timing-function: 160px;
+  transition-timing-function: 160px;
+}
+
+.c5.c5.c5.c5.c5 {
+  color: hsla(0,0%,100%,1);
+  font-family: "Inter","Inter Fallback Arial",Arial;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-style: normal;
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+  line-height: 1.25rem;
+  -webkit-letter-spacing: 0px;
+  -moz-letter-spacing: 0px;
+  -ms-letter-spacing: 0px;
+  letter-spacing: 0px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.c3.c3.c3.c3.c3 {
   opacity: 1;
 }
 
@@ -392,36 +432,51 @@ exports[`<Button /> should render button with icon with default iconPosition 1`]
     type="button"
   >
     <div
-      class="c1 c2"
+      class=" c1"
       data-blade-component="base-box"
     >
       <div
-        class="c3"
+        class="c2 c3"
         data-blade-component="base-box"
       >
-        <svg
-          aria-hidden="true"
-          class="Svgweb__StyledSvg-vcmjs8-0"
-          data-blade-component="icon"
-          fill="none"
-          height="16px"
-          viewBox="0 0 24 24"
-          width="16px"
+        <div
+          class="c4"
+          data-blade-component="base-box"
         >
-          <path
-            clip-rule="evenodd"
-            d="M3 3C1.34315 3 0 4.34315 0 6V18C0 19.6569 1.34314 21 3 21H21C22.6569 21 24 19.6569 24 18V6C24 4.34315 22.6569 3 21 3H3ZM22 9V6C22 5.44771 21.5523 5 21 5H3C2.44772 5 2 5.44772 2 6V9H22ZM2 11H22V18C22 18.5523 21.5523 19 21 19H3C2.44772 19 2 18.5523 2 18V11Z"
-            data-blade-component="svg-path"
-            fill="hsla(0, 0%, 100%, 1)"
-            fill-rule="evenodd"
-          />
-        </svg>
-      </div>
-      <div
-        class="c4"
-        data-blade-component="base-text"
-      >
-        Pay Now
+          <svg
+            aria-hidden="true"
+            class="Svgweb__StyledSvg-vcmjs8-0"
+            data-blade-component="icon"
+            fill="none"
+            height="16px"
+            viewBox="0 0 24 24"
+            width="16px"
+          >
+            <path
+              d="M15.875 14.375C15.3227 14.375 14.875 14.8227 14.875 15.375C14.875 15.9273 15.3227 16.375 15.875 16.375H18.875C19.4273 16.375 19.875 15.9273 19.875 15.375C19.875 14.8227 19.4273 14.375 18.875 14.375H15.875Z"
+              data-blade-component="svg-path"
+              fill="hsla(0, 0%, 100%, 1)"
+            />
+            <path
+              d="M10.375 15.375C10.375 14.8227 10.8227 14.375 11.375 14.375H12.5C13.0523 14.375 13.5 14.8227 13.5 15.375C13.5 15.9273 13.0523 16.375 12.5 16.375H11.375C10.8227 16.375 10.375 15.9273 10.375 15.375Z"
+              data-blade-component="svg-path"
+              fill="hsla(0, 0%, 100%, 1)"
+            />
+            <path
+              clip-rule="evenodd"
+              d="M1.75 6C1.75 5.0335 2.5335 4.25 3.5 4.25H21.5C22.4665 4.25 23.25 5.0335 23.25 6V18C23.25 18.9665 22.4665 19.75 21.5 19.75H3.5C2.5335 19.75 1.75 18.9665 1.75 18V6ZM3.75 8.375V6.25H21.25V8.375H3.75ZM21.25 10.375V17.75H3.75V10.375H21.25Z"
+              data-blade-component="svg-path"
+              fill="hsla(0, 0%, 100%, 1)"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </div>
+        <div
+          class="c5"
+          data-blade-component="base-text"
+        >
+          Pay Now
+        </div>
       </div>
     </div>
   </button>
@@ -461,8 +516,8 @@ exports[`<Button /> should render button with icon with right iconPosition 1`] =
   transition-property: background-color,border-color,box-shadow;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   position: relative;
 }
 
@@ -486,31 +541,13 @@ exports[`<Button /> should render button with icon with right iconPosition 1`] =
 .c0.c0.c0.c0.c0 * {
   -webkit-transition-property: color,fill,opacity;
   transition-property: color,fill,opacity;
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
 }
 
-.c3.c3.c3.c3.c3 {
-  color: hsla(0,0%,100%,1);
-  font-family: "Inter","Inter Fallback Arial",Arial;
-  font-size: 0.875rem;
-  font-weight: 500;
-  font-style: normal;
-  -webkit-text-decoration-line: none;
-  text-decoration-line: none;
-  line-height: 1.25rem;
-  -webkit-letter-spacing: 0px;
-  -moz-letter-spacing: 0px;
-  -ms-letter-spacing: 0px;
-  letter-spacing: 0px;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-}
-
-.c1.c1.c1.c1.c1 {
+.c2.c2.c2.c2.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -532,7 +569,7 @@ exports[`<Button /> should render button with icon with right iconPosition 1`] =
   z-index: 1;
 }
 
-.c4.c4.c4.c4.c4 {
+.c5.c5.c5.c5.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -545,10 +582,38 @@ exports[`<Button /> should render button with icon with right iconPosition 1`] =
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding-left: 4px;
+  padding-left: 8px;
 }
 
-.c2.c2.c2.c2.c2 {
+.c1.c1.c1.c1.c1 {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition-duration: cubic-bezier(0.3,0,0.2,1);
+  transition-duration: cubic-bezier(0.3,0,0.2,1);
+  -webkit-transition-timing-function: 160px;
+  transition-timing-function: 160px;
+}
+
+.c4.c4.c4.c4.c4 {
+  color: hsla(0,0%,100%,1);
+  font-family: "Inter","Inter Fallback Arial",Arial;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-style: normal;
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+  line-height: 1.25rem;
+  -webkit-letter-spacing: 0px;
+  -moz-letter-spacing: 0px;
+  -ms-letter-spacing: 0px;
+  letter-spacing: 0px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.c3.c3.c3.c3.c3 {
   opacity: 1;
 }
 
@@ -560,36 +625,51 @@ exports[`<Button /> should render button with icon with right iconPosition 1`] =
     type="button"
   >
     <div
-      class="c1 c2"
+      class=" c1"
       data-blade-component="base-box"
     >
       <div
-        class="c3"
-        data-blade-component="base-text"
-      >
-        Pay Now
-      </div>
-      <div
-        class="c4"
+        class="c2 c3"
         data-blade-component="base-box"
       >
-        <svg
-          aria-hidden="true"
-          class="Svgweb__StyledSvg-vcmjs8-0"
-          data-blade-component="icon"
-          fill="none"
-          height="16px"
-          viewBox="0 0 24 24"
-          width="16px"
+        <div
+          class="c4"
+          data-blade-component="base-text"
         >
-          <path
-            clip-rule="evenodd"
-            d="M3 3C1.34315 3 0 4.34315 0 6V18C0 19.6569 1.34314 21 3 21H21C22.6569 21 24 19.6569 24 18V6C24 4.34315 22.6569 3 21 3H3ZM22 9V6C22 5.44771 21.5523 5 21 5H3C2.44772 5 2 5.44772 2 6V9H22ZM2 11H22V18C22 18.5523 21.5523 19 21 19H3C2.44772 19 2 18.5523 2 18V11Z"
-            data-blade-component="svg-path"
-            fill="hsla(0, 0%, 100%, 1)"
-            fill-rule="evenodd"
-          />
-        </svg>
+          Pay Now
+        </div>
+        <div
+          class="c5"
+          data-blade-component="base-box"
+        >
+          <svg
+            aria-hidden="true"
+            class="Svgweb__StyledSvg-vcmjs8-0"
+            data-blade-component="icon"
+            fill="none"
+            height="16px"
+            viewBox="0 0 24 24"
+            width="16px"
+          >
+            <path
+              d="M15.875 14.375C15.3227 14.375 14.875 14.8227 14.875 15.375C14.875 15.9273 15.3227 16.375 15.875 16.375H18.875C19.4273 16.375 19.875 15.9273 19.875 15.375C19.875 14.8227 19.4273 14.375 18.875 14.375H15.875Z"
+              data-blade-component="svg-path"
+              fill="hsla(0, 0%, 100%, 1)"
+            />
+            <path
+              d="M10.375 15.375C10.375 14.8227 10.8227 14.375 11.375 14.375H12.5C13.0523 14.375 13.5 14.8227 13.5 15.375C13.5 15.9273 13.0523 16.375 12.5 16.375H11.375C10.8227 16.375 10.375 15.9273 10.375 15.375Z"
+              data-blade-component="svg-path"
+              fill="hsla(0, 0%, 100%, 1)"
+            />
+            <path
+              clip-rule="evenodd"
+              d="M1.75 6C1.75 5.0335 2.5335 4.25 3.5 4.25H21.5C22.4665 4.25 23.25 5.0335 23.25 6V18C23.25 18.9665 22.4665 19.75 21.5 19.75H3.5C2.5335 19.75 1.75 18.9665 1.75 18V6ZM3.75 8.375V6.25H21.25V8.375H3.75ZM21.25 10.375V17.75H3.75V10.375H21.25Z"
+              data-blade-component="svg-path"
+              fill="hsla(0, 0%, 100%, 1)"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </div>
       </div>
     </div>
   </button>
@@ -629,8 +709,8 @@ exports[`<Button /> should render disabled button 1`] = `
   transition-property: background-color,border-color,box-shadow;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   position: relative;
 }
 
@@ -654,31 +734,13 @@ exports[`<Button /> should render disabled button 1`] = `
 .c0.c0.c0.c0.c0 * {
   -webkit-transition-property: color,fill,opacity;
   transition-property: color,fill,opacity;
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
 }
 
-.c3.c3.c3.c3.c3 {
-  color: hsla(227,100%,59%,0.18);
-  font-family: "Inter","Inter Fallback Arial",Arial;
-  font-size: 0.875rem;
-  font-weight: 500;
-  font-style: normal;
-  -webkit-text-decoration-line: none;
-  text-decoration-line: none;
-  line-height: 1.25rem;
-  -webkit-letter-spacing: 0px;
-  -moz-letter-spacing: 0px;
-  -ms-letter-spacing: 0px;
-  letter-spacing: 0px;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-}
-
-.c1.c1.c1.c1.c1 {
+.c2.c2.c2.c2.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -700,7 +762,35 @@ exports[`<Button /> should render disabled button 1`] = `
   z-index: 1;
 }
 
-.c2.c2.c2.c2.c2 {
+.c1.c1.c1.c1.c1 {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition-duration: cubic-bezier(0.3,0,0.2,1);
+  transition-duration: cubic-bezier(0.3,0,0.2,1);
+  -webkit-transition-timing-function: 160px;
+  transition-timing-function: 160px;
+}
+
+.c4.c4.c4.c4.c4 {
+  color: hsla(227,100%,59%,0.18);
+  font-family: "Inter","Inter Fallback Arial",Arial;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-style: normal;
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+  line-height: 1.25rem;
+  -webkit-letter-spacing: 0px;
+  -moz-letter-spacing: 0px;
+  -ms-letter-spacing: 0px;
+  letter-spacing: 0px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.c3.c3.c3.c3.c3 {
   opacity: 1;
 }
 
@@ -713,14 +803,19 @@ exports[`<Button /> should render disabled button 1`] = `
     type="button"
   >
     <div
-      class="c1 c2"
+      class=" c1"
       data-blade-component="base-box"
     >
       <div
-        class="c3"
-        data-blade-component="base-text"
+        class="c2 c3"
+        data-blade-component="base-box"
       >
-        Pay Now
+        <div
+          class="c4"
+          data-blade-component="base-text"
+        >
+          Pay Now
+        </div>
       </div>
     </div>
   </button>
@@ -760,8 +855,8 @@ exports[`<Button /> should render disabled negative color primary button 1`] = `
   transition-property: background-color,border-color,box-shadow;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   position: relative;
 }
 
@@ -785,31 +880,13 @@ exports[`<Button /> should render disabled negative color primary button 1`] = `
 .c0.c0.c0.c0.c0 * {
   -webkit-transition-property: color,fill,opacity;
   transition-property: color,fill,opacity;
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
 }
 
-.c3.c3.c3.c3.c3 {
-  color: hsla(4,74%,49%,0.32);
-  font-family: "Inter","Inter Fallback Arial",Arial;
-  font-size: 0.875rem;
-  font-weight: 500;
-  font-style: normal;
-  -webkit-text-decoration-line: none;
-  text-decoration-line: none;
-  line-height: 1.25rem;
-  -webkit-letter-spacing: 0px;
-  -moz-letter-spacing: 0px;
-  -ms-letter-spacing: 0px;
-  letter-spacing: 0px;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-}
-
-.c1.c1.c1.c1.c1 {
+.c2.c2.c2.c2.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -831,7 +908,35 @@ exports[`<Button /> should render disabled negative color primary button 1`] = `
   z-index: 1;
 }
 
-.c2.c2.c2.c2.c2 {
+.c1.c1.c1.c1.c1 {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition-duration: cubic-bezier(0.3,0,0.2,1);
+  transition-duration: cubic-bezier(0.3,0,0.2,1);
+  -webkit-transition-timing-function: 160px;
+  transition-timing-function: 160px;
+}
+
+.c4.c4.c4.c4.c4 {
+  color: hsla(4,74%,49%,0.32);
+  font-family: "Inter","Inter Fallback Arial",Arial;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-style: normal;
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+  line-height: 1.25rem;
+  -webkit-letter-spacing: 0px;
+  -moz-letter-spacing: 0px;
+  -ms-letter-spacing: 0px;
+  letter-spacing: 0px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.c3.c3.c3.c3.c3 {
   opacity: 1;
 }
 
@@ -844,14 +949,19 @@ exports[`<Button /> should render disabled negative color primary button 1`] = `
     type="button"
   >
     <div
-      class="c1 c2"
+      class=" c1"
       data-blade-component="base-box"
     >
       <div
-        class="c3"
-        data-blade-component="base-text"
+        class="c2 c3"
+        data-blade-component="base-box"
       >
-        Pay Now
+        <div
+          class="c4"
+          data-blade-component="base-text"
+        >
+          Pay Now
+        </div>
       </div>
     </div>
   </button>
@@ -891,8 +1001,8 @@ exports[`<Button /> should render disabled negative color secondary button 1`] =
   transition-property: background-color,border-color,box-shadow;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   position: relative;
 }
 
@@ -916,31 +1026,13 @@ exports[`<Button /> should render disabled negative color secondary button 1`] =
 .c0.c0.c0.c0.c0 * {
   -webkit-transition-property: color,fill,opacity;
   transition-property: color,fill,opacity;
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
 }
 
-.c3.c3.c3.c3.c3 {
-  color: hsla(4,74%,49%,0.32);
-  font-family: "Inter","Inter Fallback Arial",Arial;
-  font-size: 0.875rem;
-  font-weight: 500;
-  font-style: normal;
-  -webkit-text-decoration-line: none;
-  text-decoration-line: none;
-  line-height: 1.25rem;
-  -webkit-letter-spacing: 0px;
-  -moz-letter-spacing: 0px;
-  -ms-letter-spacing: 0px;
-  letter-spacing: 0px;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-}
-
-.c1.c1.c1.c1.c1 {
+.c2.c2.c2.c2.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -962,7 +1054,35 @@ exports[`<Button /> should render disabled negative color secondary button 1`] =
   z-index: 1;
 }
 
-.c2.c2.c2.c2.c2 {
+.c1.c1.c1.c1.c1 {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition-duration: cubic-bezier(0.3,0,0.2,1);
+  transition-duration: cubic-bezier(0.3,0,0.2,1);
+  -webkit-transition-timing-function: 160px;
+  transition-timing-function: 160px;
+}
+
+.c4.c4.c4.c4.c4 {
+  color: hsla(4,74%,49%,0.32);
+  font-family: "Inter","Inter Fallback Arial",Arial;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-style: normal;
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+  line-height: 1.25rem;
+  -webkit-letter-spacing: 0px;
+  -moz-letter-spacing: 0px;
+  -ms-letter-spacing: 0px;
+  letter-spacing: 0px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.c3.c3.c3.c3.c3 {
   opacity: 1;
 }
 
@@ -975,14 +1095,19 @@ exports[`<Button /> should render disabled negative color secondary button 1`] =
     type="button"
   >
     <div
-      class="c1 c2"
+      class=" c1"
       data-blade-component="base-box"
     >
       <div
-        class="c3"
-        data-blade-component="base-text"
+        class="c2 c3"
+        data-blade-component="base-box"
       >
-        Pay Now
+        <div
+          class="c4"
+          data-blade-component="base-text"
+        >
+          Pay Now
+        </div>
       </div>
     </div>
   </button>
@@ -1022,8 +1147,8 @@ exports[`<Button /> should render disabled positive color primary button 1`] = `
   transition-property: background-color,border-color,box-shadow;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   position: relative;
 }
 
@@ -1047,31 +1172,13 @@ exports[`<Button /> should render disabled positive color primary button 1`] = `
 .c0.c0.c0.c0.c0 * {
   -webkit-transition-property: color,fill,opacity;
   transition-property: color,fill,opacity;
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
 }
 
-.c3.c3.c3.c3.c3 {
-  color: hsla(150,100%,32%,0.32);
-  font-family: "Inter","Inter Fallback Arial",Arial;
-  font-size: 0.875rem;
-  font-weight: 500;
-  font-style: normal;
-  -webkit-text-decoration-line: none;
-  text-decoration-line: none;
-  line-height: 1.25rem;
-  -webkit-letter-spacing: 0px;
-  -moz-letter-spacing: 0px;
-  -ms-letter-spacing: 0px;
-  letter-spacing: 0px;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-}
-
-.c1.c1.c1.c1.c1 {
+.c2.c2.c2.c2.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1093,7 +1200,35 @@ exports[`<Button /> should render disabled positive color primary button 1`] = `
   z-index: 1;
 }
 
-.c2.c2.c2.c2.c2 {
+.c1.c1.c1.c1.c1 {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition-duration: cubic-bezier(0.3,0,0.2,1);
+  transition-duration: cubic-bezier(0.3,0,0.2,1);
+  -webkit-transition-timing-function: 160px;
+  transition-timing-function: 160px;
+}
+
+.c4.c4.c4.c4.c4 {
+  color: hsla(150,100%,32%,0.32);
+  font-family: "Inter","Inter Fallback Arial",Arial;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-style: normal;
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+  line-height: 1.25rem;
+  -webkit-letter-spacing: 0px;
+  -moz-letter-spacing: 0px;
+  -ms-letter-spacing: 0px;
+  letter-spacing: 0px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.c3.c3.c3.c3.c3 {
   opacity: 1;
 }
 
@@ -1106,14 +1241,19 @@ exports[`<Button /> should render disabled positive color primary button 1`] = `
     type="button"
   >
     <div
-      class="c1 c2"
+      class=" c1"
       data-blade-component="base-box"
     >
       <div
-        class="c3"
-        data-blade-component="base-text"
+        class="c2 c3"
+        data-blade-component="base-box"
       >
-        Pay Now
+        <div
+          class="c4"
+          data-blade-component="base-text"
+        >
+          Pay Now
+        </div>
       </div>
     </div>
   </button>
@@ -1153,8 +1293,8 @@ exports[`<Button /> should render disabled positive color secondary button 1`] =
   transition-property: background-color,border-color,box-shadow;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   position: relative;
 }
 
@@ -1178,31 +1318,13 @@ exports[`<Button /> should render disabled positive color secondary button 1`] =
 .c0.c0.c0.c0.c0 * {
   -webkit-transition-property: color,fill,opacity;
   transition-property: color,fill,opacity;
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
 }
 
-.c3.c3.c3.c3.c3 {
-  color: hsla(150,100%,32%,0.32);
-  font-family: "Inter","Inter Fallback Arial",Arial;
-  font-size: 0.875rem;
-  font-weight: 500;
-  font-style: normal;
-  -webkit-text-decoration-line: none;
-  text-decoration-line: none;
-  line-height: 1.25rem;
-  -webkit-letter-spacing: 0px;
-  -moz-letter-spacing: 0px;
-  -ms-letter-spacing: 0px;
-  letter-spacing: 0px;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-}
-
-.c1.c1.c1.c1.c1 {
+.c2.c2.c2.c2.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1224,7 +1346,35 @@ exports[`<Button /> should render disabled positive color secondary button 1`] =
   z-index: 1;
 }
 
-.c2.c2.c2.c2.c2 {
+.c1.c1.c1.c1.c1 {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition-duration: cubic-bezier(0.3,0,0.2,1);
+  transition-duration: cubic-bezier(0.3,0,0.2,1);
+  -webkit-transition-timing-function: 160px;
+  transition-timing-function: 160px;
+}
+
+.c4.c4.c4.c4.c4 {
+  color: hsla(150,100%,32%,0.32);
+  font-family: "Inter","Inter Fallback Arial",Arial;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-style: normal;
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+  line-height: 1.25rem;
+  -webkit-letter-spacing: 0px;
+  -moz-letter-spacing: 0px;
+  -ms-letter-spacing: 0px;
+  letter-spacing: 0px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.c3.c3.c3.c3.c3 {
   opacity: 1;
 }
 
@@ -1237,14 +1387,19 @@ exports[`<Button /> should render disabled positive color secondary button 1`] =
     type="button"
   >
     <div
-      class="c1 c2"
+      class=" c1"
       data-blade-component="base-box"
     >
       <div
-        class="c3"
-        data-blade-component="base-text"
+        class="c2 c3"
+        data-blade-component="base-box"
       >
-        Pay Now
+        <div
+          class="c4"
+          data-blade-component="base-text"
+        >
+          Pay Now
+        </div>
       </div>
     </div>
   </button>
@@ -1284,8 +1439,8 @@ exports[`<Button /> should render disabled primary color primary button 1`] = `
   transition-property: background-color,border-color,box-shadow;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   position: relative;
 }
 
@@ -1309,31 +1464,13 @@ exports[`<Button /> should render disabled primary color primary button 1`] = `
 .c0.c0.c0.c0.c0 * {
   -webkit-transition-property: color,fill,opacity;
   transition-property: color,fill,opacity;
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
 }
 
-.c3.c3.c3.c3.c3 {
-  color: hsla(227,100%,59%,0.18);
-  font-family: "Inter","Inter Fallback Arial",Arial;
-  font-size: 0.875rem;
-  font-weight: 500;
-  font-style: normal;
-  -webkit-text-decoration-line: none;
-  text-decoration-line: none;
-  line-height: 1.25rem;
-  -webkit-letter-spacing: 0px;
-  -moz-letter-spacing: 0px;
-  -ms-letter-spacing: 0px;
-  letter-spacing: 0px;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-}
-
-.c1.c1.c1.c1.c1 {
+.c2.c2.c2.c2.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1355,7 +1492,35 @@ exports[`<Button /> should render disabled primary color primary button 1`] = `
   z-index: 1;
 }
 
-.c2.c2.c2.c2.c2 {
+.c1.c1.c1.c1.c1 {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition-duration: cubic-bezier(0.3,0,0.2,1);
+  transition-duration: cubic-bezier(0.3,0,0.2,1);
+  -webkit-transition-timing-function: 160px;
+  transition-timing-function: 160px;
+}
+
+.c4.c4.c4.c4.c4 {
+  color: hsla(227,100%,59%,0.18);
+  font-family: "Inter","Inter Fallback Arial",Arial;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-style: normal;
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+  line-height: 1.25rem;
+  -webkit-letter-spacing: 0px;
+  -moz-letter-spacing: 0px;
+  -ms-letter-spacing: 0px;
+  letter-spacing: 0px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.c3.c3.c3.c3.c3 {
   opacity: 1;
 }
 
@@ -1368,14 +1533,19 @@ exports[`<Button /> should render disabled primary color primary button 1`] = `
     type="button"
   >
     <div
-      class="c1 c2"
+      class=" c1"
       data-blade-component="base-box"
     >
       <div
-        class="c3"
-        data-blade-component="base-text"
+        class="c2 c3"
+        data-blade-component="base-box"
       >
-        Pay Now
+        <div
+          class="c4"
+          data-blade-component="base-text"
+        >
+          Pay Now
+        </div>
       </div>
     </div>
   </button>
@@ -1415,8 +1585,8 @@ exports[`<Button /> should render disabled primary color secondary button 1`] = 
   transition-property: background-color,border-color,box-shadow;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   position: relative;
 }
 
@@ -1440,31 +1610,13 @@ exports[`<Button /> should render disabled primary color secondary button 1`] = 
 .c0.c0.c0.c0.c0 * {
   -webkit-transition-property: color,fill,opacity;
   transition-property: color,fill,opacity;
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
 }
 
-.c3.c3.c3.c3.c3 {
-  color: hsla(227,100%,59%,0.18);
-  font-family: "Inter","Inter Fallback Arial",Arial;
-  font-size: 0.875rem;
-  font-weight: 500;
-  font-style: normal;
-  -webkit-text-decoration-line: none;
-  text-decoration-line: none;
-  line-height: 1.25rem;
-  -webkit-letter-spacing: 0px;
-  -moz-letter-spacing: 0px;
-  -ms-letter-spacing: 0px;
-  letter-spacing: 0px;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-}
-
-.c1.c1.c1.c1.c1 {
+.c2.c2.c2.c2.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1486,7 +1638,35 @@ exports[`<Button /> should render disabled primary color secondary button 1`] = 
   z-index: 1;
 }
 
-.c2.c2.c2.c2.c2 {
+.c1.c1.c1.c1.c1 {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition-duration: cubic-bezier(0.3,0,0.2,1);
+  transition-duration: cubic-bezier(0.3,0,0.2,1);
+  -webkit-transition-timing-function: 160px;
+  transition-timing-function: 160px;
+}
+
+.c4.c4.c4.c4.c4 {
+  color: hsla(227,100%,59%,0.18);
+  font-family: "Inter","Inter Fallback Arial",Arial;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-style: normal;
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+  line-height: 1.25rem;
+  -webkit-letter-spacing: 0px;
+  -moz-letter-spacing: 0px;
+  -ms-letter-spacing: 0px;
+  letter-spacing: 0px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.c3.c3.c3.c3.c3 {
   opacity: 1;
 }
 
@@ -1499,14 +1679,19 @@ exports[`<Button /> should render disabled primary color secondary button 1`] = 
     type="button"
   >
     <div
-      class="c1 c2"
+      class=" c1"
       data-blade-component="base-box"
     >
       <div
-        class="c3"
-        data-blade-component="base-text"
+        class="c2 c3"
+        data-blade-component="base-box"
       >
-        Pay Now
+        <div
+          class="c4"
+          data-blade-component="base-text"
+        >
+          Pay Now
+        </div>
       </div>
     </div>
   </button>
@@ -1546,8 +1731,8 @@ exports[`<Button /> should render disabled primary color tertiary button 1`] = `
   transition-property: background-color,border-color,box-shadow;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   position: relative;
 }
 
@@ -1568,31 +1753,13 @@ exports[`<Button /> should render disabled primary color tertiary button 1`] = `
 .c0.c0.c0.c0.c0 * {
   -webkit-transition-property: color,fill,opacity;
   transition-property: color,fill,opacity;
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
 }
 
-.c3.c3.c3.c3.c3 {
-  color: hsla(211,20%,52%,0.32);
-  font-family: "Inter","Inter Fallback Arial",Arial;
-  font-size: 0.875rem;
-  font-weight: 500;
-  font-style: normal;
-  -webkit-text-decoration-line: none;
-  text-decoration-line: none;
-  line-height: 1.25rem;
-  -webkit-letter-spacing: 0px;
-  -moz-letter-spacing: 0px;
-  -ms-letter-spacing: 0px;
-  letter-spacing: 0px;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-}
-
-.c1.c1.c1.c1.c1 {
+.c2.c2.c2.c2.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1614,7 +1781,35 @@ exports[`<Button /> should render disabled primary color tertiary button 1`] = `
   z-index: 1;
 }
 
-.c2.c2.c2.c2.c2 {
+.c1.c1.c1.c1.c1 {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition-duration: cubic-bezier(0.3,0,0.2,1);
+  transition-duration: cubic-bezier(0.3,0,0.2,1);
+  -webkit-transition-timing-function: 160px;
+  transition-timing-function: 160px;
+}
+
+.c4.c4.c4.c4.c4 {
+  color: hsla(211,20%,52%,0.32);
+  font-family: "Inter","Inter Fallback Arial",Arial;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-style: normal;
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+  line-height: 1.25rem;
+  -webkit-letter-spacing: 0px;
+  -moz-letter-spacing: 0px;
+  -ms-letter-spacing: 0px;
+  letter-spacing: 0px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.c3.c3.c3.c3.c3 {
   opacity: 1;
 }
 
@@ -1627,14 +1822,19 @@ exports[`<Button /> should render disabled primary color tertiary button 1`] = `
     type="button"
   >
     <div
-      class="c1 c2"
+      class=" c1"
       data-blade-component="base-box"
     >
       <div
-        class="c3"
-        data-blade-component="base-text"
+        class="c2 c3"
+        data-blade-component="base-box"
       >
-        Pay Now
+        <div
+          class="c4"
+          data-blade-component="base-text"
+        >
+          Pay Now
+        </div>
       </div>
     </div>
   </button>
@@ -1674,8 +1874,8 @@ exports[`<Button /> should render disabled white color primary button 1`] = `
   transition-property: background-color,border-color,box-shadow;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   position: relative;
 }
 
@@ -1699,31 +1899,13 @@ exports[`<Button /> should render disabled white color primary button 1`] = `
 .c0.c0.c0.c0.c0 * {
   -webkit-transition-property: color,fill,opacity;
   transition-property: color,fill,opacity;
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
 }
 
-.c3.c3.c3.c3.c3 {
-  color: hsla(0,0%,0%,0.32);
-  font-family: "Inter","Inter Fallback Arial",Arial;
-  font-size: 0.875rem;
-  font-weight: 500;
-  font-style: normal;
-  -webkit-text-decoration-line: none;
-  text-decoration-line: none;
-  line-height: 1.25rem;
-  -webkit-letter-spacing: 0px;
-  -moz-letter-spacing: 0px;
-  -ms-letter-spacing: 0px;
-  letter-spacing: 0px;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-}
-
-.c1.c1.c1.c1.c1 {
+.c2.c2.c2.c2.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1745,7 +1927,35 @@ exports[`<Button /> should render disabled white color primary button 1`] = `
   z-index: 1;
 }
 
-.c2.c2.c2.c2.c2 {
+.c1.c1.c1.c1.c1 {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition-duration: cubic-bezier(0.3,0,0.2,1);
+  transition-duration: cubic-bezier(0.3,0,0.2,1);
+  -webkit-transition-timing-function: 160px;
+  transition-timing-function: 160px;
+}
+
+.c4.c4.c4.c4.c4 {
+  color: hsla(0,0%,0%,0.32);
+  font-family: "Inter","Inter Fallback Arial",Arial;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-style: normal;
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+  line-height: 1.25rem;
+  -webkit-letter-spacing: 0px;
+  -moz-letter-spacing: 0px;
+  -ms-letter-spacing: 0px;
+  letter-spacing: 0px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.c3.c3.c3.c3.c3 {
   opacity: 1;
 }
 
@@ -1758,14 +1968,19 @@ exports[`<Button /> should render disabled white color primary button 1`] = `
     type="button"
   >
     <div
-      class="c1 c2"
+      class=" c1"
       data-blade-component="base-box"
     >
       <div
-        class="c3"
-        data-blade-component="base-text"
+        class="c2 c3"
+        data-blade-component="base-box"
       >
-        Pay Now
+        <div
+          class="c4"
+          data-blade-component="base-text"
+        >
+          Pay Now
+        </div>
       </div>
     </div>
   </button>
@@ -1805,8 +2020,8 @@ exports[`<Button /> should render disabled white color secondary button 1`] = `
   transition-property: background-color,border-color,box-shadow;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   position: relative;
 }
 
@@ -1830,31 +2045,13 @@ exports[`<Button /> should render disabled white color secondary button 1`] = `
 .c0.c0.c0.c0.c0 * {
   -webkit-transition-property: color,fill,opacity;
   transition-property: color,fill,opacity;
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
 }
 
-.c3.c3.c3.c3.c3 {
-  color: hsla(0,0%,100%,0.32);
-  font-family: "Inter","Inter Fallback Arial",Arial;
-  font-size: 0.875rem;
-  font-weight: 500;
-  font-style: normal;
-  -webkit-text-decoration-line: none;
-  text-decoration-line: none;
-  line-height: 1.25rem;
-  -webkit-letter-spacing: 0px;
-  -moz-letter-spacing: 0px;
-  -ms-letter-spacing: 0px;
-  letter-spacing: 0px;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-}
-
-.c1.c1.c1.c1.c1 {
+.c2.c2.c2.c2.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1876,7 +2073,35 @@ exports[`<Button /> should render disabled white color secondary button 1`] = `
   z-index: 1;
 }
 
-.c2.c2.c2.c2.c2 {
+.c1.c1.c1.c1.c1 {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition-duration: cubic-bezier(0.3,0,0.2,1);
+  transition-duration: cubic-bezier(0.3,0,0.2,1);
+  -webkit-transition-timing-function: 160px;
+  transition-timing-function: 160px;
+}
+
+.c4.c4.c4.c4.c4 {
+  color: hsla(0,0%,100%,0.32);
+  font-family: "Inter","Inter Fallback Arial",Arial;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-style: normal;
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+  line-height: 1.25rem;
+  -webkit-letter-spacing: 0px;
+  -moz-letter-spacing: 0px;
+  -ms-letter-spacing: 0px;
+  letter-spacing: 0px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.c3.c3.c3.c3.c3 {
   opacity: 1;
 }
 
@@ -1889,14 +2114,19 @@ exports[`<Button /> should render disabled white color secondary button 1`] = `
     type="button"
   >
     <div
-      class="c1 c2"
+      class=" c1"
       data-blade-component="base-box"
     >
       <div
-        class="c3"
-        data-blade-component="base-text"
+        class="c2 c3"
+        data-blade-component="base-box"
       >
-        Pay Now
+        <div
+          class="c4"
+          data-blade-component="base-text"
+        >
+          Pay Now
+        </div>
       </div>
     </div>
   </button>
@@ -1936,8 +2166,8 @@ exports[`<Button /> should render disabled white color tertiary button 1`] = `
   transition-property: background-color,border-color,box-shadow;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   position: relative;
 }
 
@@ -1958,31 +2188,13 @@ exports[`<Button /> should render disabled white color tertiary button 1`] = `
 .c0.c0.c0.c0.c0 * {
   -webkit-transition-property: color,fill,opacity;
   transition-property: color,fill,opacity;
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
 }
 
-.c3.c3.c3.c3.c3 {
-  color: hsla(0,0%,100%,0.32);
-  font-family: "Inter","Inter Fallback Arial",Arial;
-  font-size: 0.875rem;
-  font-weight: 500;
-  font-style: normal;
-  -webkit-text-decoration-line: none;
-  text-decoration-line: none;
-  line-height: 1.25rem;
-  -webkit-letter-spacing: 0px;
-  -moz-letter-spacing: 0px;
-  -ms-letter-spacing: 0px;
-  letter-spacing: 0px;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-}
-
-.c1.c1.c1.c1.c1 {
+.c2.c2.c2.c2.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2004,7 +2216,35 @@ exports[`<Button /> should render disabled white color tertiary button 1`] = `
   z-index: 1;
 }
 
-.c2.c2.c2.c2.c2 {
+.c1.c1.c1.c1.c1 {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition-duration: cubic-bezier(0.3,0,0.2,1);
+  transition-duration: cubic-bezier(0.3,0,0.2,1);
+  -webkit-transition-timing-function: 160px;
+  transition-timing-function: 160px;
+}
+
+.c4.c4.c4.c4.c4 {
+  color: hsla(0,0%,100%,0.32);
+  font-family: "Inter","Inter Fallback Arial",Arial;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-style: normal;
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+  line-height: 1.25rem;
+  -webkit-letter-spacing: 0px;
+  -moz-letter-spacing: 0px;
+  -ms-letter-spacing: 0px;
+  letter-spacing: 0px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.c3.c3.c3.c3.c3 {
   opacity: 1;
 }
 
@@ -2017,14 +2257,19 @@ exports[`<Button /> should render disabled white color tertiary button 1`] = `
     type="button"
   >
     <div
-      class="c1 c2"
+      class=" c1"
       data-blade-component="base-box"
     >
       <div
-        class="c3"
-        data-blade-component="base-text"
+        class="c2 c3"
+        data-blade-component="base-box"
       >
-        Pay Now
+        <div
+          class="c4"
+          data-blade-component="base-text"
+        >
+          Pay Now
+        </div>
       </div>
     </div>
   </button>
@@ -2064,8 +2309,8 @@ exports[`<Button /> should render large size button 1`] = `
   transition-property: background-color,border-color,box-shadow;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   position: relative;
 }
 
@@ -2089,31 +2334,13 @@ exports[`<Button /> should render large size button 1`] = `
 .c0.c0.c0.c0.c0 * {
   -webkit-transition-property: color,fill,opacity;
   transition-property: color,fill,opacity;
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
 }
 
-.c3.c3.c3.c3.c3 {
-  color: hsla(0,0%,100%,1);
-  font-family: "Inter","Inter Fallback Arial",Arial;
-  font-size: 1rem;
-  font-weight: 500;
-  font-style: normal;
-  -webkit-text-decoration-line: none;
-  text-decoration-line: none;
-  line-height: 1.5rem;
-  -webkit-letter-spacing: 0px;
-  -moz-letter-spacing: 0px;
-  -ms-letter-spacing: 0px;
-  letter-spacing: 0px;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-}
-
-.c1.c1.c1.c1.c1 {
+.c2.c2.c2.c2.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2135,7 +2362,35 @@ exports[`<Button /> should render large size button 1`] = `
   z-index: 1;
 }
 
-.c2.c2.c2.c2.c2 {
+.c1.c1.c1.c1.c1 {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition-duration: cubic-bezier(0.3,0,0.2,1);
+  transition-duration: cubic-bezier(0.3,0,0.2,1);
+  -webkit-transition-timing-function: 160px;
+  transition-timing-function: 160px;
+}
+
+.c4.c4.c4.c4.c4 {
+  color: hsla(0,0%,100%,1);
+  font-family: "Inter","Inter Fallback Arial",Arial;
+  font-size: 1rem;
+  font-weight: 500;
+  font-style: normal;
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+  line-height: 1.5rem;
+  -webkit-letter-spacing: 0px;
+  -moz-letter-spacing: 0px;
+  -ms-letter-spacing: 0px;
+  letter-spacing: 0px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.c3.c3.c3.c3.c3 {
   opacity: 1;
 }
 
@@ -2147,14 +2402,19 @@ exports[`<Button /> should render large size button 1`] = `
     type="button"
   >
     <div
-      class="c1 c2"
+      class=" c1"
       data-blade-component="base-box"
     >
       <div
-        class="c3"
-        data-blade-component="base-text"
+        class="c2 c3"
+        data-blade-component="base-box"
       >
-        Pay Now
+        <div
+          class="c4"
+          data-blade-component="base-text"
+        >
+          Pay Now
+        </div>
       </div>
     </div>
   </button>
@@ -2194,8 +2454,8 @@ exports[`<Button /> should render medium size button 1`] = `
   transition-property: background-color,border-color,box-shadow;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   position: relative;
 }
 
@@ -2219,31 +2479,13 @@ exports[`<Button /> should render medium size button 1`] = `
 .c0.c0.c0.c0.c0 * {
   -webkit-transition-property: color,fill,opacity;
   transition-property: color,fill,opacity;
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
 }
 
-.c3.c3.c3.c3.c3 {
-  color: hsla(0,0%,100%,1);
-  font-family: "Inter","Inter Fallback Arial",Arial;
-  font-size: 0.875rem;
-  font-weight: 500;
-  font-style: normal;
-  -webkit-text-decoration-line: none;
-  text-decoration-line: none;
-  line-height: 1.25rem;
-  -webkit-letter-spacing: 0px;
-  -moz-letter-spacing: 0px;
-  -ms-letter-spacing: 0px;
-  letter-spacing: 0px;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-}
-
-.c1.c1.c1.c1.c1 {
+.c2.c2.c2.c2.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2265,7 +2507,35 @@ exports[`<Button /> should render medium size button 1`] = `
   z-index: 1;
 }
 
-.c2.c2.c2.c2.c2 {
+.c1.c1.c1.c1.c1 {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition-duration: cubic-bezier(0.3,0,0.2,1);
+  transition-duration: cubic-bezier(0.3,0,0.2,1);
+  -webkit-transition-timing-function: 160px;
+  transition-timing-function: 160px;
+}
+
+.c4.c4.c4.c4.c4 {
+  color: hsla(0,0%,100%,1);
+  font-family: "Inter","Inter Fallback Arial",Arial;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-style: normal;
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+  line-height: 1.25rem;
+  -webkit-letter-spacing: 0px;
+  -moz-letter-spacing: 0px;
+  -ms-letter-spacing: 0px;
+  letter-spacing: 0px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.c3.c3.c3.c3.c3 {
   opacity: 1;
 }
 
@@ -2277,14 +2547,19 @@ exports[`<Button /> should render medium size button 1`] = `
     type="button"
   >
     <div
-      class="c1 c2"
+      class=" c1"
       data-blade-component="base-box"
     >
       <div
-        class="c3"
-        data-blade-component="base-text"
+        class="c2 c3"
+        data-blade-component="base-box"
       >
-        Pay Now
+        <div
+          class="c4"
+          data-blade-component="base-text"
+        >
+          Pay Now
+        </div>
       </div>
     </div>
   </button>
@@ -2324,8 +2599,8 @@ exports[`<Button /> should render negative color primary button 1`] = `
   transition-property: background-color,border-color,box-shadow;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   position: relative;
 }
 
@@ -2349,31 +2624,13 @@ exports[`<Button /> should render negative color primary button 1`] = `
 .c0.c0.c0.c0.c0 * {
   -webkit-transition-property: color,fill,opacity;
   transition-property: color,fill,opacity;
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
 }
 
-.c3.c3.c3.c3.c3 {
-  color: hsla(0,0%,100%,1);
-  font-family: "Inter","Inter Fallback Arial",Arial;
-  font-size: 0.875rem;
-  font-weight: 500;
-  font-style: normal;
-  -webkit-text-decoration-line: none;
-  text-decoration-line: none;
-  line-height: 1.25rem;
-  -webkit-letter-spacing: 0px;
-  -moz-letter-spacing: 0px;
-  -ms-letter-spacing: 0px;
-  letter-spacing: 0px;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-}
-
-.c1.c1.c1.c1.c1 {
+.c2.c2.c2.c2.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2395,7 +2652,35 @@ exports[`<Button /> should render negative color primary button 1`] = `
   z-index: 1;
 }
 
-.c2.c2.c2.c2.c2 {
+.c1.c1.c1.c1.c1 {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition-duration: cubic-bezier(0.3,0,0.2,1);
+  transition-duration: cubic-bezier(0.3,0,0.2,1);
+  -webkit-transition-timing-function: 160px;
+  transition-timing-function: 160px;
+}
+
+.c4.c4.c4.c4.c4 {
+  color: hsla(0,0%,100%,1);
+  font-family: "Inter","Inter Fallback Arial",Arial;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-style: normal;
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+  line-height: 1.25rem;
+  -webkit-letter-spacing: 0px;
+  -moz-letter-spacing: 0px;
+  -ms-letter-spacing: 0px;
+  letter-spacing: 0px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.c3.c3.c3.c3.c3 {
   opacity: 1;
 }
 
@@ -2407,14 +2692,19 @@ exports[`<Button /> should render negative color primary button 1`] = `
     type="button"
   >
     <div
-      class="c1 c2"
+      class=" c1"
       data-blade-component="base-box"
     >
       <div
-        class="c3"
-        data-blade-component="base-text"
+        class="c2 c3"
+        data-blade-component="base-box"
       >
-        Pay Now
+        <div
+          class="c4"
+          data-blade-component="base-text"
+        >
+          Pay Now
+        </div>
       </div>
     </div>
   </button>
@@ -2454,8 +2744,8 @@ exports[`<Button /> should render negative color secondary button 1`] = `
   transition-property: background-color,border-color,box-shadow;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   position: relative;
 }
 
@@ -2479,31 +2769,13 @@ exports[`<Button /> should render negative color secondary button 1`] = `
 .c0.c0.c0.c0.c0 * {
   -webkit-transition-property: color,fill,opacity;
   transition-property: color,fill,opacity;
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
 }
 
-.c3.c3.c3.c3.c3 {
-  color: hsla(4,74%,49%,1);
-  font-family: "Inter","Inter Fallback Arial",Arial;
-  font-size: 0.875rem;
-  font-weight: 500;
-  font-style: normal;
-  -webkit-text-decoration-line: none;
-  text-decoration-line: none;
-  line-height: 1.25rem;
-  -webkit-letter-spacing: 0px;
-  -moz-letter-spacing: 0px;
-  -ms-letter-spacing: 0px;
-  letter-spacing: 0px;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-}
-
-.c1.c1.c1.c1.c1 {
+.c2.c2.c2.c2.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2525,7 +2797,35 @@ exports[`<Button /> should render negative color secondary button 1`] = `
   z-index: 1;
 }
 
-.c2.c2.c2.c2.c2 {
+.c1.c1.c1.c1.c1 {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition-duration: cubic-bezier(0.3,0,0.2,1);
+  transition-duration: cubic-bezier(0.3,0,0.2,1);
+  -webkit-transition-timing-function: 160px;
+  transition-timing-function: 160px;
+}
+
+.c4.c4.c4.c4.c4 {
+  color: hsla(4,74%,49%,1);
+  font-family: "Inter","Inter Fallback Arial",Arial;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-style: normal;
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+  line-height: 1.25rem;
+  -webkit-letter-spacing: 0px;
+  -moz-letter-spacing: 0px;
+  -ms-letter-spacing: 0px;
+  letter-spacing: 0px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.c3.c3.c3.c3.c3 {
   opacity: 1;
 }
 
@@ -2537,14 +2837,19 @@ exports[`<Button /> should render negative color secondary button 1`] = `
     type="button"
   >
     <div
-      class="c1 c2"
+      class=" c1"
       data-blade-component="base-box"
     >
       <div
-        class="c3"
-        data-blade-component="base-text"
+        class="c2 c3"
+        data-blade-component="base-box"
       >
-        Pay Now
+        <div
+          class="c4"
+          data-blade-component="base-text"
+        >
+          Pay Now
+        </div>
       </div>
     </div>
   </button>
@@ -2584,8 +2889,8 @@ exports[`<Button /> should render positive color primary button 1`] = `
   transition-property: background-color,border-color,box-shadow;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   position: relative;
 }
 
@@ -2609,31 +2914,13 @@ exports[`<Button /> should render positive color primary button 1`] = `
 .c0.c0.c0.c0.c0 * {
   -webkit-transition-property: color,fill,opacity;
   transition-property: color,fill,opacity;
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
 }
 
-.c3.c3.c3.c3.c3 {
-  color: hsla(0,0%,100%,1);
-  font-family: "Inter","Inter Fallback Arial",Arial;
-  font-size: 0.875rem;
-  font-weight: 500;
-  font-style: normal;
-  -webkit-text-decoration-line: none;
-  text-decoration-line: none;
-  line-height: 1.25rem;
-  -webkit-letter-spacing: 0px;
-  -moz-letter-spacing: 0px;
-  -ms-letter-spacing: 0px;
-  letter-spacing: 0px;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-}
-
-.c1.c1.c1.c1.c1 {
+.c2.c2.c2.c2.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2655,7 +2942,35 @@ exports[`<Button /> should render positive color primary button 1`] = `
   z-index: 1;
 }
 
-.c2.c2.c2.c2.c2 {
+.c1.c1.c1.c1.c1 {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition-duration: cubic-bezier(0.3,0,0.2,1);
+  transition-duration: cubic-bezier(0.3,0,0.2,1);
+  -webkit-transition-timing-function: 160px;
+  transition-timing-function: 160px;
+}
+
+.c4.c4.c4.c4.c4 {
+  color: hsla(0,0%,100%,1);
+  font-family: "Inter","Inter Fallback Arial",Arial;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-style: normal;
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+  line-height: 1.25rem;
+  -webkit-letter-spacing: 0px;
+  -moz-letter-spacing: 0px;
+  -ms-letter-spacing: 0px;
+  letter-spacing: 0px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.c3.c3.c3.c3.c3 {
   opacity: 1;
 }
 
@@ -2667,14 +2982,19 @@ exports[`<Button /> should render positive color primary button 1`] = `
     type="button"
   >
     <div
-      class="c1 c2"
+      class=" c1"
       data-blade-component="base-box"
     >
       <div
-        class="c3"
-        data-blade-component="base-text"
+        class="c2 c3"
+        data-blade-component="base-box"
       >
-        Pay Now
+        <div
+          class="c4"
+          data-blade-component="base-text"
+        >
+          Pay Now
+        </div>
       </div>
     </div>
   </button>
@@ -2714,8 +3034,8 @@ exports[`<Button /> should render positive color secondary button 1`] = `
   transition-property: background-color,border-color,box-shadow;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   position: relative;
 }
 
@@ -2739,31 +3059,13 @@ exports[`<Button /> should render positive color secondary button 1`] = `
 .c0.c0.c0.c0.c0 * {
   -webkit-transition-property: color,fill,opacity;
   transition-property: color,fill,opacity;
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
 }
 
-.c3.c3.c3.c3.c3 {
-  color: hsla(150,100%,27%,1);
-  font-family: "Inter","Inter Fallback Arial",Arial;
-  font-size: 0.875rem;
-  font-weight: 500;
-  font-style: normal;
-  -webkit-text-decoration-line: none;
-  text-decoration-line: none;
-  line-height: 1.25rem;
-  -webkit-letter-spacing: 0px;
-  -moz-letter-spacing: 0px;
-  -ms-letter-spacing: 0px;
-  letter-spacing: 0px;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-}
-
-.c1.c1.c1.c1.c1 {
+.c2.c2.c2.c2.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2785,7 +3087,35 @@ exports[`<Button /> should render positive color secondary button 1`] = `
   z-index: 1;
 }
 
-.c2.c2.c2.c2.c2 {
+.c1.c1.c1.c1.c1 {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition-duration: cubic-bezier(0.3,0,0.2,1);
+  transition-duration: cubic-bezier(0.3,0,0.2,1);
+  -webkit-transition-timing-function: 160px;
+  transition-timing-function: 160px;
+}
+
+.c4.c4.c4.c4.c4 {
+  color: hsla(150,100%,27%,1);
+  font-family: "Inter","Inter Fallback Arial",Arial;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-style: normal;
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+  line-height: 1.25rem;
+  -webkit-letter-spacing: 0px;
+  -moz-letter-spacing: 0px;
+  -ms-letter-spacing: 0px;
+  letter-spacing: 0px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.c3.c3.c3.c3.c3 {
   opacity: 1;
 }
 
@@ -2797,14 +3127,19 @@ exports[`<Button /> should render positive color secondary button 1`] = `
     type="button"
   >
     <div
-      class="c1 c2"
+      class=" c1"
       data-blade-component="base-box"
     >
       <div
-        class="c3"
-        data-blade-component="base-text"
+        class="c2 c3"
+        data-blade-component="base-box"
       >
-        Pay Now
+        <div
+          class="c4"
+          data-blade-component="base-text"
+        >
+          Pay Now
+        </div>
       </div>
     </div>
   </button>
@@ -2844,8 +3179,8 @@ exports[`<Button /> should render primary color primary button 1`] = `
   transition-property: background-color,border-color,box-shadow;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   position: relative;
 }
 
@@ -2869,31 +3204,13 @@ exports[`<Button /> should render primary color primary button 1`] = `
 .c0.c0.c0.c0.c0 * {
   -webkit-transition-property: color,fill,opacity;
   transition-property: color,fill,opacity;
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
 }
 
-.c3.c3.c3.c3.c3 {
-  color: hsla(0,0%,100%,1);
-  font-family: "Inter","Inter Fallback Arial",Arial;
-  font-size: 0.875rem;
-  font-weight: 500;
-  font-style: normal;
-  -webkit-text-decoration-line: none;
-  text-decoration-line: none;
-  line-height: 1.25rem;
-  -webkit-letter-spacing: 0px;
-  -moz-letter-spacing: 0px;
-  -ms-letter-spacing: 0px;
-  letter-spacing: 0px;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-}
-
-.c1.c1.c1.c1.c1 {
+.c2.c2.c2.c2.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2915,7 +3232,35 @@ exports[`<Button /> should render primary color primary button 1`] = `
   z-index: 1;
 }
 
-.c2.c2.c2.c2.c2 {
+.c1.c1.c1.c1.c1 {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition-duration: cubic-bezier(0.3,0,0.2,1);
+  transition-duration: cubic-bezier(0.3,0,0.2,1);
+  -webkit-transition-timing-function: 160px;
+  transition-timing-function: 160px;
+}
+
+.c4.c4.c4.c4.c4 {
+  color: hsla(0,0%,100%,1);
+  font-family: "Inter","Inter Fallback Arial",Arial;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-style: normal;
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+  line-height: 1.25rem;
+  -webkit-letter-spacing: 0px;
+  -moz-letter-spacing: 0px;
+  -ms-letter-spacing: 0px;
+  letter-spacing: 0px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.c3.c3.c3.c3.c3 {
   opacity: 1;
 }
 
@@ -2927,14 +3272,19 @@ exports[`<Button /> should render primary color primary button 1`] = `
     type="button"
   >
     <div
-      class="c1 c2"
+      class=" c1"
       data-blade-component="base-box"
     >
       <div
-        class="c3"
-        data-blade-component="base-text"
+        class="c2 c3"
+        data-blade-component="base-box"
       >
-        Pay Now
+        <div
+          class="c4"
+          data-blade-component="base-text"
+        >
+          Pay Now
+        </div>
       </div>
     </div>
   </button>
@@ -2974,8 +3324,8 @@ exports[`<Button /> should render primary color secondary button 1`] = `
   transition-property: background-color,border-color,box-shadow;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   position: relative;
 }
 
@@ -2999,31 +3349,13 @@ exports[`<Button /> should render primary color secondary button 1`] = `
 .c0.c0.c0.c0.c0 * {
   -webkit-transition-property: color,fill,opacity;
   transition-property: color,fill,opacity;
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
 }
 
-.c3.c3.c3.c3.c3 {
-  color: hsla(227,100%,59%,1);
-  font-family: "Inter","Inter Fallback Arial",Arial;
-  font-size: 0.875rem;
-  font-weight: 500;
-  font-style: normal;
-  -webkit-text-decoration-line: none;
-  text-decoration-line: none;
-  line-height: 1.25rem;
-  -webkit-letter-spacing: 0px;
-  -moz-letter-spacing: 0px;
-  -ms-letter-spacing: 0px;
-  letter-spacing: 0px;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-}
-
-.c1.c1.c1.c1.c1 {
+.c2.c2.c2.c2.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3045,7 +3377,35 @@ exports[`<Button /> should render primary color secondary button 1`] = `
   z-index: 1;
 }
 
-.c2.c2.c2.c2.c2 {
+.c1.c1.c1.c1.c1 {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition-duration: cubic-bezier(0.3,0,0.2,1);
+  transition-duration: cubic-bezier(0.3,0,0.2,1);
+  -webkit-transition-timing-function: 160px;
+  transition-timing-function: 160px;
+}
+
+.c4.c4.c4.c4.c4 {
+  color: hsla(227,100%,59%,1);
+  font-family: "Inter","Inter Fallback Arial",Arial;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-style: normal;
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+  line-height: 1.25rem;
+  -webkit-letter-spacing: 0px;
+  -moz-letter-spacing: 0px;
+  -ms-letter-spacing: 0px;
+  letter-spacing: 0px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.c3.c3.c3.c3.c3 {
   opacity: 1;
 }
 
@@ -3057,14 +3417,19 @@ exports[`<Button /> should render primary color secondary button 1`] = `
     type="button"
   >
     <div
-      class="c1 c2"
+      class=" c1"
       data-blade-component="base-box"
     >
       <div
-        class="c3"
-        data-blade-component="base-text"
+        class="c2 c3"
+        data-blade-component="base-box"
       >
-        Pay Now
+        <div
+          class="c4"
+          data-blade-component="base-text"
+        >
+          Pay Now
+        </div>
       </div>
     </div>
   </button>
@@ -3076,8 +3441,8 @@ exports[`<Button /> should render primary color tertiary button 1`] = `
   min-height: 36px;
   width: auto;
   cursor: pointer;
-  background-color: hsla(211,20%,52%,0.09);
-  border-color: hsla(211,27%,76%,1);
+  background-color: hsla(211,20%,52%,0.12);
+  border-color: hsla(214,28%,84%,1);
   border-width: 0px;
   border-radius: 4px;
   border-style: solid;
@@ -3104,8 +3469,8 @@ exports[`<Button /> should render primary color tertiary button 1`] = `
   transition-property: background-color,border-color,box-shadow;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   position: relative;
 }
 
@@ -3126,31 +3491,13 @@ exports[`<Button /> should render primary color tertiary button 1`] = `
 .c0.c0.c0.c0.c0 * {
   -webkit-transition-property: color,fill,opacity;
   transition-property: color,fill,opacity;
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
 }
 
-.c3.c3.c3.c3.c3 {
-  color: hsla(212,39%,16%,1);
-  font-family: "Inter","Inter Fallback Arial",Arial;
-  font-size: 0.875rem;
-  font-weight: 500;
-  font-style: normal;
-  -webkit-text-decoration-line: none;
-  text-decoration-line: none;
-  line-height: 1.25rem;
-  -webkit-letter-spacing: 0px;
-  -moz-letter-spacing: 0px;
-  -ms-letter-spacing: 0px;
-  letter-spacing: 0px;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-}
-
-.c1.c1.c1.c1.c1 {
+.c2.c2.c2.c2.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3172,7 +3519,35 @@ exports[`<Button /> should render primary color tertiary button 1`] = `
   z-index: 1;
 }
 
-.c2.c2.c2.c2.c2 {
+.c1.c1.c1.c1.c1 {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition-duration: cubic-bezier(0.3,0,0.2,1);
+  transition-duration: cubic-bezier(0.3,0,0.2,1);
+  -webkit-transition-timing-function: 160px;
+  transition-timing-function: 160px;
+}
+
+.c4.c4.c4.c4.c4 {
+  color: hsla(212,39%,16%,1);
+  font-family: "Inter","Inter Fallback Arial",Arial;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-style: normal;
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+  line-height: 1.25rem;
+  -webkit-letter-spacing: 0px;
+  -moz-letter-spacing: 0px;
+  -ms-letter-spacing: 0px;
+  letter-spacing: 0px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.c3.c3.c3.c3.c3 {
   opacity: 1;
 }
 
@@ -3184,14 +3559,19 @@ exports[`<Button /> should render primary color tertiary button 1`] = `
     type="button"
   >
     <div
-      class="c1 c2"
+      class=" c1"
       data-blade-component="base-box"
     >
       <div
-        class="c3"
-        data-blade-component="base-text"
+        class="c2 c3"
+        data-blade-component="base-box"
       >
-        Pay Now
+        <div
+          class="c4"
+          data-blade-component="base-text"
+        >
+          Pay Now
+        </div>
       </div>
     </div>
   </button>
@@ -3231,8 +3611,8 @@ exports[`<Button /> should render small size button 1`] = `
   transition-property: background-color,border-color,box-shadow;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   position: relative;
 }
 
@@ -3256,31 +3636,13 @@ exports[`<Button /> should render small size button 1`] = `
 .c0.c0.c0.c0.c0 * {
   -webkit-transition-property: color,fill,opacity;
   transition-property: color,fill,opacity;
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
 }
 
-.c3.c3.c3.c3.c3 {
-  color: hsla(0,0%,100%,1);
-  font-family: "Inter","Inter Fallback Arial",Arial;
-  font-size: 0.6875rem;
-  font-weight: 500;
-  font-style: normal;
-  -webkit-text-decoration-line: none;
-  text-decoration-line: none;
-  line-height: 1.125rem;
-  -webkit-letter-spacing: 0px;
-  -moz-letter-spacing: 0px;
-  -ms-letter-spacing: 0px;
-  letter-spacing: 0px;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-}
-
-.c1.c1.c1.c1.c1 {
+.c2.c2.c2.c2.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3302,7 +3664,35 @@ exports[`<Button /> should render small size button 1`] = `
   z-index: 1;
 }
 
-.c2.c2.c2.c2.c2 {
+.c1.c1.c1.c1.c1 {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition-duration: cubic-bezier(0.3,0,0.2,1);
+  transition-duration: cubic-bezier(0.3,0,0.2,1);
+  -webkit-transition-timing-function: 160px;
+  transition-timing-function: 160px;
+}
+
+.c4.c4.c4.c4.c4 {
+  color: hsla(0,0%,100%,1);
+  font-family: "Inter","Inter Fallback Arial",Arial;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  font-style: normal;
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+  line-height: 1.125rem;
+  -webkit-letter-spacing: 0px;
+  -moz-letter-spacing: 0px;
+  -ms-letter-spacing: 0px;
+  letter-spacing: 0px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.c3.c3.c3.c3.c3 {
   opacity: 1;
 }
 
@@ -3314,14 +3704,19 @@ exports[`<Button /> should render small size button 1`] = `
     type="button"
   >
     <div
-      class="c1 c2"
+      class=" c1"
       data-blade-component="base-box"
     >
       <div
-        class="c3"
-        data-blade-component="base-text"
+        class="c2 c3"
+        data-blade-component="base-box"
       >
-        Pay Now
+        <div
+          class="c4"
+          data-blade-component="base-text"
+        >
+          Pay Now
+        </div>
       </div>
     </div>
   </button>
@@ -3361,8 +3756,8 @@ exports[`<Button /> should render white color primary button 1`] = `
   transition-property: background-color,border-color,box-shadow;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   position: relative;
 }
 
@@ -3386,31 +3781,13 @@ exports[`<Button /> should render white color primary button 1`] = `
 .c0.c0.c0.c0.c0 * {
   -webkit-transition-property: color,fill,opacity;
   transition-property: color,fill,opacity;
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
 }
 
-.c3.c3.c3.c3.c3 {
-  color: hsla(0,0%,0%,0.72);
-  font-family: "Inter","Inter Fallback Arial",Arial;
-  font-size: 0.875rem;
-  font-weight: 500;
-  font-style: normal;
-  -webkit-text-decoration-line: none;
-  text-decoration-line: none;
-  line-height: 1.25rem;
-  -webkit-letter-spacing: 0px;
-  -moz-letter-spacing: 0px;
-  -ms-letter-spacing: 0px;
-  letter-spacing: 0px;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-}
-
-.c1.c1.c1.c1.c1 {
+.c2.c2.c2.c2.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3432,7 +3809,35 @@ exports[`<Button /> should render white color primary button 1`] = `
   z-index: 1;
 }
 
-.c2.c2.c2.c2.c2 {
+.c1.c1.c1.c1.c1 {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition-duration: cubic-bezier(0.3,0,0.2,1);
+  transition-duration: cubic-bezier(0.3,0,0.2,1);
+  -webkit-transition-timing-function: 160px;
+  transition-timing-function: 160px;
+}
+
+.c4.c4.c4.c4.c4 {
+  color: hsla(0,0%,0%,0.72);
+  font-family: "Inter","Inter Fallback Arial",Arial;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-style: normal;
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+  line-height: 1.25rem;
+  -webkit-letter-spacing: 0px;
+  -moz-letter-spacing: 0px;
+  -ms-letter-spacing: 0px;
+  letter-spacing: 0px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.c3.c3.c3.c3.c3 {
   opacity: 1;
 }
 
@@ -3444,14 +3849,19 @@ exports[`<Button /> should render white color primary button 1`] = `
     type="button"
   >
     <div
-      class="c1 c2"
+      class=" c1"
       data-blade-component="base-box"
     >
       <div
-        class="c3"
-        data-blade-component="base-text"
+        class="c2 c3"
+        data-blade-component="base-box"
       >
-        Pay Now
+        <div
+          class="c4"
+          data-blade-component="base-text"
+        >
+          Pay Now
+        </div>
       </div>
     </div>
   </button>
@@ -3491,8 +3901,8 @@ exports[`<Button /> should render white color secondary button 1`] = `
   transition-property: background-color,border-color,box-shadow;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   position: relative;
 }
 
@@ -3516,31 +3926,13 @@ exports[`<Button /> should render white color secondary button 1`] = `
 .c0.c0.c0.c0.c0 * {
   -webkit-transition-property: color,fill,opacity;
   transition-property: color,fill,opacity;
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
 }
 
-.c3.c3.c3.c3.c3 {
-  color: hsla(0,0%,100%,1);
-  font-family: "Inter","Inter Fallback Arial",Arial;
-  font-size: 0.875rem;
-  font-weight: 500;
-  font-style: normal;
-  -webkit-text-decoration-line: none;
-  text-decoration-line: none;
-  line-height: 1.25rem;
-  -webkit-letter-spacing: 0px;
-  -moz-letter-spacing: 0px;
-  -ms-letter-spacing: 0px;
-  letter-spacing: 0px;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-}
-
-.c1.c1.c1.c1.c1 {
+.c2.c2.c2.c2.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3562,7 +3954,35 @@ exports[`<Button /> should render white color secondary button 1`] = `
   z-index: 1;
 }
 
-.c2.c2.c2.c2.c2 {
+.c1.c1.c1.c1.c1 {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition-duration: cubic-bezier(0.3,0,0.2,1);
+  transition-duration: cubic-bezier(0.3,0,0.2,1);
+  -webkit-transition-timing-function: 160px;
+  transition-timing-function: 160px;
+}
+
+.c4.c4.c4.c4.c4 {
+  color: hsla(0,0%,100%,1);
+  font-family: "Inter","Inter Fallback Arial",Arial;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-style: normal;
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+  line-height: 1.25rem;
+  -webkit-letter-spacing: 0px;
+  -moz-letter-spacing: 0px;
+  -ms-letter-spacing: 0px;
+  letter-spacing: 0px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.c3.c3.c3.c3.c3 {
   opacity: 1;
 }
 
@@ -3574,14 +3994,19 @@ exports[`<Button /> should render white color secondary button 1`] = `
     type="button"
   >
     <div
-      class="c1 c2"
+      class=" c1"
       data-blade-component="base-box"
     >
       <div
-        class="c3"
-        data-blade-component="base-text"
+        class="c2 c3"
+        data-blade-component="base-box"
       >
-        Pay Now
+        <div
+          class="c4"
+          data-blade-component="base-text"
+        >
+          Pay Now
+        </div>
       </div>
     </div>
   </button>
@@ -3621,8 +4046,8 @@ exports[`<Button /> should render white color tertiary button 1`] = `
   transition-property: background-color,border-color,box-shadow;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   position: relative;
 }
 
@@ -3643,31 +4068,13 @@ exports[`<Button /> should render white color tertiary button 1`] = `
 .c0.c0.c0.c0.c0 * {
   -webkit-transition-property: color,fill,opacity;
   transition-property: color,fill,opacity;
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
 }
 
-.c3.c3.c3.c3.c3 {
-  color: hsla(0,0%,100%,1);
-  font-family: "Inter","Inter Fallback Arial",Arial;
-  font-size: 0.875rem;
-  font-weight: 500;
-  font-style: normal;
-  -webkit-text-decoration-line: none;
-  text-decoration-line: none;
-  line-height: 1.25rem;
-  -webkit-letter-spacing: 0px;
-  -moz-letter-spacing: 0px;
-  -ms-letter-spacing: 0px;
-  letter-spacing: 0px;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-}
-
-.c1.c1.c1.c1.c1 {
+.c2.c2.c2.c2.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3689,7 +4096,35 @@ exports[`<Button /> should render white color tertiary button 1`] = `
   z-index: 1;
 }
 
-.c2.c2.c2.c2.c2 {
+.c1.c1.c1.c1.c1 {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition-duration: cubic-bezier(0.3,0,0.2,1);
+  transition-duration: cubic-bezier(0.3,0,0.2,1);
+  -webkit-transition-timing-function: 160px;
+  transition-timing-function: 160px;
+}
+
+.c4.c4.c4.c4.c4 {
+  color: hsla(0,0%,100%,1);
+  font-family: "Inter","Inter Fallback Arial",Arial;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-style: normal;
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+  line-height: 1.25rem;
+  -webkit-letter-spacing: 0px;
+  -moz-letter-spacing: 0px;
+  -ms-letter-spacing: 0px;
+  letter-spacing: 0px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.c3.c3.c3.c3.c3 {
   opacity: 1;
 }
 
@@ -3701,14 +4136,19 @@ exports[`<Button /> should render white color tertiary button 1`] = `
     type="button"
   >
     <div
-      class="c1 c2"
+      class=" c1"
       data-blade-component="base-box"
     >
       <div
-        class="c3"
-        data-blade-component="base-text"
+        class="c2 c3"
+        data-blade-component="base-box"
       >
-        Pay Now
+        <div
+          class="c4"
+          data-blade-component="base-text"
+        >
+          Pay Now
+        </div>
       </div>
     </div>
   </button>
@@ -3748,8 +4188,8 @@ exports[`<Button /> should render xsmall size button 1`] = `
   transition-property: background-color,border-color,box-shadow;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   position: relative;
 }
 
@@ -3773,31 +4213,13 @@ exports[`<Button /> should render xsmall size button 1`] = `
 .c0.c0.c0.c0.c0 * {
   -webkit-transition-property: color,fill,opacity;
   transition-property: color,fill,opacity;
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
 }
 
-.c3.c3.c3.c3.c3 {
-  color: hsla(0,0%,100%,1);
-  font-family: "Inter","Inter Fallback Arial",Arial;
-  font-size: 0.6875rem;
-  font-weight: 500;
-  font-style: normal;
-  -webkit-text-decoration-line: none;
-  text-decoration-line: none;
-  line-height: 1.125rem;
-  -webkit-letter-spacing: 0px;
-  -moz-letter-spacing: 0px;
-  -ms-letter-spacing: 0px;
-  letter-spacing: 0px;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-}
-
-.c1.c1.c1.c1.c1 {
+.c2.c2.c2.c2.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3819,7 +4241,35 @@ exports[`<Button /> should render xsmall size button 1`] = `
   z-index: 1;
 }
 
-.c2.c2.c2.c2.c2 {
+.c1.c1.c1.c1.c1 {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition-duration: cubic-bezier(0.3,0,0.2,1);
+  transition-duration: cubic-bezier(0.3,0,0.2,1);
+  -webkit-transition-timing-function: 160px;
+  transition-timing-function: 160px;
+}
+
+.c4.c4.c4.c4.c4 {
+  color: hsla(0,0%,100%,1);
+  font-family: "Inter","Inter Fallback Arial",Arial;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  font-style: normal;
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+  line-height: 1.125rem;
+  -webkit-letter-spacing: 0px;
+  -moz-letter-spacing: 0px;
+  -ms-letter-spacing: 0px;
+  letter-spacing: 0px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.c3.c3.c3.c3.c3 {
   opacity: 1;
 }
 
@@ -3831,14 +4281,19 @@ exports[`<Button /> should render xsmall size button 1`] = `
     type="button"
   >
     <div
-      class="c1 c2"
+      class=" c1"
       data-blade-component="base-box"
     >
       <div
-        class="c3"
-        data-blade-component="base-text"
+        class="c2 c3"
+        data-blade-component="base-box"
       >
-        PAY NOW
+        <div
+          class="c4"
+          data-blade-component="base-text"
+        >
+          Pay Now
+        </div>
       </div>
     </div>
   </button>

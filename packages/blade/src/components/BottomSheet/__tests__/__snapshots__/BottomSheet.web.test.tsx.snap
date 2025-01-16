@@ -6,7 +6,7 @@ exports[`<BottomSheet /> should compose with DropdownButton 1`] = `
   position: relative;
 }
 
-.c2.c2.c2.c2.c2 {
+.c3.c3.c3.c3.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -28,7 +28,7 @@ exports[`<BottomSheet /> should compose with DropdownButton 1`] = `
   z-index: 1;
 }
 
-.c5.c5.c5.c5.c5 {
+.c6.c6.c6.c6.c6 {
   position: fixed;
   z-index: 101;
   top: 0px;
@@ -39,7 +39,7 @@ exports[`<BottomSheet /> should compose with DropdownButton 1`] = `
   opacity: 0;
 }
 
-.c8.c8.c8.c8.c8 {
+.c9.c9.c9.c9.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -50,7 +50,8 @@ exports[`<BottomSheet /> should compose with DropdownButton 1`] = `
   height: 100%;
 }
 
-.c10.c10.c10.c10.c10 {
+.c11.c11.c11.c11.c11 {
+  overflow: auto;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -60,21 +61,21 @@ exports[`<BottomSheet /> should compose with DropdownButton 1`] = `
   flex-shrink: 1;
 }
 
-.c12.c12.c12.c12.c12 {
+.c13.c13.c13.c13.c13 {
   overflow: visible;
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
 }
 
-.c13.c13.c13.c13.c13 {
+.c14.c14.c14.c14.c14 {
   position: relative;
   height: 8px;
   right: 0px;
   touch-action: none;
 }
 
-.c14.c14.c14.c14.c14 {
+.c15.c15.c15.c15.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -100,38 +101,20 @@ exports[`<BottomSheet /> should compose with DropdownButton 1`] = `
   border-radius: 9999px;
 }
 
-.c18.c18.c18.c18.c18 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  max-height: 20px;
-}
-
 .c19.c19.c19.c19.c19 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  width: 100%;
 }
 
 .c20.c20.c20.c20.c20 {
@@ -139,6 +122,34 @@ exports[`<BottomSheet /> should compose with DropdownButton 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 20px;
+}
+
+.c21.c21.c21.c21.c21 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-right: 8px;
+  padding-left: 0px;
+}
+
+.c22.c22.c22.c22.c22 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
@@ -146,15 +157,14 @@ exports[`<BottomSheet /> should compose with DropdownButton 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  padding-right: 8px;
-  padding-left: 0px;
+  height: 20px;
 }
 
-.c22.c22.c22.c22.c22 {
+.c24.c24.c24.c24.c24 {
   margin-left: auto;
 }
 
-.c11.c11.c11.c11.c11 {
+.c12.c12.c12.c12.c12 {
   overflow: auto;
   padding-top: 8px;
   padding-bottom: 8px;
@@ -162,7 +172,7 @@ exports[`<BottomSheet /> should compose with DropdownButton 1`] = `
   padding-left: 8px;
 }
 
-.c15.c15.c15.c15.c15 {
+.c16.c16.c16.c16.c16 {
   border: none;
   cursor: pointer;
   padding: 0;
@@ -183,33 +193,34 @@ exports[`<BottomSheet /> should compose with DropdownButton 1`] = `
   color: hsla(211,22%,56%,1);
   -webkit-transition-property: color,box-shadow;
   transition-property: color,box-shadow;
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
 }
 
-.c15.c15.c15.c15.c15:hover {
+.c16.c16.c16.c16.c16:hover:not([disabled]) {
   color: hsla(211,26%,34%,1);
+  background-color: transparent;
 }
 
-.c15.c15.c15.c15.c15:focus-visible {
+.c16.c16.c16.c16.c16:focus-visible {
   outline: 4px solid hsla(227,100%,59%,0.18);
   outline-offset: 1px;
   -webkit-transition-property: outline-width;
   transition-property: outline-width;
-  -webkit-transition-duration: 70ms;
-  transition-duration: 70ms;
+  -webkit-transition-duration: 80ms;
+  transition-duration: 80ms;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   color: hsla(211,26%,34%,1);
 }
 
-.c15.c15.c15.c15.c15:active {
+.c16.c16.c16.c16.c16:active {
   color: hsla(211,26%,34%,1);
 }
 
-.c4.c4.c4.c4.c4 {
+.c5.c5.c5.c5.c5 {
   color: hsla(212,39%,16%,1);
   font-family: "Inter","Inter Fallback Arial",Arial;
   font-size: 0.875rem;
@@ -227,7 +238,7 @@ exports[`<BottomSheet /> should compose with DropdownButton 1`] = `
   padding: 0;
 }
 
-.c21.c21.c21.c21.c21 {
+.c23.c23.c23.c23.c23 {
   color: hsla(212,39%,16%,1);
   font-family: "Inter","Inter Fallback Arial",Arial;
   font-size: 0.875rem;
@@ -247,9 +258,11 @@ exports[`<BottomSheet /> should compose with DropdownButton 1`] = `
   line-clamp: 1;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
+  overflow-wrap: break-word;
+  word-break: break-all;
 }
 
-.c24.c24.c24.c24.c24 {
+.c26.c26.c26.c26.c26 {
   color: hsla(4,74%,49%,1);
   font-family: "Inter","Inter Fallback Arial",Arial;
   font-size: 0.875rem;
@@ -269,19 +282,21 @@ exports[`<BottomSheet /> should compose with DropdownButton 1`] = `
   line-clamp: 1;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
+  overflow-wrap: break-word;
+  word-break: break-all;
 }
 
-.c6.c6.c6.c6.c6 {
-  -webkit-transition-duration: 250ms;
-  transition-duration: 250ms;
-  -webkit-transition-timing-function: cubic-bezier(0.5,0,1,1);
-  transition-timing-function: cubic-bezier(0.5,0,1,1);
+.c7.c7.c7.c7.c7 {
+  -webkit-transition-duration: 280ms;
+  transition-duration: 280ms;
+  -webkit-transition-timing-function: cubic-bezier(0.17,0,1,1);
+  transition-timing-function: cubic-bezier(0.17,0,1,1);
   pointer-events: none;
   -webkit-transition-property: opacity;
   transition-property: opacity;
 }
 
-.c9.c9.c9.c9.c9 {
+.c10.c10.c10.c10.c10 {
   position: relative;
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
@@ -308,16 +323,16 @@ exports[`<BottomSheet /> should compose with DropdownButton 1`] = `
   z-index: 100;
 }
 
-.c9.c9.c9.c9.c9:after {
+.c10.c10.c10.c10.c10:after {
   margin: auto;
   content: '';
   width: 56px;
   height: 4px;
-  background-color: hsla(211,20%,52%,0.12);
+  background-color: hsla(211,20%,52%,0.06);
   border-radius: 16px;
 }
 
-.c7.c7.c7.c7.c7 {
+.c8.c8.c8.c8.c8 {
   background: hsla(0,0%,100%,1);
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
@@ -325,8 +340,8 @@ exports[`<BottomSheet /> should compose with DropdownButton 1`] = `
   box-shadow: 0px -24px 48px -12px hsla(217,56%,17%,0.18);
   opacity: 0;
   pointer-events: none;
-  -webkit-transition-duration: 250ms;
-  transition-duration: 250ms;
+  -webkit-transition-duration: 280ms;
+  transition-duration: 280ms;
   -webkit-transition-timing-function: cubic-bezier(.15,0,.24,.97);
   transition-timing-function: cubic-bezier(.15,0,.24,.97);
   will-change: transform,opacity,height;
@@ -355,8 +370,8 @@ exports[`<BottomSheet /> should compose with DropdownButton 1`] = `
   min-height: 36px;
   width: auto;
   cursor: pointer;
-  background-color: hsla(211,20%,52%,0.09);
-  border-color: hsla(211,27%,76%,1);
+  background-color: hsla(211,20%,52%,0.12);
+  border-color: hsla(214,28%,84%,1);
   border-width: 0px;
   border-radius: 4px;
   border-style: solid;
@@ -383,8 +398,8 @@ exports[`<BottomSheet /> should compose with DropdownButton 1`] = `
   transition-property: background-color,border-color,box-shadow;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   position: relative;
 }
 
@@ -405,76 +420,134 @@ exports[`<BottomSheet /> should compose with DropdownButton 1`] = `
 .c1.c1.c1.c1.c1 * {
   -webkit-transition-property: color,fill,opacity;
   transition-property: color,fill,opacity;
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
 }
 
-.c3.c3.c3.c3.c3 {
+.c2.c2.c2.c2.c2 {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition-duration: cubic-bezier(0.3,0,0.2,1);
+  transition-duration: cubic-bezier(0.3,0,0.2,1);
+  -webkit-transition-timing-function: 160px;
+  transition-timing-function: 160px;
+}
+
+.c4.c4.c4.c4.c4 {
   opacity: 1;
 }
 
-.c16.c16.c16.c16.c16 {
+.c17.c17.c17.c17.c17 {
   overflow-y: auto;
 }
 
-.c16.c16.c16.c16.c16 [role=group]:last-child > [role=separator]:last-child {
+.c17.c17.c17.c17.c17 [role=group]:last-child > [role=separator]:last-child {
   display: none;
 }
 
-.c17.c17.c17.c17.c17 {
-  border-width: 4px;
-  border-style: solid;
-  border-color: transparent;
+.c18.c18.c18.c18.c18 {
+  border-width: 0px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   text-align: left;
   background-color: transparent;
-  padding: 4px;
   border-radius: 4px;
+  margin-top: 2px;
+  margin-bottom: 2px;
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
   width: 100%;
-  display: block;
+  padding: 4px;
 }
 
-.c17.c17.c17.c17.c17:hover:not([aria-disabled=true]) {
-  background-color: hsla(211,20%,52%,0.09);
+.c18.c18.c18.c18.c18:hover:not([aria-disabled=true]),
+.c18.c18.c18.c18.c18[aria-expanded="true"] {
+  background-color: hsla(211,20%,52%,0.12);
 }
 
-.c17.c17.c17.c17.c17[aria-selected=true] {
+.c18.c18.c18.c18.c18:focus-visible {
+  outline: 4px solid hsla(227,100%,59%,0.18);
+  outline-offset: 1px;
+  -webkit-transition-property: outline-width;
+  transition-property: outline-width;
+  -webkit-transition-duration: 80ms;
+  transition-duration: 80ms;
+  -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
+  transition-timing-function: cubic-bezier(0.3,0,0.2,1);
+}
+
+.c18.c18.c18.c18.c18[aria-selected=true] {
   background-color: hsla(227,100%,59%,0.09);
 }
 
-.c17.c17.c17.c17.c17[aria-selected=true]:hover {
+.c18.c18.c18.c18.c18[aria-selected=true]:hover {
   background-color: hsla(227,100%,59%,0.18);
 }
 
-.c23.c23.c23.c23.c23 {
-  border-width: 4px;
-  border-style: solid;
-  border-color: transparent;
+.c25.c25.c25.c25.c25 {
+  border-width: 0px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   text-align: left;
   background-color: transparent;
-  padding: 4px;
   border-radius: 4px;
+  margin-top: 2px;
+  margin-bottom: 2px;
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
   width: 100%;
-  display: block;
+  padding: 4px;
 }
 
-.c23.c23.c23.c23.c23:hover:not([aria-disabled=true]) {
+.c25.c25.c25.c25.c25:hover:not([aria-disabled=true]),
+.c25.c25.c25.c25.c25[aria-expanded="true"] {
   background-color: hsla(4,74%,49%,0.09);
 }
 
-.c23.c23.c23.c23.c23[aria-selected=true] {
+.c25.c25.c25.c25.c25:focus-visible {
+  outline: 4px solid hsla(227,100%,59%,0.18);
+  outline-offset: 1px;
+  -webkit-transition-property: outline-width;
+  transition-property: outline-width;
+  -webkit-transition-duration: 80ms;
+  transition-duration: 80ms;
+  -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
+  transition-timing-function: cubic-bezier(0.3,0,0.2,1);
+}
+
+.c25.c25.c25.c25.c25[aria-selected=true] {
   background-color: hsla(227,100%,59%,0.09);
 }
 
-.c23.c23.c23.c23.c23[aria-selected=true]:hover {
+.c25.c25.c25.c25.c25[aria-selected=true]:hover {
   background-color: hsla(227,100%,59%,0.18);
+}
+
+@media screen and (min-width:768px) {
+  .c18.c18.c18.c18.c18 {
+    padding: 8px;
+  }
+}
+
+@media screen and (min-width:768px) {
+  .c25.c25.c25.c25.c25 {
+    padding: 8px;
+  }
 }
 
 <body>
@@ -497,64 +570,69 @@ exports[`<BottomSheet /> should compose with DropdownButton 1`] = `
           type="button"
         >
           <div
-            class="c2 c3"
+            class=" c2"
             data-blade-component="base-box"
           >
             <div
-              class="c4"
-              data-blade-component="base-text"
+              class="c3 c4"
+              data-blade-component="base-box"
             >
-              Status: approve
+              <div
+                class="c5"
+                data-blade-component="base-text"
+              >
+                Status: approve
+              </div>
             </div>
           </div>
         </button>
         <div
-          class="c5 c6"
+          class="c6 c7"
           data-blade-component="base-box"
           data-testid="bottomsheet-backdrop"
           opacity="0"
         />
         <div
           aria-modal="true"
-          class="c7"
+          class="c8"
           data-blade-component="bottom-sheet"
           data-testid="bottomsheet-surface"
           role="dialog"
           style="opacity: 0; pointer-events: none; height: 0px; bottom: 0px; z-index: 101;"
         >
           <div
-            class="c8"
+            class="c9"
             data-blade-component="base-box"
           >
             <div
-              class="c9"
+              class="c10"
               data-blade-component="BottomSheetGrabHandle"
             />
             <div
-              class="c10"
+              class="c11"
               data-blade-component="bottom-sheet-body"
               data-testid="bottomsheet-body"
-              style="user-select: auto; overflow: auto;"
+              style="user-select: auto;"
             >
               <div
-                class="c11"
+                class="c12"
                 data-blade-component="base-box"
               >
                 <div
-                  class="c12"
+                  class="c13"
                   data-blade-component="bottom-sheet-header"
                 >
                   <div
-                    class="c13"
+                    class="c14"
                     data-blade-component="base-box"
                   >
                     <div
-                      class="c14"
+                      class="c15"
                       data-blade-component="base-box"
                     >
                       <button
                         aria-label="Close"
-                        class="c15"
+                        class="c16"
                         data-blade-component="icon-button"
                         type="button"
                       >
@@ -578,13 +656,13 @@ exports[`<BottomSheet /> should compose with DropdownButton 1`] = `
                   </div>
                 </div>
                 <div
-                  class=" c16"
+                  class=" c17"
                   data-blade-component="base-box"
                 >
                   <button
                     aria-current="true"
                     aria-selected="true"
-                    class=" c17"
+                    class=" c18"
                     data-blade-component="action-list-item"
                     data-index="0"
                     data-value="approve"
@@ -594,38 +672,43 @@ exports[`<BottomSheet /> should compose with DropdownButton 1`] = `
                     type="button"
                   >
                     <div
-                      class="c18"
-                      data-blade-component="base-box"
+                      class="c19"
+                      data-blade-component="box"
                     >
                       <div
-                        class="c19"
-                        data-blade-component="base-box"
+                        class="c20"
+                        data-blade-component="box"
                       />
                       <div
-                        class="c20"
-                        data-blade-component="base-box"
+                        class="c21"
+                        data-blade-component="box"
                       >
-                        <p
-                          class="c21"
-                          data-blade-component="text"
+                        <div
+                          class="c22"
+                          data-blade-component="box"
                         >
-                          Approve
-                        </p>
+                          <p
+                            class="c23"
+                            data-blade-component="text"
+                          >
+                            Approve
+                          </p>
+                        </div>
+                        <div
+                          class=""
+                          data-blade-component="box"
+                        />
                       </div>
                       <div
-                        class="c22"
-                        data-blade-component="base-box"
+                        class="c24"
+                        data-blade-component="box"
                       />
                     </div>
-                    <div
-                      class=""
-                      data-blade-component="base-box"
-                    />
                   </button>
                   <button
                     aria-current="false"
                     aria-selected="false"
-                    class=" c17"
+                    class=" c18"
                     data-blade-component="action-list-item"
                     data-index="1"
                     data-value="in-progress"
@@ -635,38 +718,43 @@ exports[`<BottomSheet /> should compose with DropdownButton 1`] = `
                     type="button"
                   >
                     <div
-                      class="c18"
-                      data-blade-component="base-box"
+                      class="c19"
+                      data-blade-component="box"
                     >
                       <div
-                        class="c19"
-                        data-blade-component="base-box"
+                        class="c20"
+                        data-blade-component="box"
                       />
                       <div
-                        class="c20"
-                        data-blade-component="base-box"
+                        class="c21"
+                        data-blade-component="box"
                       >
-                        <p
-                          class="c21"
-                          data-blade-component="text"
+                        <div
+                          class="c22"
+                          data-blade-component="box"
                         >
-                          In Progress
-                        </p>
+                          <p
+                            class="c23"
+                            data-blade-component="text"
+                          >
+                            In Progress
+                          </p>
+                        </div>
+                        <div
+                          class=""
+                          data-blade-component="box"
+                        />
                       </div>
                       <div
-                        class="c22"
-                        data-blade-component="base-box"
+                        class="c24"
+                        data-blade-component="box"
                       />
                     </div>
-                    <div
-                      class=""
-                      data-blade-component="base-box"
-                    />
                   </button>
                   <button
                     aria-current="false"
                     aria-selected="false"
-                    class=" c23"
+                    class=" c25"
                     data-blade-component="action-list-item"
                     data-index="2"
                     data-value="reject"
@@ -676,33 +764,38 @@ exports[`<BottomSheet /> should compose with DropdownButton 1`] = `
                     type="button"
                   >
                     <div
-                      class="c18"
-                      data-blade-component="base-box"
+                      class="c19"
+                      data-blade-component="box"
                     >
                       <div
-                        class="c19"
-                        data-blade-component="base-box"
+                        class="c20"
+                        data-blade-component="box"
                       />
                       <div
-                        class="c20"
-                        data-blade-component="base-box"
+                        class="c21"
+                        data-blade-component="box"
                       >
-                        <p
-                          class="c24"
-                          data-blade-component="text"
+                        <div
+                          class="c22"
+                          data-blade-component="box"
                         >
-                          Reject
-                        </p>
+                          <p
+                            class="c26"
+                            data-blade-component="text"
+                          >
+                            Reject
+                          </p>
+                        </div>
+                        <div
+                          class=""
+                          data-blade-component="box"
+                        />
                       </div>
                       <div
-                        class="c22"
-                        data-blade-component="base-box"
+                        class="c24"
+                        data-blade-component="box"
                       />
                     </div>
-                    <div
-                      class=""
-                      data-blade-component="base-box"
-                    />
                   </button>
                 </div>
               </div>
@@ -854,11 +947,35 @@ exports[`<BottomSheet /> should render Header/Footer/Body properly on opened sta
 }
 
 .c25.c25.c25.c25.c25 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.c26.c26.c26.c26.c26 {
+  width: 100%;
+}
+
+.c27.c27.c27.c27.c27 {
   border-bottom-color: hsla(211,20%,52%,0.18);
   border-bottom-style: solid;
 }
 
-.c27.c27.c27.c27.c27 {
+.c29.c29.c29.c29.c29 {
+  overflow: auto;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -868,7 +985,7 @@ exports[`<BottomSheet /> should render Header/Footer/Body properly on opened sta
   flex-shrink: 1;
 }
 
-.c28.c28.c28.c28.c28 {
+.c30.c30.c30.c30.c30 {
   overflow: auto;
   padding-top: 16px;
   padding-bottom: 16px;
@@ -876,7 +993,7 @@ exports[`<BottomSheet /> should render Header/Footer/Body properly on opened sta
   padding-left: 16px;
 }
 
-.c30.c30.c30.c30.c30 {
+.c32.c32.c32.c32.c32 {
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
@@ -887,11 +1004,11 @@ exports[`<BottomSheet /> should render Header/Footer/Body properly on opened sta
   touch-action: none;
 }
 
-.c31.c31.c31.c31.c31 {
+.c33.c33.c33.c33.c33 {
   padding: 16px;
 }
 
-.c33.c33.c33.c33.c33 {
+.c36.c36.c36.c36.c36 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -955,14 +1072,15 @@ exports[`<BottomSheet /> should render Header/Footer/Body properly on opened sta
   color: hsla(211,22%,56%,1);
   -webkit-transition-property: color,box-shadow;
   transition-property: color,box-shadow;
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
 }
 
-.c24.c24.c24.c24.c24:hover {
+.c24.c24.c24.c24.c24:hover:not([disabled]) {
   color: hsla(211,26%,34%,1);
+  background-color: transparent;
 }
 
 .c24.c24.c24.c24.c24:focus-visible {
@@ -970,8 +1088,8 @@ exports[`<BottomSheet /> should render Header/Footer/Body properly on opened sta
   outline-offset: 1px;
   -webkit-transition-property: outline-width;
   transition-property: outline-width;
-  -webkit-transition-duration: 70ms;
-  transition-duration: 70ms;
+  -webkit-transition-duration: 80ms;
+  transition-duration: 80ms;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   color: hsla(211,26%,34%,1);
@@ -981,7 +1099,7 @@ exports[`<BottomSheet /> should render Header/Footer/Body properly on opened sta
   color: hsla(211,26%,34%,1);
 }
 
-.c26.c26.c26.c26.c26 {
+.c28.c28.c28.c28.c28 {
   border-width: 0;
   border-bottom-style: solid;
   border-bottom-width: 1px;
@@ -1006,6 +1124,7 @@ exports[`<BottomSheet /> should render Header/Footer/Body properly on opened sta
   letter-spacing: 0px;
   margin: 0;
   padding: 0;
+  word-break: break-word;
   margin-top: 1px;
 }
 
@@ -1030,6 +1149,7 @@ exports[`<BottomSheet /> should render Header/Footer/Body properly on opened sta
   line-clamp: 1;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
+  overflow-wrap: break-word;
 }
 
 .c19.c19.c19.c19.c19 {
@@ -1049,7 +1169,7 @@ exports[`<BottomSheet /> should render Header/Footer/Body properly on opened sta
   padding: 0;
 }
 
-.c29.c29.c29.c29.c29 {
+.c31.c31.c31.c31.c31 {
   color: hsla(212,39%,16%,1);
   font-family: "Inter","Inter Fallback Arial",Arial;
   font-size: 0.875rem;
@@ -1066,7 +1186,7 @@ exports[`<BottomSheet /> should render Header/Footer/Body properly on opened sta
   padding: 0;
 }
 
-.c35.c35.c35.c35.c35 {
+.c38.c38.c38.c38.c38 {
   color: hsla(227,100%,59%,1);
   font-family: "Inter","Inter Fallback Arial",Arial;
   font-size: 0.875rem;
@@ -1104,13 +1224,14 @@ exports[`<BottomSheet /> should render Header/Footer/Body properly on opened sta
   line-clamp: 1;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
+  overflow-wrap: break-word;
 }
 
 .c1.c1.c1.c1.c1 {
-  -webkit-transition-duration: 250ms;
-  transition-duration: 250ms;
-  -webkit-transition-timing-function: cubic-bezier(0,0,0,1);
-  transition-timing-function: cubic-bezier(0,0,0,1);
+  -webkit-transition-duration: 280ms;
+  transition-duration: 280ms;
+  -webkit-transition-timing-function: cubic-bezier(0,0,0.2,1);
+  transition-timing-function: cubic-bezier(0,0,0.2,1);
   pointer-events: all;
   -webkit-transition-property: opacity;
   transition-property: opacity;
@@ -1148,7 +1269,7 @@ exports[`<BottomSheet /> should render Header/Footer/Body properly on opened sta
   content: '';
   width: 56px;
   height: 4px;
-  background-color: hsla(211,20%,52%,0.12);
+  background-color: hsla(211,20%,52%,0.06);
   border-radius: 16px;
 }
 
@@ -1160,8 +1281,8 @@ exports[`<BottomSheet /> should render Header/Footer/Body properly on opened sta
   box-shadow: 0px -24px 48px -12px hsla(217,56%,17%,0.18);
   opacity: 0;
   pointer-events: none;
-  -webkit-transition-duration: 250ms;
-  transition-duration: 250ms;
+  -webkit-transition-duration: 280ms;
+  transition-duration: 280ms;
   -webkit-transition-timing-function: cubic-bezier(.15,0,.24,.97);
   transition-timing-function: cubic-bezier(.15,0,.24,.97);
   will-change: transform,opacity,height;
@@ -1202,7 +1323,7 @@ exports[`<BottomSheet /> should render Header/Footer/Body properly on opened sta
   width: fit-content;
 }
 
-.c32.c32.c32.c32.c32 {
+.c34.c34.c34.c34.c34 {
   min-height: 36px;
   width: 100%;
   cursor: pointer;
@@ -1234,38 +1355,48 @@ exports[`<BottomSheet /> should render Header/Footer/Body properly on opened sta
   transition-property: background-color,border-color,box-shadow;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   position: relative;
 }
 
-.c32.c32.c32.c32.c32:hover {
+.c34.c34.c34.c34.c34:hover {
   background-color: hsla(227,100%,59%,0.09);
   border-color: hsla(227,100%,59%,1);
 }
 
-.c32.c32.c32.c32.c32:active {
+.c34.c34.c34.c34.c34:active {
   background-color: hsla(227,100%,59%,0.09);
   border-color: hsla(227,100%,59%,1);
 }
 
-.c32.c32.c32.c32.c32:focus-visible {
+.c34.c34.c34.c34.c34:focus-visible {
   background-color: hsla(227,100%,59%,0.09);
   border-color: hsla(227,100%,59%,1);
   outline: 1px solid hsla(227,100%,59%,0.09);
   box-shadow: 0px 0px 0px 4px hsla(227,100%,59%,0.18);
 }
 
-.c32.c32.c32.c32.c32 * {
+.c34.c34.c34.c34.c34 * {
   -webkit-transition-property: color,fill,opacity;
   transition-property: color,fill,opacity;
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
 }
 
-.c34.c34.c34.c34.c34 {
+.c35.c35.c35.c35.c35 {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition-duration: cubic-bezier(0.3,0,0.2,1);
+  transition-duration: cubic-bezier(0.3,0,0.2,1);
+  -webkit-transition-timing-function: 160px;
+  transition-timing-function: 160px;
+}
+
+.c37.c37.c37.c37.c37 {
   opacity: 1;
 }
 
@@ -1294,37 +1425,37 @@ exports[`<BottomSheet /> should render Header/Footer/Body properly on opened sta
 }
 
 @media screen and (min-width:320px) {
-  .c25.c25.c25.c25.c25 {
+  .c27.c27.c27.c27.c27 {
     border-bottom-style: solid;
   }
 }
 
 @media screen and (min-width:480px) {
-  .c25.c25.c25.c25.c25 {
+  .c27.c27.c27.c27.c27 {
     border-bottom-style: solid;
   }
 }
 
 @media screen and (min-width:768px) {
-  .c25.c25.c25.c25.c25 {
+  .c27.c27.c27.c27.c27 {
     border-bottom-style: solid;
   }
 }
 
 @media screen and (min-width:1024px) {
-  .c25.c25.c25.c25.c25 {
+  .c27.c27.c27.c27.c27 {
     border-bottom-style: solid;
   }
 }
 
 @media screen and (min-width:1200px) {
-  .c25.c25.c25.c25.c25 {
+  .c27.c27.c27.c27.c27 {
     border-bottom-style: solid;
   }
 }
 
 @media screen and (min-width:768px) {
-  .c31.c31.c31.c31.c31 {
+  .c33.c33.c33.c33.c33 {
     padding: 20px;
   }
 }
@@ -1486,26 +1617,35 @@ exports[`<BottomSheet /> should render Header/Footer/Body properly on opened sta
                   </button>
                 </div>
               </div>
+              <div
+                class="c25"
+                data-blade-component="base-box"
+              >
+                <div
+                  class="c26"
+                  data-blade-component="box"
+                />
+              </div>
             </div>
             <div
-              class="c25 c26"
+              class="c27 c28"
               data-blade-component="divider"
               role="separator"
             />
           </div>
         </div>
         <div
-          class="c27"
+          class="c29"
           data-blade-component="bottom-sheet-body"
           data-testid="bottomsheet-body"
-          style="user-select: auto; overflow: auto;"
+          style="user-select: auto;"
         >
           <div
-            class="c28"
+            class="c30"
             data-blade-component="base-box"
           >
             <p
-              class="c29"
+              class="c31"
               data-blade-component="text"
             >
               BottomSheet body
@@ -1513,33 +1653,38 @@ exports[`<BottomSheet /> should render Header/Footer/Body properly on opened sta
           </div>
         </div>
         <div
-          class="c30"
+          class="c32"
           data-blade-component="bottom-sheet-footer"
         >
           <div
-            class="c25 c26"
+            class="c27 c28"
             data-blade-component="divider"
             role="separator"
           />
           <div
-            class="c31"
+            class="c33"
             data-blade-component="base-box"
           >
             <button
-              class="c32"
+              class="c34"
               data-blade-component="button"
               role="button"
               type="button"
             >
               <div
-                class="c33 c34"
+                class=" c35"
                 data-blade-component="base-box"
               >
                 <div
-                  class="c35"
-                  data-blade-component="base-text"
+                  class="c36 c37"
+                  data-blade-component="base-box"
                 >
-                  Remove address
+                  <div
+                    class="c38"
+                    data-blade-component="base-text"
+                  >
+                    Remove address
+                  </div>
                 </div>
               </div>
             </button>
@@ -1571,6 +1716,7 @@ exports[`<BottomSheet /> should render empty header with padding 0 1`] = `
 }
 
 .c9.c9.c9.c9.c9 {
+  overflow: auto;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -1654,14 +1800,15 @@ exports[`<BottomSheet /> should render empty header with padding 0 1`] = `
   color: hsla(211,22%,56%,1);
   -webkit-transition-property: color,box-shadow;
   transition-property: color,box-shadow;
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
 }
 
-.c8.c8.c8.c8.c8:hover {
+.c8.c8.c8.c8.c8:hover:not([disabled]) {
   color: hsla(211,26%,34%,1);
+  background-color: transparent;
 }
 
 .c8.c8.c8.c8.c8:focus-visible {
@@ -1669,8 +1816,8 @@ exports[`<BottomSheet /> should render empty header with padding 0 1`] = `
   outline-offset: 1px;
   -webkit-transition-property: outline-width;
   transition-property: outline-width;
-  -webkit-transition-duration: 70ms;
-  transition-duration: 70ms;
+  -webkit-transition-duration: 80ms;
+  transition-duration: 80ms;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   color: hsla(211,26%,34%,1);
@@ -1698,10 +1845,10 @@ exports[`<BottomSheet /> should render empty header with padding 0 1`] = `
 }
 
 .c1.c1.c1.c1.c1 {
-  -webkit-transition-duration: 250ms;
-  transition-duration: 250ms;
-  -webkit-transition-timing-function: cubic-bezier(0,0,0,1);
-  transition-timing-function: cubic-bezier(0,0,0,1);
+  -webkit-transition-duration: 280ms;
+  transition-duration: 280ms;
+  -webkit-transition-timing-function: cubic-bezier(0,0,0.2,1);
+  transition-timing-function: cubic-bezier(0,0,0.2,1);
   pointer-events: all;
   -webkit-transition-property: opacity;
   transition-property: opacity;
@@ -1739,7 +1886,7 @@ exports[`<BottomSheet /> should render empty header with padding 0 1`] = `
   content: '';
   width: 56px;
   height: 4px;
-  background-color: hsla(211,20%,52%,0.12);
+  background-color: hsla(211,20%,52%,0.06);
   border-radius: 16px;
 }
 
@@ -1751,8 +1898,8 @@ exports[`<BottomSheet /> should render empty header with padding 0 1`] = `
   box-shadow: 0px -24px 48px -12px hsla(217,56%,17%,0.18);
   opacity: 0;
   pointer-events: none;
-  -webkit-transition-duration: 250ms;
-  transition-duration: 250ms;
+  -webkit-transition-duration: 280ms;
+  transition-duration: 280ms;
   -webkit-transition-timing-function: cubic-bezier(.15,0,.24,.97);
   transition-timing-function: cubic-bezier(.15,0,.24,.97);
   will-change: transform,opacity,height;
@@ -1842,7 +1989,7 @@ exports[`<BottomSheet /> should render empty header with padding 0 1`] = `
           class="c9"
           data-blade-component="bottom-sheet-body"
           data-testid="bottomsheet-body"
-          style="user-select: auto; overflow: auto;"
+          style="user-select: auto;"
         >
           <div
             class="c10"

@@ -10,14 +10,18 @@ import { getStyledProps } from '~components/Box/styledProps';
 import BaseBox from '~components/Box/BaseBox';
 import { assignWithoutSideEffects } from '~utils/assignWithoutSideEffects';
 import { getComponentId, isValidAllowedChildren } from '~utils/isValidAllowedChildren';
-import { isReactNative } from '~utils';
 import { MetaConstants, metaAttribute } from '~utils/metaAttribute';
 import { throwBladeError } from '~utils/logger';
-import type { ContainerElementType } from '~utils/types';
+import type { BladeElementRef, ContainerElementType } from '~utils/types';
 import { useControllableState } from '~utils/useControllable';
+import { mergeRefs } from '~utils/useMergeRefs';
+import { makeAnalyticsAttribute } from '~utils/makeAnalyticsAttribute';
 
 const validDropdownChildren = [
+  // TODO: Remove Box once CountrySelector's button sizing is fixed
+  dropdownComponentIds.BaseBox,
   dropdownComponentIds.triggers.SelectInput,
+  dropdownComponentIds.triggers.SearchInput,
   dropdownComponentIds.triggers.DropdownButton,
   dropdownComponentIds.triggers.DropdownLink,
   dropdownComponentIds.DropdownOverlay,
@@ -51,14 +55,18 @@ const validDropdownChildren = [
  *
  * Checkout {@link https://blade.razorpay.com/?path=/docs/components-dropdown-with-select--with-single-select Dropdown Documentation}
  */
-const _Dropdown = ({
-  children,
-  isOpen: isOpenControlled,
-  onOpenChange,
-  selectionType = 'single',
-  testID,
-  ...styledProps
-}: DropdownProps): React.ReactElement => {
+const _Dropdown = (
+  {
+    children,
+    isOpen: isOpenControlled,
+    onOpenChange,
+    selectionType = 'single',
+    testID,
+    _width,
+    ...rest
+  }: DropdownProps,
+  ref: React.Ref<BladeElementRef>,
+): React.ReactElement => {
   const [options, setOptions] = React.useState<DropdownContextType['options']>([]);
   const [filteredValues, setFilteredValues] = React.useState<string[]>([]);
   const [selectedIndices, setSelectedIndices] = React.useState<
@@ -135,6 +143,10 @@ const _Dropdown = ({
 
       if (isValidAllowedChildren(child, dropdownComponentIds.triggers.SelectInput)) {
         dropdownTriggerer.current = 'SelectInput';
+      }
+
+      if (isValidAllowedChildren(child, dropdownComponentIds.triggers.SearchInput)) {
+        dropdownTriggerer.current = 'SearchInput';
       }
 
       if (isValidAllowedChildren(child, dropdownComponentIds.triggers.DropdownButton)) {
@@ -216,66 +228,16 @@ const _Dropdown = ({
     };
   }, [dropdownHasBottomSheet, hasAutoCompleteInBottomSheetHeader, isDropdownOpen, close]);
 
-  React.useEffect((): (() => void) | undefined => {
-    if (!isReactNative()) {
-      const dropdown = dropdownContainerRef.current;
-
-      const documentClickHandler = (e: MouseEvent): void => {
-        const target = e.target as HTMLDivElement;
-
-        if (!target || !dropdown) {
-          return;
-        }
-
-        const isOutsideClick =
-          !dropdown.contains(target) &&
-          !isTagDismissedRef.current?.value &&
-          document.body.contains(target);
-
-        const isDropdownOpenState = isDropdownOpenRef.current;
-        if (isOutsideClick && isDropdownOpenState) {
-          close();
-        }
-
-        if (isTagDismissedRef.current?.value) {
-          isTagDismissedRef.current.value = false;
-        }
-      };
-
-      const documentFocusHandler = (e: FocusEvent): void => {
-        const target = e.relatedTarget as HTMLDivElement;
-        setActiveIndex(-1);
-
-        if (!dropdown || !target) {
-          return;
-        }
-
-        if (!dropdown.contains(target)) {
-          close();
-        }
-      };
-
-      document.addEventListener('click', documentClickHandler);
-      document.addEventListener('focusout', documentFocusHandler);
-
-      return (): void => {
-        document.removeEventListener('click', documentClickHandler);
-        document.removeEventListener('focusout', documentFocusHandler);
-      };
-    }
-
-    return undefined;
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
   return (
     <BottomSheetAndDropdownGlueContext.Provider value={BottomSheetAndDropdownGlueContextValue}>
       <DropdownContext.Provider value={contextValue}>
         <BaseBox
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          ref={dropdownContainerRef as any}
+          ref={mergeRefs(ref, dropdownContainerRef as any)}
           {...metaAttribute({ name: MetaConstants.Dropdown, testID })}
-          {...getStyledProps(styledProps)}
+          {...getStyledProps(rest)}
+          {...makeAnalyticsAttribute(rest)}
+          width={_width}
         >
           <BaseBox position="relative" textAlign={'left' as never}>
             {children}
@@ -286,7 +248,7 @@ const _Dropdown = ({
   );
 };
 
-const Dropdown = assignWithoutSideEffects(_Dropdown, {
+const Dropdown = assignWithoutSideEffects(React.forwardRef(_Dropdown), {
   componentId: dropdownComponentIds.Dropdown,
 });
 

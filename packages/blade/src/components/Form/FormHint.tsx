@@ -2,27 +2,42 @@
 import type { ReactElement } from 'react';
 import React from 'react';
 import { FormHintWrapper } from './FormHintWrapper';
+import { hintIconSize, hintMarginTop, hintTextSize } from './formTokens';
 import type { TextProps } from '~components/Typography/Text';
 import { Text } from '~components/Typography/Text';
 import BaseBox from '~components/Box/BaseBox';
+import type { IconComponent } from '~components/Icons';
 import { CheckIcon, InfoIcon } from '~components/Icons';
 import { getPlatformType } from '~utils/getPlatformType';
+import { Box } from '~components/Box';
 
 type HintTextProps = {
-  icon?: React.ElementType;
+  icon?: IconComponent;
   children: string;
   id?: string;
   color: TextProps<{ variant: 'caption' }>['color'];
+  size: 'small' | 'medium' | 'large';
 };
 
-const HintText = ({ icon: Icon, children, id, color }: HintTextProps): ReactElement => {
+const HintText = ({ icon: Icon, children, id, color, size }: HintTextProps): ReactElement => {
   const isReactNative = getPlatformType() === 'react-native';
 
   return (
-    <BaseBox marginTop="spacing.2" id={id}>
+    <BaseBox marginTop={hintMarginTop[size]} id={id}>
       <FormHintWrapper>
-        {Icon ? <Icon /> : null}
-        <Text as={isReactNative ? undefined : 'span'} color={color} size="small" variant="caption">
+        {Icon ? (
+          // offset block element 2px down to align with text
+          <Box flexShrink={0} marginTop="spacing.1">
+            <Icon />
+          </Box>
+        ) : null}
+        <Text
+          as={isReactNative ? undefined : 'span'}
+          color={color}
+          size={hintTextSize[size]}
+          variant="caption"
+          wordBreak="break-word"
+        >
           {children}
         </Text>
       </FormHintWrapper>
@@ -63,20 +78,27 @@ export type FormHintProps = {
    * Needed for accessibility reasons.
    */
   successTextId?: string;
+  /**
+   * Sets the size of the hint
+   * @default medium
+   */
+  size?: 'small' | 'medium' | 'large';
 };
 
 const Icons = {
-  error: (): ReactElement => (
-    <>
-      <InfoIcon color="feedback.icon.negative.intense" size="small" />
-      <BaseBox marginRight="spacing.2" />
-    </>
+  error: ({ size }: { size: 'small' | 'medium' | 'large' }): ReactElement => (
+    <InfoIcon
+      display={'block' as never}
+      color="feedback.icon.negative.intense"
+      size={hintIconSize[size]}
+    />
   ),
-  success: (): ReactElement => (
-    <>
-      <CheckIcon color="feedback.icon.positive.intense" size="small" />
-      <BaseBox marginRight="spacing.2" />
-    </>
+  success: ({ size }: { size: 'small' | 'medium' | 'large' }): ReactElement => (
+    <CheckIcon
+      display={'block' as never}
+      color="feedback.icon.positive.intense"
+      size={hintIconSize[size]}
+    />
   ),
 };
 
@@ -88,6 +110,7 @@ const FormHint = ({
   helpTextId,
   errorTextId,
   successTextId,
+  size = 'medium',
 }: FormHintProps): React.ReactElement => {
   const colors: Record<string, TextProps<{ variant: 'caption' }>['color']> = {
     help: 'surface.text.gray.muted',
@@ -102,19 +125,29 @@ const FormHint = ({
   return (
     <>
       {showHelp && (
-        <HintText id={helpTextId} color={colors.help}>
+        <HintText size={size} id={helpTextId} color={colors.help}>
           {helpText}
         </HintText>
       )}
 
       {showError && (
-        <HintText id={errorTextId} icon={Icons.error} color={colors.error}>
+        <HintText
+          size={size}
+          id={errorTextId}
+          icon={() => Icons.error({ size })}
+          color={colors.error}
+        >
           {errorText}
         </HintText>
       )}
 
       {showSuccess && (
-        <HintText id={successTextId} icon={Icons.success} color={colors.success}>
+        <HintText
+          size={size}
+          id={successTextId}
+          icon={() => Icons.success({ size })}
+          color={colors.success}
+        >
           {successText}
         </HintText>
       )}

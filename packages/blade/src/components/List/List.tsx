@@ -5,9 +5,9 @@ import { UnorderedList } from './UnorderedList';
 import { OrderedList } from './OrderedList';
 import type { ListItemProps } from './ListItem';
 import getIn from '~utils/lodashButBetter/get';
-import type { IconComponent } from '~components/Icons';
+import type { IconComponent, IconProps } from '~components/Icons';
 import { metaAttribute, MetaConstants } from '~utils/metaAttribute';
-import type { DotNotationSpacingStringToken, TestID } from '~utils/types';
+import type { BladeElementRef, DotNotationSpacingStringToken, TestID } from '~utils/types';
 import BaseBox from '~components/Box/BaseBox';
 import { getStyledProps } from '~components/Box/styledProps';
 import type { StyledPropsBlade } from '~components/Box/styledProps';
@@ -41,10 +41,12 @@ type ListCommonProps = {
 type ListWithIconProps = ListCommonProps & {
   variant?: 'unordered';
   icon?: IconComponent;
+  iconColor?: IconProps['color'];
 };
 type ListWithoutIconProps = ListCommonProps & {
   variant?: 'ordered' | 'ordered-filled';
   icon?: undefined;
+  iconColor?: undefined;
 };
 type ListProps = ListWithIconProps | ListWithoutIconProps;
 
@@ -80,14 +82,10 @@ const StyledUnorderedList = styled(UnorderedList)<{ marginTop?: DotNotationSpaci
  *  <List />
  * ```
  */
-const _List = ({
-  variant = 'unordered',
-  size,
-  children,
-  icon,
-  testID,
-  ...styledProps
-}: ListProps): React.ReactElement => {
+const _List = (
+  { variant = 'unordered', size, children, icon, testID, iconColor, ...styledProps }: ListProps,
+  ref: React.Ref<BladeElementRef>,
+): React.ReactElement => {
   const ListElement = variant === 'unordered' ? StyledUnorderedList : StyledOrderedList;
   const { level, size: listContextSize } = useListContext();
   const listContextValue = useMemo(
@@ -95,9 +93,10 @@ const _List = ({
       level: level ? level + 1 : 1,
       size: size ?? listContextSize,
       icon,
+      iconColor,
       variant,
     }),
-    [icon, level, listContextSize, size, variant],
+    [icon, iconColor, level, listContextSize, size, variant],
   );
 
   const childrenArray = React.Children.toArray(children);
@@ -116,7 +115,7 @@ const _List = ({
 
   return (
     <ListProvider value={listContextValue}>
-      <BaseBox {...getStyledProps(styledProps)}>
+      <BaseBox ref={ref as never} {...getStyledProps(styledProps)}>
         <ListElement
           {...metaAttribute({ name: MetaConstants.List, testID })}
           {...makeAccessible({ role: 'list' })} // Role needed for react-native
@@ -133,7 +132,7 @@ const _List = ({
   );
 };
 
-const List = assignWithoutSideEffects(_List, { componentId: MetaConstants.List });
+const List = assignWithoutSideEffects(React.forwardRef(_List), { componentId: MetaConstants.List });
 
 export { List };
 export type { ListProps };

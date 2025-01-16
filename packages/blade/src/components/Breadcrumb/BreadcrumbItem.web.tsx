@@ -5,6 +5,7 @@ import { BaseLink } from '~components/Link/BaseLink';
 import { Text } from '~components/Typography';
 import BaseBox from '~components/Box/BaseBox';
 import { opacity } from '~tokens/global';
+import { makeAnalyticsAttribute } from '~utils/makeAnalyticsAttribute';
 
 const BreadcrumbItem = ({
   children,
@@ -13,6 +14,7 @@ const BreadcrumbItem = ({
   isCurrentPage,
   onClick,
   accessibilityLabel,
+  ...rest
 }: BreadcrumbItemProps): React.ReactElement => {
   const { color, size } = React.useContext(BreadcrumbContext);
 
@@ -41,11 +43,12 @@ const BreadcrumbItem = ({
     <BaseLink
       size={size}
       color={color}
-      opacity={color !== 'primary' ? opacity[7] : 1}
+      opacity={color !== 'primary' ? opacity[700] : 1}
       icon={Icon}
       href={href}
       onClick={onClick}
       accessibilityProps={{ label: accessibilityLabel }}
+      {...makeAnalyticsAttribute(rest)}
     >
       {children ?? ''}
     </BaseLink>

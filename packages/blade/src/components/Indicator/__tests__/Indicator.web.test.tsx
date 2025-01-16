@@ -22,6 +22,16 @@ describe('<Indicator />', () => {
     expect(container).toMatchSnapshot();
   });
 
+  it('should render with intense emphasis', () => {
+    const { container } = renderWithTheme(
+      <Indicator emphasis="intense" size="small" color="positive">
+        Success
+      </Indicator>,
+    );
+
+    expect(container).toMatchSnapshot();
+  });
+
   it('should render text label', () => {
     const label = 'Active';
     const { getByText } = renderWithTheme(<Indicator>{label}</Indicator>);
@@ -57,5 +67,11 @@ describe('<Indicator />', () => {
     );
 
     expect(getByTestId('indicator-test')).toBeTruthy();
+  });
+  it('should accept data-analytics attribute', () => {
+    const { container } = renderWithTheme(
+      <Indicator accessibilityLabel="Success" data-analytics-indicator="Success" />,
+    );
+    expect(container).toMatchSnapshot();
   });
 });

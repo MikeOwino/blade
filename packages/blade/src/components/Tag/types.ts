@@ -1,6 +1,6 @@
 import type { StyledPropsBlade } from '~components/Box/styledProps';
 import type { IconComponent } from '~components/Icons';
-import type { StringChildrenType, TestID } from '~utils/types';
+import type { DataAnalyticsAttribute, StringChildrenType, TestID } from '~utils/types';
 
 type TagProps = {
   /**
@@ -52,6 +52,7 @@ type TagProps = {
    */
   _isTagInsideInput?: boolean;
 } & StyledPropsBlade &
+  DataAnalyticsAttribute &
   TestID;
 
 type TagsGroupProps = {
@@ -59,6 +60,7 @@ type TagsGroupProps = {
   activeTagIndex: number;
   isDisabled: TagProps['isDisabled'];
   onDismiss: ({ tagIndex, tagName }: { tagIndex: number; tagName: TagProps['children'] }) => void;
+  size?: TagProps['size'];
 };
 
 type AnimatedTagProps = {
@@ -68,6 +70,7 @@ type AnimatedTagProps = {
   activeTagIndex: number;
   onDismiss: TagsGroupProps['onDismiss'];
   tagsLength: number;
+  size: TagProps['size'];
 };
 
 export type { TagProps, AnimatedTagProps, TagsGroupProps };

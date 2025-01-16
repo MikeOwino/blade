@@ -2,37 +2,40 @@ import type { ReactElement } from 'react';
 import { StyledAccordionButton } from './StyledAccordionButton';
 import type { AccordionButtonProps } from './types';
 import { useAccordion } from './AccordionContext';
+import { AccordionItemHeader } from './AccordionItemHeader';
 import { BaseBox } from '~components/Box/BaseBox';
 import { MetaConstants, metaAttribute } from '~utils/metaAttribute';
 import { Text } from '~components/Typography';
 import { useCollapsible } from '~components/Collapsible/CollapsibleContext';
-import { CollapsibleChevronIcon } from '~components/Collapsible/CollapsibleChevronIcon';
 import { makeAccessible } from '~utils/makeAccessible';
 import { assignWithoutSideEffects } from '~utils/assignWithoutSideEffects';
 import { throwBladeError } from '~utils/logger';
+import { makeAnalyticsAttribute } from '~utils/makeAnalyticsAttribute';
 
-const _AccordionButton = ({ index, icon: Icon, children }: AccordionButtonProps): ReactElement => {
+const _AccordionButton = ({
+  index,
+  icon: Icon,
+  title,
+  isDeprecatedAPI,
+  header,
+  isDisabled,
+  ...rest
+}: AccordionButtonProps): ReactElement => {
   const { onExpandChange, isExpanded, collapsibleBodyId } = useCollapsible();
-  const { showNumberPrefix, expandedIndex } = useAccordion();
+  const { showNumberPrefix, expandedIndex, size } = useAccordion();
 
   const toggleCollapse = (): void => onExpandChange(!isExpanded);
   const onClick = (): void => toggleCollapse();
 
   const _index =
     typeof index === 'number' && showNumberPrefix ? (
-      <Text size="large" weight="semibold" marginRight="spacing.2" as="span">
+      // we have to add -2px margin to align the number with title of BaseHeader
+      <Text size={size} weight="semibold" marginTop="-2px" as="span">
         {index + 1}.
       </Text>
     ) : null;
 
-  const _icon = Icon && (
-    <Icon
-      size="medium"
-      color="surface.icon.gray.muted"
-      marginRight="spacing.3"
-      marginY="spacing.2"
-    />
-  );
+  const _icon = Icon && <Icon size={size} color="surface.icon.gray.normal" marginY="spacing.2" />;
 
   if (__DEV__) {
     if (_index && _icon) {
@@ -49,22 +52,18 @@ const _AccordionButton = ({ index, icon: Icon, children }: AccordionButtonProps)
     <BaseBox
       // a11y guidelines suggest having an apt heading surround a button but heading level is hardcoded here
       {...makeAccessible({ role: 'heading', level: 3 })}
+      {...makeAnalyticsAttribute(rest)}
       width="100%"
     >
       <StyledAccordionButton
+        type="button"
         isExpanded={isItemExpanded}
+        disabled={isDisabled}
         onClick={onClick}
         {...makeAccessible({ expanded: isItemExpanded, controls: collapsibleBodyId })}
         {...metaAttribute({ name: MetaConstants.AccordionButton })}
       >
-        <BaseBox display="flex" flexDirection="row" alignItems="flex-start" marginRight="spacing.4">
-          {_index}
-          {_icon}
-          <Text size="large" weight="semibold" as="span">
-            {children}
-          </Text>
-        </BaseBox>
-        <CollapsibleChevronIcon color="currentColor" size="large" />
+        {isDeprecatedAPI ? <AccordionItemHeader title={title} leading={_icon ?? _index} /> : header}
       </StyledAccordionButton>
     </BaseBox>
   );

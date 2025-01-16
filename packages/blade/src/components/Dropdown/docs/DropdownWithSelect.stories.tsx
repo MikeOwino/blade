@@ -12,10 +12,11 @@ import {
   WithRefUsageStory,
   WithValidationStateStory,
   WithValueDisplayStory,
+  WithSizesStory,
 } from './stories';
 
 import { Sandbox } from '~utils/storybook/Sandbox';
-import { SelectInput } from '~components/Input/DropdownInputTriggers';
+import { AutoComplete, SelectInput } from '~components/Input/DropdownInputTriggers';
 import {
   ActionList,
   ActionListItem,
@@ -138,6 +139,14 @@ export const WithControlledMultiSelect = (): React.ReactElement => {
   );
 };
 
+export const WithSizes = (): React.ReactElement => {
+  return (
+    <Sandbox padding="spacing.0" editorHeight="100vh">
+      {WithSizesStory}
+    </Sandbox>
+  );
+};
+
 // For chromatic and internal react native testing
 export const InternalControlledSelect = (): React.ReactElement => {
   const [currentSelection, setCurrentSelection] = React.useState<string[]>([]);
@@ -190,7 +199,7 @@ export const InternalMultiSelect = (): React.ReactElement => {
     <Box padding="spacing.5" maxWidth="300px">
       <Dropdown selectionType="multiple">
         <SelectInput label="Select City" maxRows="single" />
-        <DropdownOverlay>
+        <DropdownOverlay width="500px">
           <DropdownHeader title="Header Title" subtitle="Header subtitle" />
           <ActionList>
             <ActionListItem title="Mumbai" value="mumbai" />
@@ -372,7 +381,7 @@ export const InternalSectionListPerformance = (): React.ReactElement => {
     <Dropdown selectionType="multiple">
       <SelectInput label="Select fruits" />
       <DropdownOverlay>
-        <ActionList>
+        <ActionList isVirtualized>
           <ActionListItem title="Apples" value="Apples" />
           <ActionListItem title="Appricots" value="Appricots" />
           <ActionListItem title="Abc" value="Abc" />
@@ -455,9 +464,9 @@ export const InternalDropdownPerformance = (): React.ReactElement => {
 
   return (
     <Dropdown selectionType="multiple">
-      <SelectInput label="Select fruits" />
+      <AutoComplete label="Select fruits" />
       <DropdownOverlay>
-        <ActionList>
+        <ActionList isVirtualized>
           {fruits.map((fruit) => {
             if (typeof fruit === 'string') {
               return <ActionListItem key={fruit} title={fruit} value={fruit} />;
@@ -467,7 +476,6 @@ export const InternalDropdownPerformance = (): React.ReactElement => {
               <ActionListItem
                 trailing={<ActionListItemText>⌘ + S</ActionListItemText>}
                 leading={<ActionListItemIcon icon={HomeIcon} />}
-                description={fruit.description}
                 key={fruit.name}
                 title={fruit.name}
                 value={fruit.name}

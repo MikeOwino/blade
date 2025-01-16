@@ -14,8 +14,9 @@ import type { DropdownProps } from './types';
 
 import { dropdownComponentIds } from './dropdownComponentIds';
 import type { FormInputHandleOnKeyDownEvent } from '~components/Form/FormTypes';
-import { isReactNative } from '~utils';
+import { isReactNative, isBrowser } from '~utils';
 import type { ContainerElementType } from '~utils/types';
+import { fireNativeEvent } from '~utils/fireNativeEvent';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-function
 const noop = (): void => {};
@@ -72,7 +73,12 @@ type DropdownContextType = {
   /** common baseId which is prepended to multiple other ids inside this dropdown  */
   dropdownBaseId: string;
   /** Which element has triggered the dropdown */
-  dropdownTriggerer?: 'SelectInput' | 'DropdownButton' | 'AutoComplete' | 'DropdownLink';
+  dropdownTriggerer?:
+    | 'SelectInput'
+    | 'DropdownButton'
+    | 'AutoComplete'
+    | 'DropdownLink'
+    | 'SearchInput';
   /** ref of triggerer. Used to call focus in certain places */
   triggererRef: React.MutableRefObject<HTMLButtonElement | null>;
   triggererWrapperRef: React.MutableRefObject<ContainerElementType | null>;
@@ -329,7 +335,7 @@ const useDropdown = (): UseDropdownReturnValue => {
 
       const filteredIndexes = filteredValues
         .map((filteredValue) => options.findIndex((option) => option.value === filteredValue))
-        .sort();
+        .sort((a, b) => a - b);
 
       updatedIndex =
         filteredIndexes[
@@ -349,7 +355,10 @@ const useDropdown = (): UseDropdownReturnValue => {
     setActiveIndex(updatedIndex);
 
     const optionValues = options.map((option) => option.value);
-    ensureScrollVisiblity(newIndex, rest.actionListItemRef.current, optionValues);
+    ensureScrollVisiblity(updatedIndex, rest.actionListItemRef.current, optionValues);
+    if (isBrowser()) {
+      fireNativeEvent(rest.actionListItemRef as React.RefObject<HTMLElement>, ['change', 'input']);
+    }
   };
 
   /**

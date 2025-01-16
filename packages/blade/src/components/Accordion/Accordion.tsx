@@ -1,66 +1,88 @@
 import type { ReactElement } from 'react';
-import { useCallback, useMemo, useState, cloneElement, Children } from 'react';
+import React, { useCallback, useMemo, useState, cloneElement, Children } from 'react';
 import type { AccordionContextState } from './AccordionContext';
 import { AccordionContext } from './AccordionContext';
 import { MAX_WIDTH } from './styles';
+import type { AccordionProps } from './types';
 import { BaseBox } from '~components/Box/BaseBox';
-import type { StyledPropsBlade } from '~components/Box/styledProps';
 import { getStyledProps } from '~components/Box/styledProps';
 import type { BoxProps } from '~components/Box';
-import { size } from '~tokens/global';
-import type { TestID } from '~utils/types';
+import { size as sizeTokens } from '~tokens/global';
 import { makeSize } from '~utils';
 import { metaAttribute, MetaConstants } from '~utils/metaAttribute';
-
-type AccordionProps = {
-  /**
-   * Makes the passed item index expanded by default (uncontrolled)
-   */
-  defaultExpandedIndex?: number;
-
-  /**
-   * Expands the passed index (controlled), `-1` implies no expanded items
-   */
-  expandedIndex?: number;
-
-  /**
-   * Callback for change in any item's expanded state,
-   * `-1` implies no expanded items
-   */
-  onExpandChange?: ({ expandedIndex }: { expandedIndex: number }) => void;
-
-  /**
-   * Adds numeric index at the beginning of items
-   *
-   * @default false
-   */
-  showNumberPrefix?: boolean;
-
-  /**
-   * Accepts `AccordionItem` child nodes
-   */
-  children: ReactElement | ReactElement[];
-} & TestID &
-  StyledPropsBlade;
+import type { BladeElementRef } from '~utils/types';
+import { makeAnalyticsAttribute } from '~utils/makeAnalyticsAttribute';
 
 const MIN_WIDTH: BoxProps['minWidth'] = {
-  s: makeSize(size[200]),
-  m: makeSize(size[360]),
-  l: makeSize(size[360]),
+  s: makeSize(sizeTokens[200]),
+  m: makeSize(sizeTokens[360]),
+  l: makeSize(sizeTokens[360]),
 };
 
-const Accordion = ({
-  defaultExpandedIndex,
-  expandedIndex,
-  onExpandChange,
-  showNumberPrefix = false,
-  children,
-  testID,
-  ...styledProps
-}: AccordionProps): ReactElement => {
+const getVariantStyles = (variant: AccordionProps['variant']): BoxProps => {
+  if (variant === 'transparent') {
+    return {};
+  }
+
+  return {
+    backgroundColor: 'surface.background.gray.intense',
+    borderRadius: 'medium',
+    borderWidth: 'thinner',
+    borderColor: 'surface.border.gray.subtle',
+  };
+};
+
+/**
+ * # Accordion
+ *
+ * An accordion is used to allow users to toggle between different content sections in a compact vertical stack.
+ *
+ * ## Usage
+ *
+ * ```jsx
+ * <Accordion>
+ *  <AccordionItem>
+ *    <AccordionItemHeader title="Title" />
+ *    <AccordionItemBody>
+ *      <Text color="surface.text.gray.subtle">
+ *        Hello this is accordion body content
+ *        </Text>
+ *     </AccordionItemBody>
+ *  </AccordionItem>
+ *  <AccordionItem>
+ *    <AccordionItemHeader title="Title" />
+ *    <AccordionItemBody>
+ *      <Text color="surface.text.gray.subtle">
+ *         Hello this is accordion body content
+ *      </Text>
+ *    </AccordionItemBody>
+ *  </AccordionItem>
+ * </Accordion>
+ * ```
+ *
+ * Checkout https://blade.razorpay.com/?path=/docs/components-accordion--docs
+ *
+ */
+const _Accordion = (
+  {
+    defaultExpandedIndex,
+    expandedIndex,
+    onExpandChange,
+    showNumberPrefix = false,
+    children,
+    variant = 'transparent',
+    size = 'large',
+    maxWidth,
+    testID,
+    ...rest
+  }: AccordionProps,
+  ref: React.Ref<BladeElementRef>,
+): ReactElement => {
   const [expandedAccordionItemIndex, setExpandedAccordionItemIndex] = useState<number | undefined>(
     defaultExpandedIndex,
   );
+
+  const numberOfItems = Children.count(children);
 
   const handleExpandChange = useCallback(
     (nextExpandedIndex: number) => {
@@ -82,6 +104,9 @@ const Accordion = ({
       defaultExpandedIndex,
       onExpandChange: handleExpandChange,
       showNumberPrefix,
+      variant,
+      numberOfItems,
+      size,
     }),
     [
       expandedAccordionItemIndex,
@@ -89,16 +114,26 @@ const Accordion = ({
       expandedIndex,
       showNumberPrefix,
       defaultExpandedIndex,
+      variant,
+      numberOfItems,
+      size,
     ],
   );
 
   return (
     <AccordionContext.Provider value={accordionContext}>
       <BaseBox
+        ref={ref as never}
         {...metaAttribute({ name: MetaConstants.Accordion, testID })}
-        {...getStyledProps(styledProps)}
+        {...getStyledProps(rest)}
+        {...makeAnalyticsAttribute(rest)}
       >
-        <BaseBox minWidth={MIN_WIDTH} maxWidth={MAX_WIDTH} width="100%">
+        <BaseBox
+          {...getVariantStyles(variant)}
+          minWidth={MIN_WIDTH}
+          maxWidth={maxWidth ?? MAX_WIDTH}
+          width="100%"
+        >
           {Children.map(children, (child, index) =>
             cloneElement(child, { _index: index, key: index }),
           )}
@@ -108,5 +143,6 @@ const Accordion = ({
   );
 };
 
-export type { AccordionProps };
+const Accordion = React.forwardRef(_Accordion);
+
 export { Accordion };

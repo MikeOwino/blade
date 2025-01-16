@@ -7,7 +7,7 @@ import { makeMotionTime } from '~utils';
 const getTransitionDuration = (theme: Theme) => makeMotionTime(theme.motion.duration['2xquick']);
 
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-const getTransitionEasing = (theme: Theme) => theme.motion.easing.standard.effective;
+const getTransitionEasing = (theme: Theme) => theme.motion.easing.standard;
 
 const getBackgroundColor = ({
   theme,
@@ -20,16 +20,19 @@ const getBackgroundColor = ({
 }): string => {
   const { gray } = theme.colors.interactive.background;
 
+  if (isExpanded) {
+    if (isActive) {
+      return gray.fadedHighlighted;
+    }
+
+    return gray.faded;
+  }
+
   if (isActive) {
     return gray.faded;
   }
 
-  if (isExpanded) {
-    return gray.default;
-  }
-
-  const TRANSPARENT = 'hsla(0, 0%, 100%, 0)';
-  return TRANSPARENT;
+  return theme.colors.transparent;
 };
 
 const getCommonAccordionButtonStyles = (
@@ -38,7 +41,7 @@ const getCommonAccordionButtonStyles = (
   const { theme } = props;
 
   return {
-    padding: theme.spacing[5],
+    padding: theme.spacing[0],
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',

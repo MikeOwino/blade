@@ -1,5 +1,755 @@
 # @razorpay/blade
 
+## 12.2.1
+
+### Patch Changes
+
+- dbd53024: fix(blade): date picker on level change typo
+
+## 12.2.0
+
+### Minor Changes
+
+- a9e46afb: feat(ActionList): add Virtualization in ActionList
+
+  ```jsx
+  <ActionList isVirtualized></ActionList>
+  ```
+
+  > [!NOTE]
+  >
+  > Current version only supports virtulization of fixed height list where items do not have descriptions. We'll be adding support for dynamic height lists in future versions
+
+### Patch Changes
+
+- 70259329: feat(blade): add dateformat and placeholder prop for datepicker input
+  fix(blade): Removed the chevron icon when the picker prop is used.
+
+## 12.1.1
+
+### Patch Changes
+
+- 6aae282a: chore(blade): change TabNavItem,TopNavActions background color & update examples
+- c676f3ed: fix(SideNav): empty padding in banner when banner component returns null
+
+## 12.1.0
+
+### Minor Changes
+
+- e00172bf: feat(blade): Changes in components for X migration
+
+  **Drawer:**
+
+  - Changed the drawer's showOverlay behaviour to not mandate the overlay on level2 stacking
+  - Exposed ref
+
+  **RadioGroup:**
+
+  - Exposed event in onChange
+
+  **ButtonGroup:**
+
+  - Added styled props
+  - Added support for Tooltip inside ButtonGroup
+
+  **IconButton:**
+
+  - Added styledProps
+
+  **SideNavLink:**
+
+  - Added onClick
+
+### Patch Changes
+
+- 41354f63: fix(blade): cleanup bodyscroll locks if bottomsheet is force unmounted
+
+## 12.0.3
+
+### Patch Changes
+
+- 0b5dc72d: fix: interactive card selected borderRadius
+
+## 12.0.2
+
+### Patch Changes
+
+- 95a58247: fix(blade): Add backwards compat for React17 - fallback for useInsertionEffect
+
+## 12.0.1
+
+### Patch Changes
+
+- 4178c595: docs: remove stackblitz and add story code
+  fix: export Stagger and AnimateInteractions
+
+## 12.0.0
+
+### Major Changes
+
+- 663da58e: feat(Motion): Release Motion Presets
+
+  - Check out [Blade v12 Upgrade Guide](https://github.com/razorpay/blade/blob/master/packages/blade/docs/migration-docs/upgrade-v12.md) for codemod and migration steps
+
+## 11.39.0
+
+### Minor Changes
+
+- 583900a1: feat(blade): add ray icon
+
+## 11.38.1
+
+### Patch Changes
+
+- 65431583: feat: update use-presence hook to latest for react 19 support
+
+## 11.38.0
+
+### Minor Changes
+
+- a51e8f70: feat(StepGroup): spacing enhancements, support for titleColor prop
+- 7117bfbc: feat: add support for data-analytics attribute
+
+## 11.37.0
+
+### Minor Changes
+
+- 778e388b: feat(blade): add new icons - IndiaFlag, MagicKonnect, WorldWide
+
+## 11.36.2
+
+### Patch Changes
+
+- f294a414: fix(blade): maxCharacters alignment in Input field
+- fa487f1e: fix(blade): Trigger native select events in dropdown/ file upload / Date picker
+
+## 11.36.1
+
+### Patch Changes
+
+- 8846293f: fix: dropdown not opening if user clicks on dropdown backdrop
+
+## 11.36.0
+
+### Minor Changes
+
+- e97ec75b: feat: add new icons
+
+### Patch Changes
+
+- 9294580c: feat: expose textAlign prop types in text input
+
+## 11.35.0
+
+### Minor Changes
+
+- e53905b0: feat(blade): add controlled state to carousel
+
+## 11.34.1
+
+### Patch Changes
+
+- 421a3a8e: fix(blade): bottomsheet body scroll lock not clearing
+
+## 11.34.0
+
+### Minor Changes
+
+- b63190b0: feat(BottomNav): add BottomNav component
+
+### Patch Changes
+
+- 479431ab: feat(BottomNav): remove tap animation
+
+## 11.33.0
+
+### Minor Changes
+
+- e35355af: feat(Table): add hover actions support on `TableRow`
+
+## 11.32.0
+
+### Minor Changes
+
+- a4a61681: feat(blade): revamped top-nav component
+
+  > NOTE:
+  > This might be a breaking change for you, if your project uses the older deprecated TopNav.
+
+## 11.31.2
+
+### Patch Changes
+
+- eef992bd: feat(blade): support test id for table row
+
+## 11.31.1
+
+### Patch Changes
+
+- 94b69155: fix(blade): set isDisabled to checkbox for disabled table rows [DSSUP-157]
+
+  Changed the visual styling of disabled checkbox to have 'not-allowed' cursor.
+
+## 11.31.0
+
+### Minor Changes
+
+- 234f1083: feat(Amount): add support for negative amount
+  fix(PhoneNumberInput): PhoneNumber input compatibility issues with i18nify
+
+  > [!NOTE]
+  >
+  > Consumers should upgrade to latest version of `@razorpay/i18nify-js` and `@razorpay/i18nify-react` for support of negative amount
+
+## 11.30.5
+
+### Patch Changes
+
+- 9d4f9b85: feat(blade): add height & styled props to carousel
+
+## 11.30.4
+
+### Patch Changes
+
+- 68e0ec53: fix(blade): Table cell text truncation
+
+## 11.30.3
+
+### Patch Changes
+
+- 98482ca9: fix(blade): interactive card cursor
+
+## 11.30.2
+
+### Patch Changes
+
+- 2f8a5029: fix(BaseHeader): Handle word break on single word. Fixes for AccordionItemHeader, DropdownHeader, etc
+
+## 11.30.1
+
+### Patch Changes
+
+- c050c1d9: fix: AccordionItemHeader to take full width
+
+## 11.30.0
+
+### Minor Changes
+
+- 6e059a68: feat: fix datepicker range selection bug & add onApply handler
+
+### Patch Changes
+
+- 98770d68: fix(Input): required necessity indicator label break
+- 3c31990d: feat(Table): add `defaultSelectedIds` prop
+
+## 11.29.0
+
+### Minor Changes
+
+- eaa75c64: feat(ActionList): add ActionListItemAvatar component for leading prop
+
+### Patch Changes
+
+- c6f8bc72: fix(blade): support overriding tooltip interactive wrapper display prop
+
+## 11.28.2
+
+### Patch Changes
+
+- 12f30712: fix(input): change `wordBreak` behaviour of input hint text & fix alignment
+- 601cedc8: feat(StepItem): add `isDisabled` prop to StepItem
+
+## 11.28.1
+
+### Patch Changes
+
+- 830c8744: fix(Table): table sticky column overlapping with relative cell
+
+## 11.28.0
+
+### Minor Changes
+
+- 95f19f49: feat: expose link negative/positive colors
+
+## 11.27.1
+
+### Patch Changes
+
+- 8ba3eab7: fix: datepicker necessityIndicator
+
+## 11.27.0
+
+### Minor Changes
+
+- f036ef58: feat: add EqualsIcon
+
+## 11.26.1
+
+### Patch Changes
+
+- 5d7317ca: fix: remove default `rel` values
+
+  > [!NOTE]
+  >
+  > While its non-ui-breaking change, you might want to add `rel="noopener noreferrer"` to your Button if that is what you're expecting. This PR removes the defaults in-order to not break analytics that relies on referrer.
+
+- 4dcad016: fix: set min-width on Radio to avoid shrinking
+
+## 11.26.0
+
+### Minor Changes
+
+- f26cf80d: chore: expose brand colors
+- 39742907: feat(TableEditableCell): refactor TableEditableCell and add TableEditableDropdownCell
+
+### Patch Changes
+
+- e13023de: fix: table footer background color
+- fb58be12: fix: Spinner colors
+
+## 11.25.0
+
+### Minor Changes
+
+- 45ed9267: feat: add avatar addons, added new topAddon and bottomAddon props
+
+## 11.24.3
+
+### Patch Changes
+
+- 343d494d: fix(ActionListItem, MenuItem): truncate text without spaces and add htmlTitle
+
+## 11.24.2
+
+### Patch Changes
+
+- 733b9545: fix: change onRemove/onReupload params
+
+## 11.24.1
+
+### Patch Changes
+
+- b38943c0: fix: table multiselect with pagination bug
+- 636952b6: feat: add multiselection-mode prop to Table
+- caee2688: fix: add button type button
+
+## 11.24.0
+
+### Minor Changes
+
+- 03837f9f: feat: add `TableEditableCell` component for Table
+
+## 11.23.3
+
+### Patch Changes
+
+- 5b3c42db: fix: white-labeling issue with surface text primary
+
+## 11.23.2
+
+### Patch Changes
+
+- 59a333b4: fix(FileUpload): correctly update errortText
+- bb06013f: fix(ProgressBar): show percentage with decimal when using as meter
+
+## 11.23.1
+
+### Patch Changes
+
+- 00238183: feat(Menu, Dropdown): add width props on MenuOverlay and allow it in SelectInput Dropdown
+
+## 11.23.0
+
+### Minor Changes
+
+- fe9a0cff: feat(blade): add TopNav component
+
+## 11.22.0
+
+### Minor Changes
+
+- 2cb7668b: feat(Menu): add Menu component
+
+## 11.21.9
+
+### Patch Changes
+
+- d12977d5: fix(FileUpload): correctly udpate state in controlled mode
+
+## 11.21.8
+
+### Patch Changes
+
+- 9b2883f8: feat: add iconColor prop to List & ListItem
+
+## 11.21.7
+
+### Patch Changes
+
+- be353128: fix: Spinner's white color
+
+## 11.21.6
+
+### Patch Changes
+
+- 0d6d7cf7: fix: bottomsheet initial focus triggering everytime
+- cc40b48e: fix(Accordion): add `maxWidth` prop
+
+## 11.21.5
+
+### Patch Changes
+
+- 25fe56db: fix(DatePicker): correct input alignment without label
+- e179dd50: fix(FileUpload): remove excessive margins
+
+## 11.21.4
+
+### Patch Changes
+
+- d3789888: fix: datepicker zIndex issue and expose zIndex prop
+
+## 11.21.3
+
+### Patch Changes
+
+- 4643a992: fix(blade): datepicker input width
+- c7ed69b4: chore: add petty cash budget icon
+
+## 11.21.2
+
+### Patch Changes
+
+- 2a4d1673: feat(FileUpload): add `onReupload` prop to use in case of error state
+
+## 11.21.1
+
+### Patch Changes
+
+- 04c84eb4: fix: datepicker label alignment
+
+## 11.21.0
+
+### Minor Changes
+
+- 0d3e260e: feat(SideNav): add SideNav component
+
+  Checkout [SideNav Documentation](https://blade.razorpay.com/?path=/docs/components-sidenav--docs)
+
+### Patch Changes
+
+- 2d82e41c: fix(FileUpload): allow re-uploading of the same file
+
+## 11.20.0
+
+### Minor Changes
+
+- d9bb5223: refactor(blade): downgrade mantine to v6
+
+## 11.19.1
+
+### Patch Changes
+
+- 634eefd3: fix(Card, Switch): card border width, switch colors
+- 8f8b795e: fix: DatePicker necessityIndicator alignment
+
+## 11.19.0
+
+### Minor Changes
+
+- 2ed5299e: feat(blade): add DatePicker component
+
+## 11.18.3
+
+### Patch Changes
+
+- d500ec14: feat: add placeholder prop in phone input
+
+## 11.18.2
+
+### Patch Changes
+
+- 00c87e88: fix(blade): radio helptext being negative
+
+## 11.18.1
+
+### Patch Changes
+
+- 14f70c96: fix: update circular progress percentage color
+
+## 11.18.0
+
+### Minor Changes
+
+- 0c009edc: feat: add `SearchInput` component
+- 00edb732: feat: add `Avatar` & `AvatarGroup` components
+
+## 11.17.1
+
+### Patch Changes
+
+- 3d69bc9d: fix(blade): modal component failing to verify null component
+
+## 11.17.0
+
+### Minor Changes
+
+- 64108d77: feat(blade): add new icons and add figma icon importer script
+
+## 11.16.1
+
+### Patch Changes
+
+- 51c04c81: feat(Table): add compact rowDensity & update existing densities
+- 906e7f4f: fix(DropdownOverlay): Fix DropdownOverlay getting cropped in Sticky Table Column
+
+## 11.16.0
+
+### Minor Changes
+
+- afddbf27: feat: add label & validation related props to ChipGroup
+
+### Patch Changes
+
+- ef0fb059: feat(tokens): update dark mode tokens
+
+## 11.15.2
+
+### Patch Changes
+
+- 102dc873: fix: i18nify-react version upgraded to resolve duplicate i18nify-js copies
+
+## 11.15.1
+
+### Patch Changes
+
+- 989172ab: fix(blade): tab item button type
+
+## 11.15.0
+
+### Minor Changes
+
+- ada461c8: feat(StepGroup): add StepGroup component
+
+  Documentation: https://blade.razorpay.com/?path=/docs/components-stepgroup--docs
+
+## 11.14.0
+
+### Minor Changes
+
+- 23a8364b: feat(blade): add leading prop in Alert
+
+## 11.13.1
+
+### Patch Changes
+
+- 2f0d96fb: fix(blade): phone number input dropdown not opening
+
+## 11.13.0
+
+### Minor Changes
+
+- 410cfb55: feat: add `circular` variant for the `ProgressBar` component
+
+  #### Changes
+
+  - The `"meter"` & `"progress"` values for the `variant` prop are deprecated in favor of the new `type?: "meter" | "progress"` prop.
+  - The `variant` prop now accepts `"linear"` & `"circular"` values.
+  - **Usage:**
+
+    ```js
+      <ProgressBar variant="circular" value={20}> label="Label" />
+    ```
+
+  #### Migration with Codemod
+
+  - The codemod will automatically update the `ProgressBar` component. Execute the codemod on the file/directory that needs to be migrated for the page via the following command:
+
+    > Need help? Check out [jscodeshift docs](https://github.com/facebook/jscodeshift) for CLI usage tips.
+
+    ```sh
+    npx jscodeshift ./PATH_TO_YOUR_DIR --extensions=tsx,ts,jsx,js -t ./node_modules/@razorpay/blade/codemods/migrate-progressbar/transformers/index.ts --ignore-pattern="**/node_modules/**"
+    ```
+
+  - There might be some situations where the codemod falls short, If you encounter errors, refer the following examples to migrate the component manually:
+
+    ```diff
+    - <ProgressBar value={20}> label="Label" />
+    + <ProgressBar type="progress" value={20}> label="Label" />
+
+    - <ProgressBar variant="progress" value={20}> label="Label" />
+    + <ProgressBar type="progress" variant="linear" value={20}> label="Label" />
+
+    - <ProgressBar variant="meter" value={20}> label="Label" />
+    + <ProgressBar type="meter" variant="linear" value={20}> label="Label" />
+    ```
+
+## 11.12.0
+
+### Minor Changes
+
+- c5f24eae: feat(TextArea, TextInput): Support Tagged Inputs with `tags` and `isTaggedInput` prop
+  feat(Tag): max-width is removed from Tag component
+
+## 11.11.1
+
+### Patch Changes
+
+- cc69004a: fix: additional parameters added to retain fraction digits in humanize Amount figure
+
+## 11.11.0
+
+### Minor Changes
+
+- 8c5231d4: feat: add large size in FileUpload component
+
+  #### Usage
+
+  ```js
+  <FileUpload
+    size="large"
+    uploadType="single"
+    label="Upload GST certificate"
+    helpText="Upload .jpg, .jpeg, or .png file only"
+    accept="image/*"
+  />
+  ```
+
+## 11.10.0
+
+### Minor Changes
+
+- a75d2e3c: feat(blade): add PhoneNumber input
+
+## 11.9.1
+
+### Patch Changes
+
+- 38d97633: fix(Table): selection toggle for multiselect table
+
+## 11.9.0
+
+### Minor Changes
+
+- 015e6828: feat: Redesign all `Input` components
+
+  > Note: No breaking changes to the existing API. The Input components will continue to work as before but with an updated design.
+
+  ## Changes
+
+  ### TextInput
+
+  - Redesigned UI
+  - Add `leadingIcon` prop
+  - ⚠️ Deprecate `icon` prop in favour of `leadingIcon` which will be removed in the next major version
+  - Add `trailingIcon` prop
+  - Add `trailingLinkButton` prop
+  - Add `size` prop
+
+  ### TextArea
+
+  - Redesigned UI
+  - Add `size` prop
+
+  ### PasswordInput
+
+  - Redesigned UI
+  - Adds `size` prop
+
+  ### OTPInput
+
+  - Redesigned UI
+  - Add `size` prop
+
+  ### SelectInput
+
+  - Redesigned UI
+  - Add `size` prop
+
+  ### Autocomplete
+
+  - Redesigned UI
+  - Add `size` prop
+
+  ### Radio
+
+  - Add `size` prop
+
+  ### Checkbox
+
+  - Add `size` prop
+
+## 11.8.2
+
+### Patch Changes
+
+- 5be1dedb: fix: update ButtonGroup focus ring styles
+
+## 11.8.1
+
+### Patch Changes
+
+- 9dcc2914: fix(Button): use height and width to fix sizes in Icon Only Button
+
+## 11.8.0
+
+### Minor Changes
+
+- fd304e47: feat: add the `ButtonGroup` component
+
+## 11.7.0
+
+### Minor Changes
+
+- 524fa924: feat(Accordion): add new `filled` variant
+
+  New variant can be used to build individual filled Accordions like these
+
+  <img width="400" alt="image" src="https://github.com/razorpay/blade/assets/30949385/7f3d737f-149a-42b0-be1b-1c86d5a0fd83">
+
+  > [!Warning]
+  >
+  > Accordion has a new API and the current API will be deprecated and removed in next major version
+
+  #### Migration from existing API
+
+  We have added `AccordionItemHeader` and `AccordionItemBody` components.
+
+  Props like `icon`, `title`, `description` from AccordionItem are deprecated.
+
+  - `icon` on AccordionItem can be replicated with `leading` on AccordionItemHeader
+  - `title` moves from AccordionItem to AccordionItemHeader
+  - `description` from AccordionItem can be passed to AccordionItemBody as children
+
+  ##### Diff
+
+  ```diff
+  <Accordion>
+    <AccordionItem
+  -    icon={StarIcon}
+  -    title="This is title"
+  -    description="Body content of Accordion"
+    />
+  </Accordion>
+  ```
+
+  ```diff
+  <Accordion>
+    <AccordionItem>
+  +    <AccordionItemHeader leading={<StarIcon size="large" />} title="This is title" />
+  +    <AccordionItemBody>Body content of Accordion</AccordionItemBody>
+    </AccordionItem>
+  </Accordion>
+  ```
+
+  Checkout full documentation at https://blade.razorpay.com/?path=/docs/components-accordion--docs
+
+## 11.6.3
+
+### Patch Changes
+
+- 2c64f181: feat: support `defaultPlacement` prop on `DropdownOverlay`
+- ef68789a: fix(DropdownButton): scroll handling issues on keyboard navigations
+
 ## 11.6.2
 
 ### Patch Changes

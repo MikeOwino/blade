@@ -1,6 +1,6 @@
 import type { Theme } from '~components/BladeProvider';
 import type { AccessibilityProps } from '~utils/makeAccessible/types';
-import type { TestID } from '~utils/types';
+import type { DataAnalyticsAttribute, TestID } from '~utils/types';
 import type { StyledPropsBlade } from '~components/Box/styledProps';
 import type { DotNotationToken } from '~utils/lodashButBetter/get';
 
@@ -31,7 +31,7 @@ type As =
 
 export type BaseTextProps = {
   id?: string;
-  color?: TextColors;
+  color?: TextColors | 'currentColor'; // currentColor is useful for letting text inherit color property from its container
   fontFamily?: keyof Theme['typography']['fonts']['family'];
   fontSize?: keyof Theme['typography']['fonts']['size'];
   fontWeight?: keyof Theme['typography']['fonts']['weight'];
@@ -57,6 +57,7 @@ export type BaseTextProps = {
   numberOfLines?: number;
   componentName?: 'base-text' | 'text' | 'title' | 'heading' | 'code' | 'display';
 } & TestID &
+  DataAnalyticsAttribute &
   StyledPropsBlade;
 
 export type StyledBaseTextProps = Pick<

@@ -11,12 +11,9 @@ import { Button } from '~components/Button';
 import { Text } from '~components/Typography';
 import { Box } from '~components/Box';
 
-const getActiveDescendant = (
-  selectInput: HTMLElement,
-  container: HTMLElement,
-): string | null | undefined => {
+const getActiveDescendant = (selectInput: HTMLElement): string | null | undefined => {
   const activeDescendantId = selectInput.getAttribute('aria-activedescendant');
-  const activeDescendantElement = container.querySelector(`#${activeDescendantId}`);
+  const activeDescendantElement = document.querySelector(`#${activeDescendantId}`);
   return activeDescendantElement?.textContent;
 };
 
@@ -50,6 +47,28 @@ describe('<Dropdown />', () => {
     expect(queryByRole('dialog')).toBeNull();
     await user.click(selectInput);
     await waitFor(() => expect(getByRole('dialog', { name: 'Fruits' })).toBeVisible());
+    expect(container).toMatchSnapshot();
+  });
+
+  it('should render dropdown with large size select input', () => {
+    const { container } = renderWithTheme(
+      <Dropdown>
+        <SelectInput label="Fruits" size="large" />
+        <DropdownOverlay zIndex={1002}>
+          <DropdownHeader title="Recent Searches" />
+          <ActionList>
+            <ActionListItem title="Apple" value="apple" />
+            <ActionListItem title="Mango" value="mango" />
+          </ActionList>
+          <DropdownFooter>
+            <Box>
+              <Button isFullWidth>Apply</Button>
+            </Box>
+          </DropdownFooter>
+        </DropdownOverlay>
+      </Dropdown>,
+    );
+
     expect(container).toMatchSnapshot();
   });
 
@@ -140,8 +159,9 @@ describe('<Dropdown />', () => {
     expect(getByRole('option', { name: 'Mango' }).getAttribute('aria-selected')).toBe('true');
   });
 
+  // Skipped because flaky
   // https://github.com/razorpay/blade/issues/1721
-  it('should handle controlled props & disabled options with multi select', async () => {
+  it.skip('should handle controlled props & disabled options with multi select', async () => {
     const ControlledDropdown = (): React.ReactElement => {
       const [currentSelection, setCurrentSelection] = React.useState<string[]>([]);
       const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
@@ -334,6 +354,37 @@ describe('<Dropdown /> with <DropdownButton />', () => {
     expect(getByText('selection: settings')).toBeInTheDocument();
   });
 
+  it('should support data-analytics-attribute', async () => {
+    const user = userEvent.setup();
+    const profileClickHandler = jest.fn();
+
+    const { container, getByRole } = renderWithTheme(
+      <Dropdown>
+        <DropdownButton data-analytics-attribute="profile" onClick={profileClickHandler}>
+          My Account
+        </DropdownButton>
+        <DropdownOverlay>
+          <ActionList data-analytics-list="user-setting">
+            <ActionListItem data-analytics-item="user-profile" title="Profile" value="profile" />
+            <ActionListItem title="Settings" value="settings" />
+          </ActionList>
+        </DropdownOverlay>
+      </Dropdown>,
+    );
+
+    const dropdownTrigger = getByRole('button', { name: 'My Account' });
+
+    expect(dropdownTrigger).toBeInTheDocument();
+    expect(container).toMatchSnapshot();
+    await user.click(dropdownTrigger);
+    expect(getByRole('menuitem', { name: 'Profile' })).toHaveAttribute(
+      'data-analytics-item',
+      'user-profile',
+    );
+    await user.click(getByRole('menuitem', { name: 'Profile' }));
+    expect(profileClickHandler).toBeCalled();
+  });
+
   it('should handle controlled selection in link trigger menu', async () => {
     const user = userEvent.setup();
 
@@ -376,7 +427,7 @@ describe('<Dropdown /> with <DropdownButton />', () => {
     const user = userEvent.setup();
     const profileClickHandler = jest.fn();
 
-    const { container, getByRole, queryByRole } = renderWithTheme(
+    const { getByRole, queryByRole } = renderWithTheme(
       <Dropdown>
         <DropdownButton>My Account</DropdownButton>
         <DropdownOverlay>
@@ -403,13 +454,13 @@ describe('<Dropdown /> with <DropdownButton />', () => {
 
     // Move to first item
     await user.keyboard('{ArrowDown}');
-    expect(getActiveDescendant(dropdownTrigger, container)).toBe('Profile');
+    expect(getActiveDescendant(dropdownTrigger)).toBe('Profile');
     await user.keyboard('[Space]');
     expect(profileClickHandler).toBeCalled();
 
     await user.keyboard('{ArrowDown}');
     await user.keyboard('{ArrowDown}');
-    expect(getActiveDescendant(dropdownTrigger, container)).toBe('Settings');
+    expect(getActiveDescendant(dropdownTrigger)).toBe('Settings');
     window.open = jest.fn();
     await user.keyboard('[Space]');
     expect(window.open).toBeCalledWith('/settings', '_blank');

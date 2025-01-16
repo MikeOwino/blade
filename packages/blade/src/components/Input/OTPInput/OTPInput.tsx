@@ -13,6 +13,8 @@ import type { StyledPropsBlade } from '~components/Box/styledProps';
 import { getPlatformType } from '~utils';
 import { metaAttribute, MetaConstants } from '~utils/metaAttribute';
 import { makeSize } from '~utils/makeSize';
+import type { DataAnalyticsAttribute } from '~utils/types';
+import { makeAnalyticsAttribute } from '~utils/makeAnalyticsAttribute';
 
 type FormInputOnEventWithIndex = ({
   name,
@@ -42,6 +44,8 @@ export type OTPInputCommonProps = Pick<
   | 'keyboardType'
   | 'placeholder'
   | 'testID'
+  | 'size'
+  | keyof DataAnalyticsAttribute
 > & {
   /**
    * Determines the number of input fields to show for the OTP
@@ -158,7 +162,8 @@ const _OTPInput: React.ForwardRefRenderFunction<HTMLInputElement[], OTPInputProp
     isMasked,
     autoCompleteSuggestionType = 'oneTimeCode',
     testID,
-    ...styledProps
+    size = 'medium',
+    ...rest
   },
   incomingRef,
 ) => {
@@ -368,6 +373,9 @@ const _OTPInput: React.ForwardRefRenderFunction<HTMLInputElement[], OTPInputProp
             helpText={helpText}
             hideFormHint={true}
             type={currentInputType}
+            size={size}
+            valueComponentType="heading"
+            {...makeAnalyticsAttribute(rest)}
           />
         </BaseBox>,
       );
@@ -376,10 +384,7 @@ const _OTPInput: React.ForwardRefRenderFunction<HTMLInputElement[], OTPInputProp
   };
 
   return (
-    <BaseBox
-      {...metaAttribute({ name: MetaConstants.OTPInput, testID })}
-      {...getStyledProps(styledProps)}
-    >
+    <BaseBox {...metaAttribute({ name: MetaConstants.OTPInput, testID })} {...getStyledProps(rest)}>
       <BaseBox
         display="flex"
         flexDirection={isLabelLeftPositioned ? 'row' : 'column'}
@@ -387,7 +392,7 @@ const _OTPInput: React.ForwardRefRenderFunction<HTMLInputElement[], OTPInputProp
         position="relative"
       >
         {Boolean(label) && (
-          <FormLabel as="label" position={labelPosition} htmlFor={inputId}>
+          <FormLabel as="label" position={labelPosition} htmlFor={inputId} size={size}>
             {label}
           </FormLabel>
         )}
@@ -407,6 +412,7 @@ const _OTPInput: React.ForwardRefRenderFunction<HTMLInputElement[], OTPInputProp
           helpTextId={helpTextId}
           errorTextId={errorTextId}
           successTextId={successTextId}
+          size={size}
         />
       </BaseBox>
     </BaseBox>

@@ -113,7 +113,9 @@ export function getActionFromKey(
     } else if (
       key === 'Enter' ||
       // we ignore the spacebar select in autocomplete since hitting spacebar might be expected while typing
-      (dropdownTriggerer !== dropdownComponentIds.triggers.AutoComplete && key === ' ')
+      (dropdownTriggerer !== dropdownComponentIds.triggers.AutoComplete &&
+        dropdownTriggerer !== dropdownComponentIds.triggers.SearchInput &&
+        key === ' ')
     ) {
       return SelectActions.CloseSelect;
     }
@@ -198,6 +200,19 @@ export function isElementVisibleOnScreen(element: HTMLElement): boolean {
 }
 
 /**
+ * Checks if element is visible inside the given container
+ */
+function isElementVisible(container: HTMLElement, element: HTMLElement): boolean {
+  const containerRect = container.getBoundingClientRect();
+  const elementRect = element.getBoundingClientRect();
+
+  const isVerticalVisible =
+    elementRect.top >= containerRect.top && elementRect.bottom <= containerRect.bottom;
+
+  return isVerticalVisible;
+}
+
+/**
  * Checks if the dropdown is scrollable
  */
 export function isScrollable(element: HTMLElement): boolean {
@@ -274,21 +289,19 @@ export const ensureScrollVisiblity = (
   // ensure the new option is in view
   if (containerElement) {
     if (isScrollable(containerElement)) {
-      const optionEl = containerElement.querySelectorAll<HTMLElement>('[role="option"]');
+      const optionEl = containerElement.querySelectorAll<HTMLElement>(
+        '[role="option"], [role="menuitem"]',
+      );
       // Making sure its the same element as the one from options state
       if (
         newActiveIndex >= 0 &&
         optionEl[newActiveIndex].dataset.value === options[newActiveIndex]
       ) {
         const activeElement = optionEl[newActiveIndex];
-        const bodyRect = containerElement.getBoundingClientRect().top;
-        const elementRect = activeElement.getBoundingClientRect().top;
-        const elementPosition = elementRect - bodyRect;
-        const offsetPosition = elementPosition;
 
-        containerElement.scrollTo({
-          top: offsetPosition,
-        });
+        if (!isElementVisible(containerElement, activeElement)) {
+          activeElement.scrollIntoView({ inline: 'nearest' });
+        }
 
         if (!isElementVisibleOnScreen(optionEl[newActiveIndex])) {
           activeElement.scrollIntoView({ behavior: 'smooth' });

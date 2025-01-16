@@ -1,13 +1,21 @@
-// TODO disable this rule for non-react-native files
 import userEvent from '@testing-library/user-event';
 
 import type { ReactElement } from 'react';
 import React, { useState } from 'react';
+import { screen, waitFor } from '@testing-library/react';
 import { TextInput } from '../';
 import { InfoIcon } from '~components/Icons';
 import renderWithTheme from '~utils/testing/renderWithTheme.web';
 import assertAccessible from '~utils/testing/assertAccessible.web';
 import { Button } from '~components/Button';
+import { Link } from '~components/Link';
+
+const getTag = (tagName: string): HTMLElement => {
+  return screen.queryAllByLabelText(`Close ${tagName} tag`)?.[0];
+};
+
+const bladeEmail = 'blade@gmail.com';
+const tagEmail = 'tag@gmail.com';
 
 describe('<TextInput />', () => {
   it('should render', () => {
@@ -76,7 +84,7 @@ describe('<TextInput />', () => {
         label="Enter company website"
         type="url"
         placeholder="something"
-        icon={InfoIcon}
+        leadingIcon={InfoIcon}
         prefix="https://"
         suffix=".com"
       />,
@@ -86,6 +94,24 @@ describe('<TextInput />', () => {
 
     const suffix = getByText('.com');
     expect(suffix).toBeVisible();
+
+    expect(container).toMatchSnapshot();
+  });
+
+  it('should render large size', () => {
+    const { container } = renderWithTheme(
+      <TextInput
+        label="Enter company website"
+        type="url"
+        placeholder="something"
+        leadingIcon={InfoIcon}
+        trailingIcon={InfoIcon}
+        prefix="https://"
+        suffix=".com"
+        trailingButton={<Link>Apply</Link>}
+        size="large"
+      />,
+    );
 
     expect(container).toMatchSnapshot();
   });
@@ -473,11 +499,96 @@ describe('<TextInput />', () => {
     expect(input).toHaveFocus();
   });
 
+  it(`should add tags in uncontrolled API`, async () => {
+    const label = 'Enter Name';
+    const tagChangeCallback = jest.fn();
+
+    const { getByLabelText } = renderWithTheme(
+      <TextInput label={label} isTaggedInput={true} onTagChange={tagChangeCallback} />,
+    );
+
+    const input = getByLabelText(label);
+
+    expect(getTag(bladeEmail)).toBeUndefined();
+    await userEvent.type(input, bladeEmail);
+    await userEvent.type(input, ',');
+    expect(getTag(bladeEmail)).toBeVisible();
+    expect(tagChangeCallback).toBeCalledWith({ tags: [bladeEmail] });
+
+    expect(getTag(tagEmail)).toBeUndefined();
+    await userEvent.type(input, tagEmail);
+    await userEvent.keyboard('{ENTER}');
+    expect(getTag(tagEmail)).toBeVisible();
+    expect(tagChangeCallback).toBeCalledWith({ tags: [bladeEmail, tagEmail] });
+
+    await userEvent.keyboard('{Backspace}');
+    expect(getTag(tagEmail)).toBeUndefined();
+    expect(tagChangeCallback).toBeCalledWith({ tags: [bladeEmail] });
+
+    await userEvent.click(getTag(bladeEmail));
+    await waitFor(() => expect(getTag(bladeEmail)).not.toBeVisible());
+  });
+
+  it(`should add tags in controlled API`, async () => {
+    const label = 'Enter Name';
+
+    const Example = (): React.ReactElement => {
+      const [tags, setTags] = React.useState<string[]>([]);
+      return (
+        <>
+          <TextInput
+            label={label}
+            isTaggedInput={true}
+            tags={tags}
+            onTagChange={({ tags }) => setTags(tags)}
+          />
+          <Button
+            onClick={() => {
+              setTags([...tags, 'saurabh@razorpay.com', 'chaitanya@razorpay.com']);
+            }}
+          >
+            Add More
+          </Button>
+        </>
+      );
+    };
+
+    const { getByLabelText, getByRole, getByText } = renderWithTheme(<Example />);
+
+    const input = getByLabelText(label);
+
+    expect(getTag(bladeEmail)).toBeUndefined();
+    await userEvent.type(input, bladeEmail);
+    await userEvent.type(input, ',');
+    expect(getTag(bladeEmail)).toBeVisible();
+
+    expect(getTag(tagEmail)).toBeUndefined();
+    await userEvent.type(input, tagEmail);
+    await userEvent.keyboard('{ENTER}');
+    expect(getTag(tagEmail)).toBeVisible();
+
+    await userEvent.keyboard('{Backspace}');
+    expect(getTag(tagEmail)).toBeUndefined();
+
+    await userEvent.click(getByRole('button', { name: 'Add More' }));
+
+    expect(getTag(bladeEmail)).toBeVisible();
+    expect(getByText('+2 More')).toBeInTheDocument();
+  });
+
   it('should accept testID', () => {
     const { getByTestId } = renderWithTheme(
       <TextInput label="Enter name" testID="text-input-test-id" />,
     );
 
     expect(getByTestId('text-input-test-id')).toBeTruthy();
+  });
+  it('should accept data-analytics attribute', () => {
+    const { getByLabelText, container } = renderWithTheme(
+      <TextInput label="Enter name" data-analytics-name="Enter name" />,
+    );
+
+    expect(container).toMatchSnapshot();
+    expect(getByLabelText('Enter name')).toHaveAttribute('data-analytics-name', 'Enter name');
   });
 });

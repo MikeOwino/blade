@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unnecessary-type-assertion */
+import React from 'react';
 import type { ReactElement } from 'react';
 import { BaseText } from '../BaseText';
 import type { BaseTextProps, BaseTextSizes } from '../BaseText/types';
@@ -6,7 +7,7 @@ import { useValidateAsProp } from '../utils';
 import { getStyledProps } from '~components/Box/styledProps';
 import type { StyledPropsBlade } from '~components/Box/styledProps';
 import { isReactNative } from '~utils';
-import type { TestID } from '~utils/types';
+import type { BladeElementRef, TestID } from '~utils/types';
 
 const validAsValues = ['span', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'] as const;
 export type HeadingProps = {
@@ -25,7 +26,7 @@ export type HeadingProps = {
 } & TestID &
   StyledPropsBlade;
 
-const getProps = ({
+export const getHeadingProps = ({
   as,
   size,
   weight,
@@ -74,24 +75,28 @@ const getProps = ({
   return props;
 };
 
-export const Heading = ({
-  as,
-  size = 'small',
-  weight = 'semibold',
-  color = 'surface.text.gray.normal',
-  children,
-  testID,
-  textAlign,
-  textDecorationLine,
-  ...styledProps
-}: HeadingProps): ReactElement => {
+const _Heading = (
+  {
+    as,
+    size = 'small',
+    weight = 'semibold',
+    color = 'surface.text.gray.normal',
+    children,
+    testID,
+    textAlign,
+    textDecorationLine,
+    ...styledProps
+  }: HeadingProps,
+  ref: React.Ref<BladeElementRef>,
+): ReactElement => {
   useValidateAsProp({ componentName: 'Heading', as, validAsValues });
 
-  const props = getProps({ as, size, weight, color, testID });
+  const props = getHeadingProps({ as, size, weight, color, testID });
 
   return (
     <BaseText
       {...props}
+      ref={ref}
       textAlign={textAlign}
       textDecorationLine={textDecorationLine}
       {...getStyledProps(styledProps)}
@@ -100,3 +105,7 @@ export const Heading = ({
     </BaseText>
   );
 };
+
+const Heading = React.forwardRef(_Heading);
+
+export { Heading };

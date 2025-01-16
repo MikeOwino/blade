@@ -6,7 +6,7 @@ import type { BaseTextProps, BaseTextSizes } from '../BaseText/types';
 import { useValidateAsProp } from '../utils';
 import { getStyledProps } from '~components/Box/styledProps';
 import type { StyledPropsBlade } from '~components/Box/styledProps';
-import type { TestID } from '~utils/types';
+import type { BladeElementRef, TestID } from '~utils/types';
 import { assignWithoutSideEffects } from '~utils/assignWithoutSideEffects';
 import { throwBladeError } from '~utils/logger';
 
@@ -37,16 +37,10 @@ type TextBodyVariant = TextCommonProps & {
 
 type TextCaptionVariant = TextCommonProps & {
   variant?: Extract<TextVariant, 'caption'>;
-  size?: Extract<BaseTextSizes, 'small'>;
+  size?: Extract<BaseTextSizes, 'small' | 'medium'>;
 };
 
-/**
- * Conditionally changing props based on variant.
- * Overloads or union gives wrong intellisense.
- */
-export type TextProps<T> = T extends {
-  variant: infer Variant;
-}
+export type TextProps<T> = T extends { variant: infer Variant }
   ? Variant extends 'caption'
     ? TextCaptionVariant
     : Variant extends 'body'
@@ -84,16 +78,16 @@ const getTextProps = <T extends { variant: TextVariant }>({
 
   if (variant === 'caption') {
     // variant of caption can only have size of small
-    if (size && size !== 'small') {
+    if (size && size !== 'small' && size !== 'medium') {
       if (__DEV__) {
         throwBladeError({
           moduleName: 'Text',
           message: `size cannot be '${size}' when variant is 'caption'`,
         });
       }
+      // Set size as small in case of invalid size
+      size = 'small';
     }
-    // Force size to be small if variant is caption
-    size = 'small';
   } else if (variant !== 'caption' && !size) {
     size = 'medium';
   }
@@ -122,26 +116,34 @@ const getTextProps = <T extends { variant: TextVariant }>({
       props.lineHeight = 50;
       props.fontWeight = 'regular';
     }
+    if (size === 'medium') {
+      props.fontSize = 100;
+      props.lineHeight = 50;
+      props.fontWeight = 'regular';
+    }
     props.fontStyle = 'italic';
   }
 
   return props;
 };
 
-const _Text = <T extends { variant: TextVariant }>({
-  as = 'p',
-  variant = 'body',
-  weight = 'regular',
-  size,
-  truncateAfterLines,
-  children,
-  color,
-  testID,
-  textAlign,
-  textDecorationLine,
-  wordBreak,
-  ...styledProps
-}: TextProps<T>): ReactElement => {
+const _Text = <T extends { variant: TextVariant }>(
+  {
+    as = 'p',
+    variant = 'body',
+    weight = 'regular',
+    size,
+    truncateAfterLines,
+    children,
+    color,
+    testID,
+    textAlign,
+    textDecorationLine,
+    wordBreak,
+    ...styledProps
+  }: TextProps<T>,
+  ref: React.Ref<BladeElementRef>,
+): ReactElement => {
   const props: Omit<BaseTextProps, 'children'> = {
     as,
     truncateAfterLines,
@@ -160,13 +162,13 @@ const _Text = <T extends { variant: TextVariant }>({
   useValidateAsProp({ componentName: 'Text', as, validAsValues });
 
   return (
-    <BaseText {...props} {...getStyledProps(styledProps)}>
+    <BaseText ref={ref} {...props} {...getStyledProps(styledProps)}>
       {children}
     </BaseText>
   );
 };
 
-const Text = assignWithoutSideEffects(_Text, {
+const Text = assignWithoutSideEffects(React.forwardRef(_Text), {
   displayName: 'Text',
   componentId: 'Text',
 });

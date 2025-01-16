@@ -1,7 +1,8 @@
 import type { ReactChild, ReactElement } from 'react';
-import { Fragment, useState } from 'react';
+import React, { Fragment, useState, forwardRef } from 'react';
 
 import { StyledAlert } from './StyledAlert';
+import type { IconComponent } from '~components/Icons';
 import {
   AlertOctagonIcon,
   AlertTriangleIcon,
@@ -20,8 +21,14 @@ import BaseButton from '~components/Button/BaseButton';
 import { BaseLink } from '~components/Link/BaseLink';
 import type { FeedbackColors, SubtleOrIntense } from '~tokens/theme/theme';
 import { useTheme } from '~components/BladeProvider';
-import type { DotNotationSpacingStringToken, TestID } from '~utils/types';
+import type {
+  DataAnalyticsAttribute,
+  BladeElementRef,
+  DotNotationSpacingStringToken,
+  TestID,
+} from '~utils/types';
 import { makeAccessible } from '~utils/makeAccessible';
+import { makeAnalyticsAttribute } from '~utils/makeAnalyticsAttribute';
 
 type PrimaryAction = {
   text: string;
@@ -70,6 +77,11 @@ type AlertProps = {
   onDismiss?: () => void;
 
   /**
+   * Can be used to render custom icon
+   */
+  icon?: IconComponent;
+
+  /**
    * Can be set to `high` for a more prominent look. Not to be confused with a11y emphasis.
    *
    * @default subtle
@@ -103,7 +115,8 @@ type AlertProps = {
     secondary?: SecondaryAction;
   };
 } & TestID &
-  StyledPropsBlade;
+  StyledPropsBlade &
+  DataAnalyticsAttribute;
 
 const isReactNative = getPlatformType() === 'react-native';
 
@@ -118,18 +131,22 @@ const intentIconMap = {
   notice: AlertTriangleIcon,
 };
 
-const Alert = ({
-  description,
-  title,
-  isDismissible = true,
-  onDismiss,
-  emphasis = 'subtle',
-  isFullWidth = false,
-  color = 'neutral',
-  actions,
-  testID,
-  ...styledProps
-}: AlertProps): ReactElement | null => {
+const _Alert = (
+  {
+    description,
+    title,
+    isDismissible = true,
+    onDismiss,
+    emphasis = 'subtle',
+    isFullWidth = false,
+    color = 'neutral',
+    actions,
+    testID,
+    icon,
+    ...rest
+  }: AlertProps,
+  ref: React.Ref<BladeElementRef>,
+): ReactElement | null => {
   const { theme } = useTheme();
   const { matchedDeviceType } = useBreakpoint({ breakpoints: theme.breakpoints });
   const [isVisible, setIsVisible] = useState(true);
@@ -137,7 +154,7 @@ const Alert = ({
   const isDesktop = matchedDeviceType === 'desktop';
   const isMobile = !isDesktop;
 
-  const Icon = intentIconMap[color];
+  const Icon = icon ?? intentIconMap[color];
   let iconOffset: DotNotationSpacingStringToken = 'spacing.1';
 
   // certain special cases below needs special care for near perfect alignment
@@ -164,7 +181,7 @@ const Alert = ({
   if (!isFullWidth) alignment = 'flex-start';
   if (shouldCenterAlign) alignment = 'center';
 
-  const icon = (
+  const leadingIcon = (
     <BaseBox display="flex" alignSelf={alignment} marginTop={iconOffset}>
       <Icon
         color={
@@ -291,9 +308,11 @@ const Alert = ({
 
   return (
     <BaseBox
+      ref={ref as never}
       {...a11yProps}
       {...metaAttribute({ name: MetaConstants.Alert, testID })}
-      {...getStyledProps(styledProps)}
+      {...getStyledProps(rest)}
+      {...makeAnalyticsAttribute(rest)}
     >
       <StyledAlert
         color={color}
@@ -302,7 +321,7 @@ const Alert = ({
         isDesktop={isDesktop}
         textAlign={'left' as never}
       >
-        {icon}
+        {leadingIcon}
         <BaseBox
           flex={1}
           paddingLeft={isFullWidth ? 'spacing.4' : 'spacing.3'}
@@ -318,6 +337,8 @@ const Alert = ({
     </BaseBox>
   );
 };
+
+const Alert = forwardRef(_Alert);
 
 export type { AlertProps };
 export { Alert };

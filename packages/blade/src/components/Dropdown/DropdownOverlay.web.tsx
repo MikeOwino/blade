@@ -6,6 +6,9 @@ import {
   useFloating,
   useTransitionStyles,
   flip,
+  FloatingPortal,
+  useDismiss,
+  useInteractions,
 } from '@floating-ui/react';
 import { useDropdown } from './useDropdown';
 import { StyledDropdownOverlay } from './StyledDropdownOverlay';
@@ -20,8 +23,8 @@ import { assignWithoutSideEffects } from '~utils/assignWithoutSideEffects';
 import { useBottomSheetAndDropdownGlue } from '~components/BottomSheet/BottomSheetContext';
 import BaseBox from '~components/Box/BaseBox';
 import { componentZIndices } from '~utils/componentZIndices';
+import { OVERLAY_OFFSET, OVERLAY_TRANSITION_OFFSET } from '~components/BaseMenu/tokens';
 
-const OVERLAY_OFFSET: number = size['8'];
 const OVERLAY_PADDING: number = size['12']; // doesn't have to be exact. Just rough padding for floating ui to decide to show overlay on top or bottom
 
 /**
@@ -34,6 +37,10 @@ const _DropdownOverlay = ({
   testID,
   zIndex = componentZIndices.dropdownOverlay,
   width,
+  minWidth,
+  maxWidth,
+  referenceRef,
+  defaultPlacement = 'bottom-start',
 }: DropdownOverlayProps): React.ReactElement | null => {
   const { isOpen, triggererRef, triggererWrapperRef, dropdownTriggerer, setIsOpen } = useDropdown();
   const { theme } = useTheme();
@@ -41,34 +48,43 @@ const _DropdownOverlay = ({
 
   const isMenu =
     dropdownTriggerer !== dropdownComponentIds.triggers.SelectInput &&
-    dropdownTriggerer !== dropdownComponentIds.triggers.AutoComplete;
+    dropdownTriggerer !== dropdownComponentIds.triggers.SearchInput &&
+    dropdownTriggerer !== dropdownComponentIds.triggers.AutoComplete &&
+    referenceRef == undefined;
 
   const { refs, floatingStyles, context } = useFloating({
     open: isOpen,
     onOpenChange: setIsOpen,
     strategy: 'fixed',
-    placement: 'bottom-start',
+    placement: defaultPlacement,
     elements: {
       // Input triggers have their ref on internal input element but we want width height of overall visible input hence wrapperRef is needed
       // We fallback to use `triggererRef` for triggers like button and link where wrapper is not needed
       // Checkout: https://github.com/razorpay/blade/pull/1559#discussion_r1305438920
-      reference: triggererWrapperRef.current ?? triggererRef.current,
+      reference: (referenceRef?.current ??
+        triggererWrapperRef.current ??
+        triggererRef.current) as Element,
     },
     middleware: [
       offset({
         mainAxis: OVERLAY_OFFSET,
       }),
       flip({
+        // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
         padding: OVERLAY_OFFSET + OVERLAY_PADDING,
       }),
       sizeMiddleware({
         apply({ rects, elements }) {
+          const overlayWidth = isMenu ? undefined : makeSize(rects.reference.width);
+          const overlayMinWidth = isMenu ? makeSize(size['240']) : undefined;
+          const overlayMaxWidth = isMenu ? makeSize(size['400']) : undefined;
+
           Object.assign(elements.floating.style, {
             // in menu, we have flexible width between min and max
             // in input triggers, we just take width of trigger
-            width: isMenu ? undefined : makeSize(rects.reference.width),
-            minWidth: isMenu ? makeSize(size['240']) : undefined,
-            maxWidth: isMenu ? makeSize(size['400']) : undefined,
+            width: width ?? overlayWidth,
+            minWidth: minWidth ?? overlayMinWidth,
+            maxWidth: maxWidth ?? overlayMaxWidth,
           });
         },
       }),
@@ -76,10 +92,13 @@ const _DropdownOverlay = ({
     whileElementsMounted: autoUpdate,
   });
 
+  const dismiss = useDismiss(context);
+  const { getFloatingProps } = useInteractions([dismiss]);
+
   const { isMounted, styles } = useTransitionStyles(context, {
     duration: theme.motion.duration.quick,
     initial: () => ({
-      transform: `translateY(-${makeSize(size['8'])})`,
+      transform: `translateY(-${makeSize(OVERLAY_TRANSITION_OFFSET)})`,
       opacity: 0,
     }),
   });
@@ -93,23 +112,28 @@ const _DropdownOverlay = ({
   }, [isOpen]);
 
   return (
-    <BaseBox
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      ref={refs.setFloating as any}
-      style={floatingStyles}
-      zIndex={zIndex}
-      display={isMounted ? 'flex' : 'none'}
-    >
-      <StyledDropdownOverlay
-        isInBottomSheet={bottomSheetAndDropdownGlue?.dropdownHasBottomSheet}
-        elevation={bottomSheetAndDropdownGlue?.dropdownHasBottomSheet ? undefined : 'midRaised'}
-        style={{ ...styles }}
-        width={width ? width : '100%'}
-        {...metaAttribute({ name: MetaConstants.DropdownOverlay, testID })}
+    <FloatingPortal>
+      <BaseBox
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        ref={refs.setFloating as any}
+        style={floatingStyles}
+        zIndex={zIndex}
+        display={isMounted ? 'flex' : 'none'}
+        {...getFloatingProps()}
       >
-        {children}
-      </StyledDropdownOverlay>
-    </BaseBox>
+        <StyledDropdownOverlay
+          isInBottomSheet={bottomSheetAndDropdownGlue?.dropdownHasBottomSheet}
+          elevation={bottomSheetAndDropdownGlue?.dropdownHasBottomSheet ? undefined : 'midRaised'}
+          style={{ ...styles }}
+          width={width ? width : '100%'}
+          minWidth={minWidth}
+          maxWidth={maxWidth}
+          {...metaAttribute({ name: MetaConstants.DropdownOverlay, testID })}
+        >
+          {children}
+        </StyledDropdownOverlay>
+      </BaseBox>
+    </FloatingPortal>
   );
 };
 

@@ -30,7 +30,7 @@ const Page = (): ReactElement => {
         {`
           import { List, ListItem } from '@razorpay/blade/components';
 
-          function App(): React.ReactElement {
+          function App() {
             return (
               <List>
                 <ListItem>
@@ -243,7 +243,7 @@ OrderedFilledListWithSizes.storyName = 'OrderedFilled - Sizes';
 
 const ListWithLinkAndIconTemplate: StoryFn<typeof List> = () => {
   return (
-    <List variant="unordered" icon={BookmarkIcon}>
+    <List variant="unordered" icon={BookmarkIcon} iconColor="interactive.icon.staticWhite.subtle">
       <ListItem>
         <ListItemLink>Troubleshooting and FAQs</ListItemLink>
       </ListItem>

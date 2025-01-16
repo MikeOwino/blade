@@ -67,7 +67,7 @@ const getRouteIndexFromValue = ({ value, routes }: { value?: string; routes: Rou
 const getRouteValueFromIndex = ({ index, routes }: { index?: number; routes: Route[] }) =>
   routes.find((route) => route.index === index)?.value!;
 
-const Tabs = ({
+const _Tabs = ({
   children,
   defaultValue,
   value,
@@ -125,7 +125,13 @@ const Tabs = ({
   }, [selectedValue, setIndex]);
 
   const renderTabLabel = React.useCallback(
-    ({ route, focused }) => {
+    ({
+      route,
+      focused,
+    }: {
+      route: { title: string; leading?: React.ComponentType<any>; trailing?: React.ReactNode };
+      focused: boolean;
+    }) => {
       const { title, leading: Leading, trailing } = route;
       const selectedState = focused ? 'selected' : 'unselected';
       // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -158,7 +164,7 @@ const Tabs = ({
   );
 
   const renderTabBar = React.useCallback(
-    (props) => (
+    (props: any) => (
       <TabBar
         {...props}
         {...metaAttribute({ name: MetaConstants.TabList })}
@@ -236,5 +242,7 @@ const Tabs = ({
     </TabsContext.Provider>
   );
 };
+
+const Tabs = React.forwardRef(_Tabs);
 
 export { Tabs };

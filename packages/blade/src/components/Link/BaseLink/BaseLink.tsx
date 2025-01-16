@@ -37,6 +37,7 @@ import type { BladeCommonEvents } from '~components/types';
 import { assignWithoutSideEffects } from '~utils/assignWithoutSideEffects';
 import { throwBladeError } from '~utils/logger';
 import type { ActionStates } from '~utils/useInteraction';
+import { makeAnalyticsAttribute } from '~utils/makeAnalyticsAttribute';
 
 type BaseLinkCommonProps = {
   color?: 'primary' | 'white' | 'positive' | 'negative' | 'notice' | 'information' | 'neutral';
@@ -246,7 +247,7 @@ const getProps = ({
     }) as BaseTextProps['color'],
     focusRingColor: getIn(theme.colors, 'interactive.background.primary.faded'),
     motionDuration: 'duration.2xquick',
-    motionEasing: 'easing.standard.effective',
+    motionEasing: 'easing.standard',
     cursor: isButton && isDisabled ? 'not-allowed' : 'pointer',
     disabled: isButton && isDisabled,
     role: isButton ? 'button' : 'link',
@@ -288,7 +289,9 @@ const _BaseLink: React.ForwardRefRenderFunction<BladeElementRef, BaseLinkProps> 
     onPointerEnter,
     onTouchStart,
     onTouchEnd,
-    ...styledProps
+    onMouseDown,
+    onMouseUp,
+    ...rest
   },
   ref,
 ) => {
@@ -376,6 +379,8 @@ const _BaseLink: React.ForwardRefRenderFunction<BladeElementRef, BaseLinkProps> 
       onTouchStart={onTouchStart}
       onTouchEnd={onTouchEnd}
       onKeyDown={onKeyDown}
+      onMouseDown={onMouseDown}
+      onMouseUp={onMouseUp}
       disabled={disabled}
       type={type}
       cursor={cursor}
@@ -383,7 +388,8 @@ const _BaseLink: React.ForwardRefRenderFunction<BladeElementRef, BaseLinkProps> 
       motionDuration={motionDuration}
       motionEasing={motionEasing}
       setCurrentInteraction={setCurrentInteraction}
-      {...getStyledProps(styledProps)}
+      {...getStyledProps(rest)}
+      {...makeAnalyticsAttribute(rest)}
       // @ts-ignore Because we avoided exposing className to public
       className={className}
       style={style}

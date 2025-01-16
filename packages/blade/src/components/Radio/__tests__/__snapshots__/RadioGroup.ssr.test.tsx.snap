@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<RadioGroup /> should render with help text 1`] = `"<div id="root"><div data-blade-component="base-box" class="BaseBox-bmPWx"><div role="radiogroup" aria-labelledby="radio-group-undefined-label" data-blade-component="radio-group" class="BaseBox-bmPWx fnwmJW"><span style="width:auto;flex-shrink:0;margin-right:16px" id="radio-group-undefined-label" data-blade-component="form-label"><div data-blade-component="base-box" class="BaseBox-bmPWx fZlcZT"><div data-blade-component="base-box" class="BaseBox-bmPWx ikPXAQ"><p class="StyledBaseText-dVBfTO bDCeGT" data-blade-component="text">Select fruit</p><div data-blade-component="visually-hidden" class="VisuallyHiddenweb__StyledVisuallyHidden-g3hls3-0 Fuolv"><p class="StyledBaseText-dVBfTO fAQkza" data-blade-component="text">,Select one</p></div></div></div></span><div data-blade-component="base-box" class="BaseBox-bmPWx"><div data-blade-component="base-box" class="BaseBox-bmPWx fnwmJW"><div data-blade-component="base-box" class="BaseBox-bmPWx fZlcZT"><div data-blade-component="base-box" class="BaseBox-bmPWx"><label data-blade-component="radio-label" class="SelectorLabelweb__StyledSelectorLabel-sc-1yoi09a-0 ehaOvX"><div data-blade-component="base-box" class="BaseBox-bmPWx fnwmJW"><div data-blade-component="base-box" class="BaseBox-bmPWx fAEwZa"><input type="radio" name="radio-group-undefined" role="radio" aria-required="false" aria-invalid="false" aria-disabled="false" aria-checked="false" aria-describedby="radio-undefined-helptext-undefined" class="SelectorInputweb__StyledInput-sc-1bnkrae-0 eECVtI" value="apple"/><div data-blade-component="radio-icon-wrapper" class="RadioIconWrapperweb__RadioIconWrapper-sc-1memw5n-0 kSiWkh"></div><div data-blade-component="base-box" class="BaseBox-bmPWx CzMgf"></div><p class="StyledBaseText-dVBfTO cYIHIH" data-blade-component="text">Apple</p></div></div></label></div></div><div data-blade-component="base-box" class="BaseBox-bmPWx fZlcZT"><div data-blade-component="base-box" class="BaseBox-bmPWx"><label data-blade-component="radio-label" class="SelectorLabelweb__StyledSelectorLabel-sc-1yoi09a-0 ehaOvX"><div data-blade-component="base-box" class="BaseBox-bmPWx fnwmJW"><div data-blade-component="base-box" class="BaseBox-bmPWx fAEwZa"><input type="radio" name="radio-group-undefined" role="radio" aria-required="false" aria-invalid="false" aria-disabled="false" aria-checked="false" aria-describedby="radio-undefined-helptext-undefined" class="SelectorInputweb__StyledInput-sc-1bnkrae-0 eECVtI" value="mango"/><div data-blade-component="radio-icon-wrapper" class="RadioIconWrapperweb__RadioIconWrapper-sc-1memw5n-0 kSiWkh"></div><div data-blade-component="base-box" class="BaseBox-bmPWx CzMgf"></div><p class="StyledBaseText-dVBfTO cYIHIH" data-blade-component="text">Mango</p></div></div></label></div></div><div data-blade-component="base-box" class="BaseBox-bmPWx hlbQIL"><div data-blade-component="base-box" class="BaseBox-bmPWx"><label data-blade-component="radio-label" class="SelectorLabelweb__StyledSelectorLabel-sc-1yoi09a-0 ehaOvX"><div data-blade-component="base-box" class="BaseBox-bmPWx fnwmJW"><div data-blade-component="base-box" class="BaseBox-bmPWx fAEwZa"><input type="radio" name="radio-group-undefined" role="radio" aria-required="false" aria-invalid="false" aria-disabled="false" aria-checked="false" aria-describedby="radio-undefined-helptext-undefined" class="SelectorInputweb__StyledInput-sc-1bnkrae-0 eECVtI" value="orange"/><div data-blade-component="radio-icon-wrapper" class="RadioIconWrapperweb__RadioIconWrapper-sc-1memw5n-0 kSiWkh"></div><div data-blade-component="base-box" class="BaseBox-bmPWx CzMgf"></div><p class="StyledBaseText-dVBfTO cYIHIH" data-blade-component="text">Orange</p></div></div></label></div></div></div><div data-blade-component="base-box" class="BaseBox-bmPWx kzOBQv"><span style="word-break:break-all" data-blade-component="base-box" class="BaseBox-bmPWx fAEwZa"><span class="StyledBaseText-dVBfTO csXxAx" data-blade-component="text">Select one</span></span></div></div></div></div></div>"`;
+exports[`<RadioGroup /> should render with help text 1`] = `"<div id="root"><div data-blade-component="base-box" class="BaseBox-bmPWx"><div role="radiogroup" aria-labelledby="radio-group-undefined-label" data-blade-component="radio-group" class="BaseBox-bmPWx fnwmJW"><span style="width:auto;flex-shrink:0;margin-right:0px" id="radio-group-undefined-label" data-blade-component="form-label"><div data-blade-component="base-box" class="BaseBox-bmPWx fZlcZT"><div data-blade-component="base-box" class="BaseBox-bmPWx dGiucr"><p class="StyledBaseText-dVBfTO kCEKIT" data-blade-component="text">Select fruit</p><div data-blade-component="visually-hidden" class="VisuallyHiddenweb__StyledVisuallyHidden-g3hls3-0 Fuolv"><p class="StyledBaseText-dVBfTO fAQkza" data-blade-component="text">,Select one</p></div></div></div></span><div data-blade-component="base-box" class="BaseBox-bmPWx"><div data-blade-component="base-box" class="BaseBox-bmPWx fnwmJW"><div data-blade-component="base-box" class="BaseBox-bmPWx fdoqPr"><div data-blade-component="base-box" class="BaseBox-bmPWx"><label data-blade-component="radio-label" class="SelectorLabelweb__StyledSelectorLabel-sc-1yoi09a-0 ehaOvX"><div data-blade-component="base-box" class="BaseBox-bmPWx fnwmJW"><div data-blade-component="base-box" class="BaseBox-bmPWx fAEwZa"><input type="radio" name="radio-group-undefined" role="radio" aria-required="false" aria-invalid="false" aria-disabled="false" aria-checked="false" aria-describedby="radio-undefined-helptext-undefined" class="SelectorInputweb__StyledInput-sc-1bnkrae-0 jTPQRW" value="apple"/><div data-blade-component="radio-icon-wrapper" class="RadioIconWrapperweb__RadioIconWrapper-sc-1memw5n-0 pToRZ"></div><div data-blade-component="base-box" class="BaseBox-bmPWx CzMgf"></div><p class="StyledBaseText-dVBfTO cYIHIH" data-blade-component="text">Apple</p></div></div></label></div></div><div data-blade-component="base-box" class="BaseBox-bmPWx fdoqPr"><div data-blade-component="base-box" class="BaseBox-bmPWx"><label data-blade-component="radio-label" class="SelectorLabelweb__StyledSelectorLabel-sc-1yoi09a-0 ehaOvX"><div data-blade-component="base-box" class="BaseBox-bmPWx fnwmJW"><div data-blade-component="base-box" class="BaseBox-bmPWx fAEwZa"><input type="radio" name="radio-group-undefined" role="radio" aria-required="false" aria-invalid="false" aria-disabled="false" aria-checked="false" aria-describedby="radio-undefined-helptext-undefined" class="SelectorInputweb__StyledInput-sc-1bnkrae-0 jTPQRW" value="mango"/><div data-blade-component="radio-icon-wrapper" class="RadioIconWrapperweb__RadioIconWrapper-sc-1memw5n-0 pToRZ"></div><div data-blade-component="base-box" class="BaseBox-bmPWx CzMgf"></div><p class="StyledBaseText-dVBfTO cYIHIH" data-blade-component="text">Mango</p></div></div></label></div></div><div data-blade-component="base-box" class="BaseBox-bmPWx hlbQIL"><div data-blade-component="base-box" class="BaseBox-bmPWx"><label data-blade-component="radio-label" class="SelectorLabelweb__StyledSelectorLabel-sc-1yoi09a-0 ehaOvX"><div data-blade-component="base-box" class="BaseBox-bmPWx fnwmJW"><div data-blade-component="base-box" class="BaseBox-bmPWx fAEwZa"><input type="radio" name="radio-group-undefined" role="radio" aria-required="false" aria-invalid="false" aria-disabled="false" aria-checked="false" aria-describedby="radio-undefined-helptext-undefined" class="SelectorInputweb__StyledInput-sc-1bnkrae-0 jTPQRW" value="orange"/><div data-blade-component="radio-icon-wrapper" class="RadioIconWrapperweb__RadioIconWrapper-sc-1memw5n-0 pToRZ"></div><div data-blade-component="base-box" class="BaseBox-bmPWx CzMgf"></div><p class="StyledBaseText-dVBfTO cYIHIH" data-blade-component="text">Orange</p></div></div></label></div></div></div><div data-blade-component="base-box" class="BaseBox-bmPWx kzOBQv"><span data-blade-component="base-box" class="BaseBox-bmPWx hnjoEU"><span class="StyledBaseText-dVBfTO kECbDA" data-blade-component="text">Select one</span></span></div></div></div></div></div>"`;
 
 exports[`<RadioGroup /> should render with help text 2`] = `
-.c9.c9.c9.c9.c9 {
+.c10.c10.c10.c10.c10 {
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
@@ -17,6 +17,7 @@ exports[`<RadioGroup /> should render with help text 2`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  min-width: 16px;
   width: 16px;
   height: 16px;
   border-width: 1.5px;
@@ -24,14 +25,14 @@ exports[`<RadioGroup /> should render with help text 2`] = `
   margin: 2px;
   border-radius: 9999px;
   background-color: hsla(0,0%,100%,0);
-  border-color: hsla(211,27%,76%,1);
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
-  -webkit-transition-timing-function: cubic-bezier(0.7,0,0.5,1);
-  transition-timing-function: cubic-bezier(0.7,0,0.5,1);
+  border-color: hsla(214,28%,84%,1);
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
+  -webkit-transition-timing-function: cubic-bezier(0.17,0,1,1);
+  transition-timing-function: cubic-bezier(0.17,0,1,1);
 }
 
-.c6.c6.c6.c6.c6 {
+.c7.c7.c7.c7.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -59,9 +60,6 @@ exports[`<RadioGroup /> should render with help text 2`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
@@ -73,7 +71,11 @@ exports[`<RadioGroup /> should render with help text 2`] = `
   gap: 0px;
 }
 
-.c7.c7.c7.c7.c7 {
+.c6.c6.c6.c6.c6 {
+  margin-bottom: 8px;
+}
+
+.c8.c8.c8.c8.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -87,16 +89,31 @@ exports[`<RadioGroup /> should render with help text 2`] = `
   align-items: center;
 }
 
-.c10.c10.c10.c10.c10 {
+.c11.c11.c11.c11.c11 {
   margin-left: 4px;
 }
 
-.c12.c12.c12.c12.c12 {
+.c13.c13.c13.c13.c13 {
   margin-bottom: 0px;
 }
 
-.c13.c13.c13.c13.c13 {
+.c14.c14.c14.c14.c14 {
   margin-top: 4px;
+}
+
+.c15.c15.c15.c15.c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  gap: 4px;
 }
 
 .c3.c3.c3.c3.c3 {
@@ -119,6 +136,7 @@ exports[`<RadioGroup /> should render with help text 2`] = `
   line-clamp: 2;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+  overflow-wrap: break-word;
 }
 
 .c5.c5.c5.c5.c5 {
@@ -138,7 +156,7 @@ exports[`<RadioGroup /> should render with help text 2`] = `
   padding: 0;
 }
 
-.c11.c11.c11.c11.c11 {
+.c12.c12.c12.c12.c12 {
   color: hsla(211,26%,34%,1);
   font-family: "Inter","Inter Fallback Arial",Arial;
   font-size: 0.875rem;
@@ -155,7 +173,7 @@ exports[`<RadioGroup /> should render with help text 2`] = `
   padding: 0;
 }
 
-.c14.c14.c14.c14.c14 {
+.c16.c16.c16.c16.c16 {
   color: hsla(211,22%,56%,1);
   font-family: "Inter","Inter Fallback Arial",Arial;
   font-size: 0.6875rem;
@@ -170,6 +188,7 @@ exports[`<RadioGroup /> should render with help text 2`] = `
   letter-spacing: 0px;
   margin: 0;
   padding: 0;
+  word-break: break-word;
 }
 
 .c4.c4.c4.c4.c4 {
@@ -189,7 +208,7 @@ exports[`<RadioGroup /> should render with help text 2`] = `
   word-wrap: normal;
 }
 
-.c8.c8.c8.c8.c8 {
+.c9.c9.c9.c9.c9 {
   border: 0;
   -webkit-clip: rect(0 0 0 0);
   clip: rect(0 0 0 0);
@@ -206,24 +225,24 @@ exports[`<RadioGroup /> should render with help text 2`] = `
   word-wrap: normal;
 }
 
-.c8.c8.c8.c8.c8:focus-visible + div {
+.c9.c9.c9.c9.c9:focus-visible + div {
   outline: 4px solid hsla(227,100%,59%,0.18);
   outline-offset: 1px;
   -webkit-transition-property: outline-width;
   transition-property: outline-width;
-  -webkit-transition-duration: 70ms;
-  transition-duration: 70ms;
+  -webkit-transition-duration: 80ms;
+  transition-duration: 80ms;
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
 }
 
-.c8.c8.c8.c8.c8:hover + div {
-  border-color: hsla(211,27%,76%,1);
-  background-color: hsla(211,20%,52%,0.12);
+.c9.c9.c9.c9.c9:hover + div {
+  border-color: hsla(214,28%,84%,1);
+  background-color: hsla(211,20%,52%,0.06);
   -webkit-transition-timing-function: cubic-bezier(0.3,0,0.2,1);
   transition-timing-function: cubic-bezier(0.3,0,0.2,1);
-  -webkit-transition-duration: 70ms;
-  transition-duration: 70ms;
+  -webkit-transition-duration: 80ms;
+  transition-duration: 80ms;
 }
 
 <div
@@ -242,7 +261,7 @@ exports[`<RadioGroup /> should render with help text 2`] = `
       <span
         data-blade-component="form-label"
         id="radio-group-7-label"
-        style="width:auto;flex-shrink:0;margin-right:16px"
+        style="width:auto;flex-shrink:0;margin-right:0px"
       >
         <div
           class="c1"
@@ -281,7 +300,7 @@ exports[`<RadioGroup /> should render with help text 2`] = `
           data-blade-component="base-box"
         >
           <div
-            class="c1"
+            class="c6"
             data-blade-component="base-box"
           >
             <div
@@ -289,7 +308,7 @@ exports[`<RadioGroup /> should render with help text 2`] = `
               data-blade-component="base-box"
             >
               <label
-                class="c6"
+                class="c7"
                 data-blade-component="radio-label"
               >
                 <div
@@ -297,7 +316,7 @@ exports[`<RadioGroup /> should render with help text 2`] = `
                   data-blade-component="base-box"
                 >
                   <div
-                    class="c7"
+                    class="c8"
                     data-blade-component="base-box"
                   >
                     <input
@@ -306,22 +325,22 @@ exports[`<RadioGroup /> should render with help text 2`] = `
                       aria-disabled="false"
                       aria-invalid="false"
                       aria-required="false"
-                      class="c8"
+                      class="c9"
                       name="radio-group-7"
                       role="radio"
                       type="radio"
                       value="apple"
                     />
                     <div
-                      class="c9"
+                      class="c10"
                       data-blade-component="radio-icon-wrapper"
                     />
                     <div
-                      class="c10"
+                      class="c11"
                       data-blade-component="base-box"
                     />
                     <p
-                      class="c11"
+                      class="c12"
                       data-blade-component="text"
                     >
                       Apple
@@ -332,7 +351,7 @@ exports[`<RadioGroup /> should render with help text 2`] = `
             </div>
           </div>
           <div
-            class="c1"
+            class="c6"
             data-blade-component="base-box"
           >
             <div
@@ -340,7 +359,7 @@ exports[`<RadioGroup /> should render with help text 2`] = `
               data-blade-component="base-box"
             >
               <label
-                class="c6"
+                class="c7"
                 data-blade-component="radio-label"
               >
                 <div
@@ -348,7 +367,7 @@ exports[`<RadioGroup /> should render with help text 2`] = `
                   data-blade-component="base-box"
                 >
                   <div
-                    class="c7"
+                    class="c8"
                     data-blade-component="base-box"
                   >
                     <input
@@ -357,22 +376,22 @@ exports[`<RadioGroup /> should render with help text 2`] = `
                       aria-disabled="false"
                       aria-invalid="false"
                       aria-required="false"
-                      class="c8"
+                      class="c9"
                       name="radio-group-7"
                       role="radio"
                       type="radio"
                       value="mango"
                     />
                     <div
-                      class="c9"
+                      class="c10"
                       data-blade-component="radio-icon-wrapper"
                     />
                     <div
-                      class="c10"
+                      class="c11"
                       data-blade-component="base-box"
                     />
                     <p
-                      class="c11"
+                      class="c12"
                       data-blade-component="text"
                     >
                       Mango
@@ -383,7 +402,7 @@ exports[`<RadioGroup /> should render with help text 2`] = `
             </div>
           </div>
           <div
-            class="c12"
+            class="c13"
             data-blade-component="base-box"
           >
             <div
@@ -391,7 +410,7 @@ exports[`<RadioGroup /> should render with help text 2`] = `
               data-blade-component="base-box"
             >
               <label
-                class="c6"
+                class="c7"
                 data-blade-component="radio-label"
               >
                 <div
@@ -399,7 +418,7 @@ exports[`<RadioGroup /> should render with help text 2`] = `
                   data-blade-component="base-box"
                 >
                   <div
-                    class="c7"
+                    class="c8"
                     data-blade-component="base-box"
                   >
                     <input
@@ -408,22 +427,22 @@ exports[`<RadioGroup /> should render with help text 2`] = `
                       aria-disabled="false"
                       aria-invalid="false"
                       aria-required="false"
-                      class="c8"
+                      class="c9"
                       name="radio-group-7"
                       role="radio"
                       type="radio"
                       value="orange"
                     />
                     <div
-                      class="c9"
+                      class="c10"
                       data-blade-component="radio-icon-wrapper"
                     />
                     <div
-                      class="c10"
+                      class="c11"
                       data-blade-component="base-box"
                     />
                     <p
-                      class="c11"
+                      class="c12"
                       data-blade-component="text"
                     >
                       Orange
@@ -435,16 +454,15 @@ exports[`<RadioGroup /> should render with help text 2`] = `
           </div>
         </div>
         <div
-          class="c13"
+          class="c14"
           data-blade-component="base-box"
         >
           <span
-            class="c7"
+            class="c15"
             data-blade-component="base-box"
-            style="word-break:break-all"
           >
             <span
-              class="c14"
+              class="c16"
               data-blade-component="text"
             >
               Select one

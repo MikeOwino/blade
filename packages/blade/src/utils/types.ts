@@ -131,15 +131,31 @@ type BladeElementRef = Platform.Select<{
   native: View;
 }>;
 
+type BladeElementRefWithValue = BladeElementRef & { value: string };
+
 type ContainerElementType = Platform.Select<{
   web: HTMLDivElement;
   native: View;
 }>;
 
+type DataAnalyticsKey = `data-analytics-${string}`;
+
+/**
+ * This type is used to add data-analytics attributes to components.
+ * This is used to track user interactions on the components.
+ * The key is always `data-analytics-` followed by the attribute name.
+ * eg: `data-analytics-action="click"`
+ * eg: `data-analytics-section="header"`
+ */
+interface DataAnalyticsAttribute {
+  [key: DataAnalyticsKey]: string;
+}
+
 export type {
   DotNotationColorStringToken,
   DotNotationMotionStringToken,
   DotNotationSpacingStringToken,
+  DataAnalyticsAttribute,
   KeysRequired,
   StringChildrenType,
   StringWithAutocomplete,
@@ -147,6 +163,7 @@ export type {
   PickIfExist,
   PickCSSByPlatform,
   BladeElementRef,
+  BladeElementRefWithValue,
   RemoveUndefinedFromUnion,
   ContainerElementType,
 };
